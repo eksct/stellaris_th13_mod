@@ -1,0 +1,75 @@
+weapon_component_template = {
+	key = "SMALL_YOSHIKA"
+	size = small
+	type = instant
+	icon = "GFX_ship_part_laser_1"
+	icon_frame = 1
+	prerequisites = { "tech_lasers_7" }
+	component_set = "RED_LASER"
+	projectile_gfx = "infrared_laser_s"
+	tags = { weapon_type_energy s_slot }
+	upgrades_to = "SMALL_BLUE_LASER"
+	ai_tags = { weapon_role_anti_armor gunship }	#tags must be pre-registered in common/weapon_tags
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @s_t1_cost
+		}
+		upkeep = {
+			energy = 0
+			alloys = 0
+		}
+	}
+	damage = { 
+ 		min = 0
+ 		max = 30
+ 	}
+	 windup = {
+		min = 0
+		max = 40
+	 }
+	 total_fire_time = 0
+}
+weapon_component_template = {
+	key = "tho_TORPEDO_2"
+	size = torpedo
+	type = instant
+
+	#firing_arc = 25.0
+	#min_range = 45.0
+
+	icon = "GFX_ship_part_energy_torpedo_2"
+	icon_frame = 1
+
+	prerequisites = { "tech_energy_torpedoes_1" }
+	component_set = "ENERGY_TORPEDO_2"
+	projectile_gfx = "neutron_torpedoes"
+	tags = { weapon_type_energy }
+	ai_tags = { weapon_role_artillery artillery artillery_stealth energy_torpedoes energy_torpedoes_stealth }
+	ai_tag_weight = 0
+	resources = {
+		category = ship_components
+		cost = {
+			#alloys = @l_t6_cost
+			#exotic_gases = @l_t6_rare
+		}
+		upkeep = {
+			#energy = @l_t6_upkeep_energy
+			#alloys = @l_t6_upkeep_alloys
+		}
+	}
+	range = 5
+	tracking = 5
+	accuracy = 5
+	damage = {
+		min = 35
+		max = 75
+	}
+	windup = {
+		min = 0
+		max = 100
+	 }
+	 total_fire_time = 0
+
+
+}

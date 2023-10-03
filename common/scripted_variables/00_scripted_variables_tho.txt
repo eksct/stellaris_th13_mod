@@ -1,0 +1,38 @@
+
+#time
+@costTime = 256
+@costTime2 = 512
+@costTime3 = 1024
+@costTime4 = 2048
+@costTime5 = 4096
+@costTime6 = 8192
+@costTime7 = 16384
+@costTime8 = 32768
+@costTime9 = 65536
+@costTime10 = 131072
+
+# cost
+@costResource = 256
+@costResource2 = 512
+@costResource3 = 1024
+@costResource4 = 2048
+@costResource5 = 4096
+@costResource6 = 8192
+@costResource7 = 16384
+@costResource8 = 32768
+@costResource9 = 65536
+@costResource10 = 131072
+
+# produces
+@producesup = 256
+@producesup2 = 512
+@producesup3 = 1024
+@producesup4 = 2048
+@producesup5 = 4096
+@producesup6 = 8192
+@producesup7 = 16384
+@producesup8 = 32768
+@producesup9 = 65536
+@producesup10 = 131072
+
+

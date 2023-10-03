@@ -1,0 +1,171 @@
+namespace = tho_ten
+#country_event = {
+#    id = tho_ten.0
+#    diplomatic = yes
+#    title =
+#}
+#行星类型选择
+country_event = {
+    id = tho_ten.1
+    diplomatic = yes
+    title = "Argent_energy_generator"
+    desc = Argent_energy_generator_desc
+    custom_gui = ten_windows
+    custom_gui_option = option_ten
+    is_triggered_only = yes
+    immediate = {
+        set_variable = { which = tho_star_select_search_page value = 1 }
+    }
+    option = {
+        name = "option_a"
+        set_country_flag = tho_select_a
+        tho_system_class_select = yes
+        country_event = { id  =tho_ten.2}
+    }
+    option = {
+        name = "option_b"
+        set_country_flag = tho_select_b
+        tho_system_class_select = yes
+        country_event = { id  =tho_ten.2}
+    }
+    option = {
+        name = "option_f"
+        set_country_flag = tho_select_f
+        tho_system_class_select = yes
+        country_event = { id  =tho_ten.2}
+    }
+    option = {
+        name = "option_g"
+        set_country_flag = tho_select_g
+        tho_system_class_select = yes
+        country_event = { id  =tho_ten.2}
+    }
+    option = {
+        name = "option_k"
+        set_country_flag = tho_select_k
+        tho_system_class_select = yes
+        country_event = { id  =tho_ten.2}
+    }
+    option = {
+        name = "option_m"
+        set_country_flag = tho_select_m
+        tho_system_class_select = yes
+        country_event = { id  =tho_ten.2}
+    }
+    option = {
+        name = "option_t"
+        set_country_flag = tho_select_t
+        tho_system_class_select = yes
+        country_event = { id  =tho_ten.2}
+    }
+    option = {
+        name = "option_bh"
+        set_country_flag = tho_select_bh
+        tho_system_class_select = yes
+        country_event = { id  =tho_ten.2}
+    }
+    option = {
+        name = "option_nue"
+        set_country_flag = tho_select_nue
+        tho_system_class_select = yes
+        country_event = { id  =tho_ten.2}
+    }
+    option = {
+        name = "option_pul"
+        set_country_flag = tho_select_pul
+        tho_system_class_select = yes
+        country_event = { id  =tho_ten.2}
+
+    }
+    option = {
+        name = "option_bi"
+        set_country_flag = tho_select_bi
+        tho_system_class_select = yes
+        country_event = { id  =tho_ten.2}
+    }
+    option = {
+        name = "option_tri"
+        set_country_flag = tho_select_tri
+        tho_system_class_select = yes
+        country_event = { id  =tho_ten.2}
+    }
+    option = {
+        name = exit
+    }
+}
+country_event = {
+    id = tho_ten.2
+    diplomatic = yes
+    title = "Argent_energy_generator"
+    desc = Argent_energy_generator_desc
+    custom_gui = ten_windows
+    custom_gui_option = option_ten
+    is_triggered_only = yes
+    option = {
+        name = "THO_select_system_01"
+        trigger = {exists = event_target:tho_system_selectlock_system_1}
+    }
+    option = {
+        name = "THO_select_system_02"
+        trigger = {exists = event_target:tho_system_selectlock_system_2}
+    }
+    option = {
+        name = "THO_select_system_03"
+        trigger = {exists = event_target:tho_system_selectlock_system_3}
+    }
+    option = {
+        name = "THO_select_system_04"
+        trigger = {exists = event_target:tho_system_selectlock_system_4}
+    }
+    option = {
+        name = "THO_select_system_05"
+        trigger = {exists = event_target:tho_system_selectlock_system_5}
+    }
+    option = {
+        name = "THO_select_system_06"
+        trigger = {exists = event_target:tho_system_selectlock_system_6}
+    }
+    option = {
+        name = "THO_select_system_07"
+        trigger = {exists = event_target:tho_system_selectlock_system_7}
+    }
+    option = {
+        name = "THO_select_system_08"
+        trigger = {exists = event_target:tho_system_selectlock_system_8}
+    }
+    option = {
+        name = "THO_select_system_09"
+        trigger = {exists = event_target:tho_system_selectlock_system_9}
+    }
+    option = {
+        name = "THO_select_system_10"
+        trigger = {exists = event_target:tho_system_selectlock_system_10}
+    }
+    option = {
+        name = "THO_select_page_up"
+        allow = {
+            custom_tooltip = "check_select_page"
+            check_variable = { which = tho_star_select_search_page value > 1  }
+        }
+        tho_clear_system_event_targets = yes
+        subtract_variable = { which = tho_star_select_search_page value = 1 }
+        change_variable = { which = tho_stars_page_num value = 1 }
+        tho_star_select_page_trigger =yes
+        country_event = { id = tho_ten.2 }
+    }
+    option = {
+        name = "THO_select_page_down"
+        allow = {
+            custom_tooltip = "check_select_page_num"
+            check_variable = { which = tho_stars_page_num value > 1  }
+        }
+        tho_clear_system_event_targets = yes
+        change_variable = { which = tho_star_select_search_page value = 1 }
+        subtract_variable = { which = tho_stars_page_num value = 1 }
+        tho_star_select_page_trigger =yes
+        country_event = { id = tho_ten.2 }
+    }
+    option = {
+        name = exit
+    }
+}

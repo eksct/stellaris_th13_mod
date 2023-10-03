@@ -1,0 +1,332 @@
+namespace = tho_s
+#娘娘供给
+country_event = {
+	id = tho_s.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+        has_policy_flag = sr_lingli_buff_nyan
+	    #has_country_flag = ext1
+	}
+	immediate = {
+        export_resource_stockpile_to_variable = {
+            resource = sr_lingli
+            variable = NyanNyan_updata
+        }
+        if = {
+            limit = {
+                AND = {
+                    check_variable = { which = NyanNyan_updata value < 2000000 }
+                    check_variable = { which = NyanNyan_updata value > 100000 }
+                }
+            }
+            add_resource = {
+                sr_lingli = -100000
+            }
+            change_variable = { which = NyanNyan_updata value = -100000 }
+            multiply_variable = {
+                which = NyanNyan_updata
+                value = 0.01
+            }
+        }
+        else_if = {
+            limit = {check_variable = { which = NyanNyan_updata value > 2000000 }}
+            add_resource = {
+                sr_lingli = -1000000
+            }
+            multiply_variable = {
+                which = NyanNyan_updata
+                value = 0.001
+            }
+        }
+        else = {
+            multiply_variable = {
+                which = NyanNyan_updata
+                value = 0.1
+            }
+        }
+        country_event = {
+            id = tho_s.1
+            days = 365
+        }
+	}
+}
+country_event = {
+    id = tho_s.19
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_policy_flag = evergy_buff_nyan
+        #has_country_flag = ext1
+    }
+    immediate = {
+        export_resource_stockpile_to_variable = {
+            resource = energy
+            variable = NyanNyan_updata
+        }
+        if = {
+            limit = {
+                AND = {
+                    check_variable = { which = NyanNyan_updata value < 1000000 }
+                    check_variable = { which = NyanNyan_updata value > 100000 }
+                }
+            }
+            add_resource = {
+                energy = -100000
+            }
+            change_variable = { which = NyanNyan_updata value = -100000 }
+            multiply_variable = {
+                which = NyanNyan_updata
+                value = 0.01
+            }
+        }
+        else_if = {
+            limit = {check_variable = { which = NyanNyan_updata value >= 1000000 }}
+            add_resource = {
+                energy = -10000000
+            }
+            multiply_variable = {
+                which = NyanNyan_updata
+                value = 0.001
+            }
+        }
+        else = {
+            multiply_variable = {
+                which = NyanNyan_updata
+                value = 0.1
+            }
+        }
+        country_event = {
+            id = tho_s.19
+            days = 365
+        }
+    }
+}
+#法令启动_神子
+# 人符「劝善惩恶古之良典」
+country_event = {
+    id = tho_s.2
+    title = tho_s.2.name
+    desc = tho_s.2.desc
+    is_triggered_only = yes
+    event_window_type = leader_story
+    show_sound = event_factions
+    picture = GFX_evt_legendary_leader
+    picture_event_data = {
+        portrait = root.ruler
+        room = from
+    }
+    immediate = {
+        random_country = {
+            limit = {owner = { OR = { has_country_flag = opt1 has_country_flag = toyousatomimi_fuka }}}
+            owner = {remove_country_flag = opt1 remove_country_flag = toyousatomimi_fuka}
+        }
+        random_country = {
+            limit = {
+                #is_ai = no
+                NOT = { is_country = root }
+                NOT = { has_modifier = happy_planet }
+                NOT = {has_country_flag = toyousatomimi_fuka}
+            }
+            set_country_flag = toyousatomimi_fuka
+            save_event_target_as = country_target_miko
+        }
+    }
+
+    option = {
+        name = go_target
+        event_target:country_target_miko = {
+            country_event = { id = tho_s.3 }
+        }
+    }
+}
+country_event = {
+    id = tho_s.3
+    title = tho_s.3.name
+    desc = tho_s.3.desc
+    is_triggered_only = yes
+    picture = GFX_evt_sapient_AI
+    immediate = {
+        random_owned_planet = {
+            limit = { num_pops >= 10 }
+            add_modifier = { modifier = happy_planet days = 60 }
+            save_global_event_target_as = pop_planet
+            add_modifier = { modifier = spiritualist_attraction mult = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            owner = {
+                NOT = {
+                    OR = {
+                        has_ethic = ethic_xenophobe
+                        has_ethic = ethic_fanatic_xenophobe
+                    }
+                }
+            }
+        }
+        name = opt1
+        hidden_effect = {
+            random_list = {
+                25 = {
+                    set_country_flag = opt1
+                    event_target:pop_planet = {
+                        export_trigger_value_to_variable = {
+                            trigger = num_pops
+                            variable = poptool
+                        }
+                        multiply_variable = {
+                            which = poptool
+                            value = 0.1
+                        }
+                        while = {
+                            count = poptool
+                            random_owned_pop = {
+                                kill_pop = yes
+                            }
+                            from = {
+                                random_owned_planet = {
+                                    limit = {
+                                        NOT = { num_unemployed > 1 }
+                                    }
+                                    create_pop = { species = owner_main_species }
+                                }
+                            }
+                        }
+                    }
+                    country_event = { id = tho_s.100 days = 40 }
+
+                }
+                75 = {
+                    country_event = { id = tho_s.101 days = 30 }
+                }
+            }
+        }
+    }
+    option = {
+        name = xenophile_opt
+        trigger = {
+            owner = {
+                OR = { has_ethic = ethic_fanatic_xenophobe has_ethic = ethic_xenophobe }
+            }
+        }
+        #逃离
+            country_event = { id = tho_s.102 }
+        }
+
+    option = {
+        name = optin2
+        country_event = { id = "tho_s.103" days = 3 }
+    }
+    option = {
+        name = sanshi
+        custom_tooltip = "daoxin"
+        allow = {
+            resource_stockpile_compare = {
+                resource = energy
+                value > 3000
+            }
+        }
+        add_resource = {
+            energy = -3000
+        }
+    }
+    after = {
+        from = {
+            country_event = {
+                id = tho_s.4
+                days = 40
+            }
+        }
+    }
+}
+country_event = {
+    id = tho_s.4
+    title = tho_s.4.name
+    desc = tho_s.4.desc
+    picture = GFX_evt_unity_symbol
+    is_triggered_only = yes
+    immediate = {
+        from = {
+            save_event_target_as = country
+        }
+    }
+    option = {
+        name = op41
+        if = {
+            limit = {from = {owner = {has_country_flag = opt1}}}
+            custom_tooltip = op41_tools
+            add_resource = {
+                energy = 3000
+            }
+            from = {
+                remove_country_flag = opt1
+            }
+        }
+        else = {
+            add_resource = {
+                energy = 3000
+            }
+        }
+    }
+}
+country_event = {
+    id = tho_s.100
+    title = tho_s.100.name
+    desc = tho_s.100.desc
+    picture = GFX_evt_sapient_AI
+    is_triggered_only = yes
+    option = {
+        name = option_s_100.1
+    }
+    option = {
+        name = option_s_100.2
+    }
+}
+
+country_event = {
+    id = tho_s.101
+    title = tho_s.101.name
+    desc = tho_s.101.desc
+    picture = GFX_evt_sapient_AI
+    is_triggered_only = yes
+    option = {
+        name = 101.optin
+    }
+}
+country_event = {
+    id = tho_s.102
+    title = tho_s.102.name
+    desc = tho_s.102.desc
+    picture = GFX_evt_sapient_AI
+    is_triggered_only = yes
+    immediate = {}
+    option = {
+        name = tho_s.102_option
+        trigger = {
+            owner = {OR = { has_ethic = ethic_xenophobe has_ethic = ethic_fanatic_xenophobe }}
+        }
+        custom_tooltip = tho_s.102_tool
+        hidden_effect = {
+            event_target:pop_planet = {
+                while = {
+                    count = 5
+                    random_owned_pop = { kill_pop = yes }
+                }
+                remove_modifier = happy_planet
+            }
+        }
+    }
+}
+country_event = {
+    id = tho_s.103
+    title = tho_s.103.name
+    desc = tho_s.103.desc
+    picture = GFX_evt_sapient_AI
+    is_triggered_only = yes
+    immediate = {
+    }
+    option = {
+        name = tho_s.103.option
+    }
+}

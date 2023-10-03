@@ -1,0 +1,581 @@
+##邪修
+xiexiu = {
+    category = criminal
+    #condition_string = SPECIALIST_JOB_TRIGGER
+    #possible_precalc = can_fill_specialist_job
+    building_icon = building_residence
+    clothes_texture_index = 3
+    ignores_favorite = yes
+    contributes_to_diplo_weight = no
+    can_set_priority = no#是否设置优先级
+    possible = {
+        NOT = { has_modifier = tho_xianren }
+        has_modifier = tho_xiexiu
+    }
+    resources = {
+        category = planet_researchers
+        produces = {
+            food = -10
+            energy = -10
+            consumer_goods = -10
+            alloys = -10
+        }
+        upkeep = {
+            energy = 10
+            food = 10
+            consumer_goods = 5
+            alloys = 9
+        }
+    }
+    triggered_planet_modifier = {
+        pop_happiness = -0.3
+        pop_amenities_usage_add = -5
+        PLANET_STABILITY_ADD = -3
+        PLANET_CRIME_NO_HAPPINESS_ADD = 5
+    }
+    pop_modifier = {
+        planet_jobs_energy_produces_mult = 1
+    }
+    weight = {
+        base = 1000000000
+    }
+}
+#邪仙
+xiexian = {
+    category = criminal
+    #condition_string = criminal_JOB_TRIGGER
+    #possible_precalc = can_fill_specialist_job
+    building_icon = building_residence
+    clothes_texture_index = 3
+    ignores_favorite = yes
+    contributes_to_diplo_weight = no
+    can_set_priority = no#是否设置优先级
+    possible = {
+        has_modifier = tho_xianren
+        has_modifier = tho_xiexiu
+    }
+    resources = {
+        category = planet_researchers
+        produces = {
+            food = -100
+            energy = -100
+            consumer_goods = -100
+            alloys = -100
+        }
+        #upkeep = {
+        #    energy = 50
+        #    food = 10
+        #    consumer_goods = 5
+        #    alloys = 9
+        #}
+    }
+    triggered_planet_modifier = {
+        mult = value:xiexian_nums_tho
+        pop_happiness = -0.5
+        pop_amenities_usage_add = -15
+        PLANET_STABILITY_ADD = -13
+        PLANET_CRIME_NO_HAPPINESS_ADD = 15
+    }
+    pop_modifier = {
+        planet_jobs_energy_produces_mult = 1
+    }
+    weight = {
+        #weight = {
+            base = 1000000000
+        modifier = {
+            has_modifier = tho_xiexian
+            mult = 2
+        }
+    }
+}
+##狂信徒| |人口添加狂信徒修正
+##对不是狂信徒的人传教
+#tho_kuangxingtu = {
+#    category = specialist
+#    condition_string = SPECIALIST_JOB_TRIGGER
+#    possible_precalc = can_fill_specialist_job
+#    clothes_texture_index = 3
+#    possible = {
+#
+#    }
+#    resources = {
+#        category = planet_researchers
+#        produces = {
+#            unity = 30
+#        }
+#        upkeep = {
+#            energy = 10
+#            food = 10
+#            consumer_goods = 5
+#            alloys = 9
+#        }
+#    }
+#    triggered_planet_modifier = {
+#        pop_amenities_usage_add = -0.1
+#        planet_jobs_upkeep_mult = 0.1
+#        planet_pops_upkeep_mult = 0.05
+#    }
+#}
+##仙人,上军队 修改category为仙人,添加限制条件,人口添加仙人修正
+xianren_evergy = {
+    category = ruler
+    condition_string = RULER_JOB_TRIGGER
+    possible_precalc = can_fill_ruler_job
+    clothes_texture_index = 2
+    possible = {
+        #has_modifier =
+        has_modifier = tho_xianren
+        NOT = { has_modifier = tho_xiexiu }
+    }
+    resources = {
+        category = planet_researchers
+        produces = {
+            energy = 100
+        }
+        upkeep = {
+            consumer_goods = 15
+            food = 10
+            energy = 2
+        }
+    }
+    planet_modifier = {
+        planet_jobs_energy_produces_mult = 0.5
+        pop_happiness = 0.1
+        pop_amenities_usage_add = -2
+        PLANET_STABILITY_ADD = 2
+    }
+    weight = {
+        weight =20000
+        mult = value:job_weights_modifier|JOB|politician|RESOURCE|unity|
+        mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+        modifier = {
+            factor = 0.1
+            has_citizenship_rights = no
+            NOT = { has_trait = trait_mechanical }
+        }
+        modifier = {
+            factor = 5
+            has_job = politician
+        }
+        # crisis purge
+        modifier = {
+            factor = 0.01
+            exists = planet
+            exists = planet.controller
+            planet.controller = {
+                OR = {
+                    is_country_type = swarm
+                    is_country_type = ai_empire
+                }
+            }
+        }
+    }
+}
+xianren_minerals = {
+    category = ruler
+    condition_string = RULER_JOB_TRIGGER
+    possible_precalc = can_fill_ruler_job
+    clothes_texture_index = 2
+    possible = {
+
+        has_modifier = tho_xianren
+        NOT = { has_modifier = tho_xiexiu }
+    }
+    resources = {
+        category = planet_researchers
+        produces = {
+            minerals = 100
+        }
+        upkeep = {
+            consumer_goods = 10
+            food = 15
+            energy = 12
+        }
+    }
+
+    planet_modifier = {
+        planet_jobs_minerals_produces_mult = 0.5
+        pop_happiness = 0.1
+        pop_amenities_usage_add = -2
+        PLANET_STABILITY_ADD = 1
+    }
+
+    weight = {
+        weight = 9999999
+        mult = value:job_weights_modifier|JOB|politician|RESOURCE|unity|
+        mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+        modifier = {
+            factor = 0.1
+            has_citizenship_rights = no
+            NOT = { has_trait = trait_mechanical }
+        }
+        modifier = {
+            factor = 5
+            has_job = politician
+        }
+        # crisis purge
+        modifier = {
+            factor = 0.01
+            exists = planet
+            exists = planet.controller
+            planet.controller = {
+                OR = {
+                    is_country_type = swarm
+                    is_country_type = ai_empire
+                }
+            }
+        }
+    }
+}
+xianren_food = {
+    category = ruler
+    condition_string = RULER_JOB_TRIGGER
+    possible_precalc = can_fill_ruler_job
+    clothes_texture_index = 2
+    possible = {
+
+        has_modifier = tho_xianren
+        NOT = { has_modifier = tho_xiexiu }
+    }
+    resources = {
+        category = planet_researchers
+        produces = {
+            food = 100
+        }
+        upkeep = {
+            consumer_goods = 7
+            food = 2
+            energy = 10
+        }
+    }
+    planet_modifier = {
+        planet_jobs_food_produces_mult = 0.5
+        pop_happiness = 0.2
+        pop_amenities_usage_add = -2
+        PLANET_STABILITY_ADD = 3
+    }
+
+    weight = {
+        weight = 9999999
+        mult = value:job_weights_modifier|JOB|politician|RESOURCE|unity|
+        mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+        modifier = {
+            factor = 0.1
+            has_citizenship_rights = no
+            NOT = { has_trait = trait_mechanical }
+        }
+        modifier = {
+            factor = 5
+            has_job = politician
+        }
+        # crisis purge
+        modifier = {
+            factor = 0.01
+            exists = planet
+            exists = planet.controller
+            planet.controller = {
+                OR = {
+                    is_country_type = swarm
+                    is_country_type = ai_empire
+                }
+            }
+        }
+    }
+}
+xianren_alloys = {
+    category = ruler
+    condition_string = RULER_JOB_TRIGGER
+    possible_precalc = can_fill_ruler_job
+    clothes_texture_index = 2
+    possible = {
+
+        has_modifier = tho_xianren
+        NOT = { has_modifier = tho_xiexiu }
+    }
+    resources = {
+        category = planet_researchers
+        produces = {
+            alloys = 100
+        }
+        upkeep = {
+            consumer_goods = 15
+            food = 10
+            energy = 15
+            minerals = 20
+        }
+    }
+    planet_modifier = {
+        planet_jobs_alloys_produces_mult = 0.5
+        pop_happiness = 0.1
+    }
+
+    weight = {
+        weight = 9999999
+    }
+}
+xianren_consumer_goods = {
+    category = ruler
+    condition_string = RULER_JOB_TRIGGER
+    possible_precalc = can_fill_ruler_job
+    clothes_texture_index = 2
+    possible = {
+
+        has_modifier = tho_xianren
+        NOT = { has_modifier = tho_xiexiu }
+    }
+    resources = {
+        category = planet_researchers
+        produces = {
+            consumer_goods = 100
+        }
+        upkeep = {
+            consumer_goods = 6
+            food = 15
+            energy = 10
+            minerals = 15
+        }
+    }
+    planet_modifier = {
+        planet_jobs_consumer_goods_produces_mult = 0.5
+        pop_happiness = 0.1
+    }
+
+    weight = {
+        weight= 9999999
+        mult = value:job_weights_modifier|JOB|politician|RESOURCE|unity|
+        mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+        modifier = {
+            factor = 0.1
+            has_citizenship_rights = no
+            NOT = { has_trait = trait_mechanical }
+        }
+        modifier = {
+            factor = 5
+            has_job = politician
+        }
+        # crisis purge
+        modifier = {
+            factor = 0.01
+            exists = planet
+            exists = planet.controller
+            planet.controller = {
+                OR = {
+                    is_country_type = swarm
+                    is_country_type = ai_empire
+                }
+            }
+        }
+    }
+}
+xianren_unity = {
+    category = ruler
+    condition_string = RULER_JOB_TRIGGER
+    possible_precalc = can_fill_ruler_job
+    clothes_texture_index = 2
+    possible = {
+
+        has_modifier = tho_xianren
+        NOT = { has_modifier = tho_xiexiu }
+    }
+    resources = {
+        category = planet_researchers
+        produces = {
+            unity = 100
+        }
+        upkeep = {
+            consumer_goods = 15
+            food = 10
+            energy = 10
+        }
+    }
+    planet_modifier = {
+        planet_jobs_unity_produces_mult = 0.5
+        pop_happiness = 0.2
+        PLANET_STABILITY_ADD = 2
+    }
+
+    weight = {
+        weight = 9999999
+        mult = value:job_weights_modifier|JOB|politician|RESOURCE|unity|
+        mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+        modifier = {
+            factor = 0.1
+            has_citizenship_rights = no
+            NOT = { has_trait = trait_mechanical }
+        }
+        modifier = {
+            factor = 5
+            has_job = politician
+        }
+        # crisis purge
+        modifier = {
+            factor = 0.01
+            exists = planet
+            exists = planet.controller
+            planet.controller = {
+                OR = {
+                    is_country_type = swarm
+                    is_country_type = ai_empire
+                }
+            }
+        }
+    }
+}
+xianren_xiyou = {
+    category = ruler
+    condition_string = RULER_JOB_TRIGGER
+    possible_precalc = can_fill_ruler_job
+    clothes_texture_index = 2
+    possible = {
+
+        has_modifier = tho_xianren
+        NOT = { has_modifier = tho_xiexiu }
+    }
+    resources = {
+        category = planet_researchers
+        produces = {
+            rare_crystals = 100
+            exotic_gases = 100
+            volatile_motes = 100
+        }
+        upkeep = {
+            consumer_goods = 25
+            food = 20
+            energy = 20
+            minerals = 30
+            alloys = 15
+        }
+    }
+
+    planet_modifier = {
+        planet_jobs_rare_crystals_produces_mult = 0.5
+        planet_jobs_exotic_gases_produces_mult = 0.5
+        planet_jobs_volatile_motes_produces_mult = 0.5
+        pop_happiness = -0.3
+        pop_amenities_usage_add = 4
+        PLANET_STABILITY_ADD = -10
+    }
+
+    weight = {
+        weight = 9999999
+        mult = value:job_weights_modifier|JOB|politician|RESOURCE|unity|
+        mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+        modifier = {
+            factor = 0.1
+            has_citizenship_rights = no
+            NOT = { has_trait = trait_mechanical }
+        }
+        modifier = {
+            factor = 5
+            has_job = politician
+        }
+        # crisis purge
+        modifier = {
+            factor = 0.01
+            exists = planet
+            exists = planet.controller
+            planet.controller = {
+                OR = {
+                    is_country_type = swarm
+                    is_country_type = ai_empire
+                }
+            }
+        }
+    }
+}
+xianren_research = {
+    category = ruler
+    condition_string = RULER_JOB_TRIGGER
+    possible_precalc = can_fill_ruler_job
+    clothes_texture_index = 2
+    possible = {
+
+        has_modifier = tho_xianren
+        NOT = { has_modifier = tho_xiexiu }
+    }
+    resources = {
+        category = planet_researchers
+        produces = {
+            engineering_research = 100
+            physics_research = 100
+            society_research = 100
+        }
+        upkeep = {
+            consumer_goods = 40
+            food = 20
+            energy = 20
+            alloys = 15
+        }
+    }
+    planet_modifier = {
+        planet_jobs_engineering_research_produces_mult = 0.5
+        planet_jobs_society_research_produces_mult = 0.5
+        planet_jobs_physics_research_produces_mult = 0.5
+        pop_happiness = 0.2
+        pop_amenities_usage_add = -2
+        PLANET_STABILITY_ADD = 2
+    }
+
+    weight = {
+        weight = 9999999
+    }
+}
+
+xianren_ship = {
+    category = ruler
+    condition_string = RULER_JOB_TRIGGER
+    possible_precalc = can_fill_ruler_job
+    clothes_texture_index = 2
+    possible = {
+        has_modifier = tho_xianren
+        NOT = { has_modifier = tho_xiexiu }
+    }
+    resources = {
+        category = planet_researchers
+
+        upkeep = {
+            consumer_goods = 25
+            food = 25
+            energy = 25
+            alloys = 25
+        }
+    }
+    triggered_country_modifier = {
+        country_naval_cap_add = 100
+    }
+    planet_modifier = {
+        pop_happiness = 0.2
+        pop_amenities_usage_add = -2
+        PLANET_STABILITY_ADD = 2
+    }
+    triggered_country_modifier = {
+        country_naval_cap_mult = 0.5
+    }
+
+    weight = {
+        weight = 9999999
+        mult = value:job_weights_modifier|JOB|politician|RESOURCE|unity|
+        mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+        modifier = {
+            factor = 0.1
+            has_citizenship_rights = no
+            NOT = { has_trait = trait_mechanical }
+        }
+        modifier = {
+            factor = 5
+            has_job = politician
+        }
+        # crisis purge
+        modifier = {
+            factor = 0.01
+            exists = planet
+            exists = planet.controller
+            planet.controller = {
+                OR = {
+                    is_country_type = swarm
+                    is_country_type = ai_empire
+                }
+            }
+        }
+    }
+}

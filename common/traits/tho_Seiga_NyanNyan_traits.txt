@@ -1,0 +1,143 @@
+#霍青娥
+leader_trait_NyanNyan = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    #councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+    inline_script = {
+        script = trait/icon_psionic
+        CLASS = leader
+        ICON = "GFX_leader_trait_NyanNyan"
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    custom_tooltip_with_modifiers = leader_trait_NyanNyan_tooltip
+    self_modifier = {
+        #hieend_effect = {
+        #}
+    }
+}
+#穿墙之凿
+leader_trait_NyanNyan_council_atk = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_fazan"
+        RARITY = paragon
+        COUNCIL = yes
+        TIER = none
+    }
+    triggered_modifier = {
+        planet_army_build_time_mult = -0.2
+        army_morale = 0.05
+        army_damage_mult = 0.05
+        army_morale_damage_mult = 0.05
+        army_disengage_chance_mult = 0.10
+        planet_combat_width_add = 1
+        ship_shield_hardening_add = 0.05
+        ship_armor_hardening_add = 0.05
+        mult = trigger:has_skill
+    }
+}
+##穿墙的邪仙
+leader_trait_NyanNyan_council_builds = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = leader
+		ICON = "GFX_leader_trait_fulu"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+    triggered_modifier = {
+         country_starbase_influence_cost_mult = -0.02
+		 planet_buildings_cost_mult = -0.02
+		 planet_districts_cost_mult = -0.02
+		 planet_building_build_speed_mult = 0.01
+		 planet_army_build_speed_mult = 0.01
+		 country_ruler_influence_produces_add = 0.2
+		 category_psionics_research_speed_mult = 0.05
+        mult = trigger:has_skill
+    }
+
+}
+#无理非道的仙人
+leader_trait_NyanNyan_immortal = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    #councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+	inline_script = {
+		script = trait/icon
+		CLASS = admiral
+		ICON = GFX_leader_trait_xiantianbagua
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+    custom_tooltip_with_modifiers = leader_trait_NyanNyan_immortal_tool
+
+	triggered_modifier = {
+	    mult = owner.value:NyanNyan_country_updata
+        ship_fire_rate_mult =0.00025
+        ship_weapon_damage = 0.00015
+        ship_hull_damage_mult = 0.00045
+        ship_shield_penetration_mult = 0.00035
+        ship_armor_penetration_mult = 0.00045
+	}
+    self_modifier = {
+
+    }
+}
+#邪仙
+leader_trait_NyanNyan_immortalB = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = admiral
+		ICON = "GFX_leader_trait_psionic_chosen_one"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+    triggered_modifier = {
+        ship_sensor_range_add = 3
+        weapon_type_energy_weapon_damage_mult = 0.25
+        ship_armor_penetration_mult = 0.2
+        ship_shield_penetration_mult = 0.2
+        ship_armor_reduction =-0.1
+        ship_armor_reduction = -0.1
+
+    }
+}

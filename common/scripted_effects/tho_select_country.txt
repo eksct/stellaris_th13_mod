@@ -1,0 +1,725 @@
+tho_give_country_flag = {#选择国家
+    every_country = { limit = { tho_is_counrty_list = yes } set_country_flag = tho_country_select }
+}
+tho_clear_country_flag = {#撤销
+    every_country = { limit = { has_country_flag = tho_country_select } remove_country_flag = tho_country_select }
+}
+tho_set_country_select_page_flag = {#分页flag
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_0 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_1 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_2 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_3 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_4 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_5 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_6 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_7 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_8 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_9 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_10 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_11 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_12 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_13 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_14 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_15 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_16 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_17 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_18 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_19 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_20 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_21 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_22 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_23 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_24 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_25 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_26 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_27 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_28 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_29 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_30 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_31 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_32 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_33 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_34 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_35 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_36 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_37 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_38 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_39 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_40 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_41 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_42 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_43 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_44 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_45 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_46 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_47 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_48 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_49 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_50 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_51 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_52 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_53 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_54 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_55 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_56 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_57 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_58 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_59 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_60 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_61 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_62 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_63 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_64 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_65 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_66 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_67 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_68 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_69 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_70 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_71 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_72 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_73 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_74 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_75 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_76 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_77 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_78 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_79 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_80 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_81 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_82 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_83 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_84 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_85 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_86 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_87 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_88 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_89 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_90 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_91 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_92 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_93 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_94 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_95 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_96 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_97 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_98 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_99 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_100 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_101 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_102 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_103 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_104 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_105 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_106 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_107 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_108 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_109 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_110 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_111 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_112 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_113 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_114 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_115 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_116 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_117 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_118 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_119 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_120 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_121 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_122 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_123 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_124 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_125 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_126 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_127 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_128 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_129 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_130 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_131 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_132 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_133 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_134 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_135 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_136 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_137 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_138 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_139 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_140 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_141 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_142 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_143 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_144 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_145 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_146 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_147 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_148 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_149 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_150 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_151 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_152 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_153 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_154 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_155 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_156 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_157 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_158 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_159 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_160 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_161 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_162 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_163 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_164 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_165 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_166 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_167 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_168 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_169 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_170 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_171 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_172 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_173 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_174 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_175 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_176 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_177 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_178 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_179 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_180 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_181 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_182 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_183 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_184 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_185 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_186 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_187 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_188 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_189 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_190 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_191 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_192 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_193 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_194 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_195 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_196 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_197 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_198 }
+    random_country = { limit = { has_country_flag = tho_country_select  NOT = { has_country_flag = tho_country_select_locked }} set_country_flag = tho_country_select_locked set_country_flag = tho_country_select_199 }
+}
+
+tho_clear_country_select_page_flag = {#撤销flag
+    every_country = {
+        remove_country_flag = tho_country_select_locked
+        remove_country_flag = tho_country_select_0
+        remove_country_flag = tho_country_select_1
+        remove_country_flag = tho_country_select_2
+        remove_country_flag = tho_country_select_3
+        remove_country_flag = tho_country_select_4
+        remove_country_flag = tho_country_select_5
+        remove_country_flag = tho_country_select_6
+        remove_country_flag = tho_country_select_7
+        remove_country_flag = tho_country_select_8
+        remove_country_flag = tho_country_select_9
+        remove_country_flag = tho_country_select_10
+        remove_country_flag = tho_country_select_11
+        remove_country_flag = tho_country_select_12
+        remove_country_flag = tho_country_select_13
+        remove_country_flag = tho_country_select_14
+        remove_country_flag = tho_country_select_15
+        remove_country_flag = tho_country_select_16
+        remove_country_flag = tho_country_select_17
+        remove_country_flag = tho_country_select_18
+        remove_country_flag = tho_country_select_19
+        remove_country_flag = tho_country_select_20
+        remove_country_flag = tho_country_select_21
+        remove_country_flag = tho_country_select_22
+        remove_country_flag = tho_country_select_23
+        remove_country_flag = tho_country_select_24
+        remove_country_flag = tho_country_select_25
+        remove_country_flag = tho_country_select_26
+        remove_country_flag = tho_country_select_27
+        remove_country_flag = tho_country_select_28
+        remove_country_flag = tho_country_select_29
+        remove_country_flag = tho_country_select_30
+        remove_country_flag = tho_country_select_31
+        remove_country_flag = tho_country_select_32
+        remove_country_flag = tho_country_select_33
+        remove_country_flag = tho_country_select_34
+        remove_country_flag = tho_country_select_35
+        remove_country_flag = tho_country_select_36
+        remove_country_flag = tho_country_select_37
+        remove_country_flag = tho_country_select_38
+        remove_country_flag = tho_country_select_39
+        remove_country_flag = tho_country_select_40
+        remove_country_flag = tho_country_select_41
+        remove_country_flag = tho_country_select_42
+        remove_country_flag = tho_country_select_43
+        remove_country_flag = tho_country_select_44
+        remove_country_flag = tho_country_select_45
+        remove_country_flag = tho_country_select_46
+        remove_country_flag = tho_country_select_47
+        remove_country_flag = tho_country_select_48
+        remove_country_flag = tho_country_select_49
+        remove_country_flag = tho_country_select_50
+        remove_country_flag = tho_country_select_51
+        remove_country_flag = tho_country_select_52
+        remove_country_flag = tho_country_select_53
+        remove_country_flag = tho_country_select_54
+        remove_country_flag = tho_country_select_55
+        remove_country_flag = tho_country_select_56
+        remove_country_flag = tho_country_select_57
+        remove_country_flag = tho_country_select_58
+        remove_country_flag = tho_country_select_59
+        remove_country_flag = tho_country_select_60
+        remove_country_flag = tho_country_select_61
+        remove_country_flag = tho_country_select_62
+        remove_country_flag = tho_country_select_63
+        remove_country_flag = tho_country_select_64
+        remove_country_flag = tho_country_select_65
+        remove_country_flag = tho_country_select_66
+        remove_country_flag = tho_country_select_67
+        remove_country_flag = tho_country_select_68
+        remove_country_flag = tho_country_select_69
+        remove_country_flag = tho_country_select_70
+        remove_country_flag = tho_country_select_71
+        remove_country_flag = tho_country_select_72
+        remove_country_flag = tho_country_select_73
+        remove_country_flag = tho_country_select_74
+        remove_country_flag = tho_country_select_75
+        remove_country_flag = tho_country_select_76
+        remove_country_flag = tho_country_select_77
+        remove_country_flag = tho_country_select_78
+        remove_country_flag = tho_country_select_79
+        remove_country_flag = tho_country_select_80
+        remove_country_flag = tho_country_select_81
+        remove_country_flag = tho_country_select_82
+        remove_country_flag = tho_country_select_83
+        remove_country_flag = tho_country_select_84
+        remove_country_flag = tho_country_select_85
+        remove_country_flag = tho_country_select_86
+        remove_country_flag = tho_country_select_87
+        remove_country_flag = tho_country_select_88
+        remove_country_flag = tho_country_select_89
+        remove_country_flag = tho_country_select_90
+        remove_country_flag = tho_country_select_91
+        remove_country_flag = tho_country_select_92
+        remove_country_flag = tho_country_select_93
+        remove_country_flag = tho_country_select_94
+        remove_country_flag = tho_country_select_95
+        remove_country_flag = tho_country_select_96
+        remove_country_flag = tho_country_select_97
+        remove_country_flag = tho_country_select_98
+        remove_country_flag = tho_country_select_99
+        remove_country_flag = tho_country_select_100
+        remove_country_flag = tho_country_select_101
+        remove_country_flag = tho_country_select_102
+        remove_country_flag = tho_country_select_103
+        remove_country_flag = tho_country_select_104
+        remove_country_flag = tho_country_select_105
+        remove_country_flag = tho_country_select_106
+        remove_country_flag = tho_country_select_107
+        remove_country_flag = tho_country_select_108
+        remove_country_flag = tho_country_select_109
+        remove_country_flag = tho_country_select_110
+        remove_country_flag = tho_country_select_111
+        remove_country_flag = tho_country_select_112
+        remove_country_flag = tho_country_select_113
+        remove_country_flag = tho_country_select_114
+        remove_country_flag = tho_country_select_115
+        remove_country_flag = tho_country_select_116
+        remove_country_flag = tho_country_select_117
+        remove_country_flag = tho_country_select_118
+        remove_country_flag = tho_country_select_119
+        remove_country_flag = tho_country_select_120
+        remove_country_flag = tho_country_select_121
+        remove_country_flag = tho_country_select_122
+        remove_country_flag = tho_country_select_123
+        remove_country_flag = tho_country_select_124
+        remove_country_flag = tho_country_select_125
+        remove_country_flag = tho_country_select_126
+        remove_country_flag = tho_country_select_127
+        remove_country_flag = tho_country_select_128
+        remove_country_flag = tho_country_select_129
+        remove_country_flag = tho_country_select_130
+        remove_country_flag = tho_country_select_131
+        remove_country_flag = tho_country_select_132
+        remove_country_flag = tho_country_select_133
+        remove_country_flag = tho_country_select_134
+        remove_country_flag = tho_country_select_135
+        remove_country_flag = tho_country_select_136
+        remove_country_flag = tho_country_select_137
+        remove_country_flag = tho_country_select_138
+        remove_country_flag = tho_country_select_139
+        remove_country_flag = tho_country_select_140
+        remove_country_flag = tho_country_select_141
+        remove_country_flag = tho_country_select_142
+        remove_country_flag = tho_country_select_143
+        remove_country_flag = tho_country_select_144
+        remove_country_flag = tho_country_select_145
+        remove_country_flag = tho_country_select_146
+        remove_country_flag = tho_country_select_147
+        remove_country_flag = tho_country_select_148
+        remove_country_flag = tho_country_select_149
+        remove_country_flag = tho_country_select_150
+        remove_country_flag = tho_country_select_151
+        remove_country_flag = tho_country_select_152
+        remove_country_flag = tho_country_select_153
+        remove_country_flag = tho_country_select_154
+        remove_country_flag = tho_country_select_155
+        remove_country_flag = tho_country_select_156
+        remove_country_flag = tho_country_select_157
+        remove_country_flag = tho_country_select_158
+        remove_country_flag = tho_country_select_159
+        remove_country_flag = tho_country_select_160
+        remove_country_flag = tho_country_select_161
+        remove_country_flag = tho_country_select_162
+        remove_country_flag = tho_country_select_163
+        remove_country_flag = tho_country_select_164
+        remove_country_flag = tho_country_select_165
+        remove_country_flag = tho_country_select_166
+        remove_country_flag = tho_country_select_167
+        remove_country_flag = tho_country_select_168
+        remove_country_flag = tho_country_select_169
+        remove_country_flag = tho_country_select_170
+        remove_country_flag = tho_country_select_171
+        remove_country_flag = tho_country_select_172
+        remove_country_flag = tho_country_select_173
+        remove_country_flag = tho_country_select_174
+        remove_country_flag = tho_country_select_175
+        remove_country_flag = tho_country_select_176
+        remove_country_flag = tho_country_select_177
+        remove_country_flag = tho_country_select_178
+        remove_country_flag = tho_country_select_179
+        remove_country_flag = tho_country_select_180
+        remove_country_flag = tho_country_select_181
+        remove_country_flag = tho_country_select_182
+        remove_country_flag = tho_country_select_183
+        remove_country_flag = tho_country_select_184
+        remove_country_flag = tho_country_select_185
+        remove_country_flag = tho_country_select_186
+        remove_country_flag = tho_country_select_187
+        remove_country_flag = tho_country_select_188
+        remove_country_flag = tho_country_select_189
+        remove_country_flag = tho_country_select_190
+        remove_country_flag = tho_country_select_191
+        remove_country_flag = tho_country_select_192
+        remove_country_flag = tho_country_select_193
+        remove_country_flag = tho_country_select_194
+        remove_country_flag = tho_country_select_195
+        remove_country_flag = tho_country_select_196
+        remove_country_flag = tho_country_select_197
+        remove_country_flag = tho_country_select_198
+        remove_country_flag = tho_country_select_199
+
+    }
+}
+Tho_country_select_page_check = {
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_10 }} root = { set_variable = { which = tho_country_page_num value = 1 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_20 }} root = { set_variable = { which = tho_country_page_num value = 2 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_30 }} root = { set_variable = { which = tho_country_page_num value = 3 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_40 }} root = { set_variable = { which = tho_country_page_num value = 4 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_50 }} root = { set_variable = { which = tho_country_page_num value = 5 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_60 }} root = { set_variable = { which = tho_country_page_num value = 6 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_70 }} root = { set_variable = { which = tho_country_page_num value = 7 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_80 }} root = { set_variable = { which = tho_country_page_num value = 8 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_90 }} root = { set_variable = { which = tho_country_page_num value = 9 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_100 }} root = { set_variable = { which = tho_country_page_num value = 10 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_110 }} root = { set_variable = { which = tho_country_page_num value = 11 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_120 }} root = { set_variable = { which = tho_country_page_num value = 12 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_130 }} root = { set_variable = { which = tho_country_page_num value = 13 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_140 }} root = { set_variable = { which = tho_country_page_num value = 14 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_150 }} root = { set_variable = { which = tho_country_page_num value = 15 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_160 }} root = { set_variable = { which = tho_country_page_num value = 16 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_170 }} root = { set_variable = { which = tho_country_page_num value = 17 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_180 }} root = { set_variable = { which = tho_country_page_num value = 18 }}}
+    if = { limit = { any_country = { has_country_flag =  tho_country_select_190 }} root = { set_variable = { which = tho_country_page_num value = 19 }}}
+}
+tho_save_country_event_trigger = {
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 1 }}
+        random_country = { limit = { has_country_flag = tho_country_select_0 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_1 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_2 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_3 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_4 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_5 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_6 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_7 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_8 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_9 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 2 }}
+        random_country = { limit = { has_country_flag = tho_country_select_10 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_11 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_12 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_13 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_14 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_15 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_16 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_17 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_18 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_19 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 3 }}
+        random_country = { limit = { has_country_flag = tho_country_select_20 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_21 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_22 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_23 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_24 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_25 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_26 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_27 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_28 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_29 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 4 }}
+        random_country = { limit = { has_country_flag = tho_country_select_30 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_31 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_32 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_33 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_34 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_35 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_36 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_37 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_38 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_39 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 5 }}
+        random_country = { limit = { has_country_flag = tho_country_select_40 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_41 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_42 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_43 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_44 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_45 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_46 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_47 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_48 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_49 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 6 }}
+        random_country = { limit = { has_country_flag = tho_country_select_50 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_51 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_52 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_53 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_54 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_55 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_56 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_57 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_58 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_59 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 7 }}
+        random_country = { limit = { has_country_flag = tho_country_select_60 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_61 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_62 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_63 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_64 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_65 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_66 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_67 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_68 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_69 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 8 }}
+        random_country = { limit = { has_country_flag = tho_country_select_70 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_71 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_72 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_73 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_74 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_75 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_76 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_77 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_78 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_79 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 9 }}
+        random_country = { limit = { has_country_flag = tho_country_select_80 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_81 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_82 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_83 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_84 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_85 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_86 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_87 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_88 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_89 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 10 }}
+        random_country = { limit = { has_country_flag = tho_country_select_90 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_91 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_92 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_93 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_94 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_95 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_96 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_97 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_98 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_99 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 11 }}
+        random_country = { limit = { has_country_flag = tho_country_select_100 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_101 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_102 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_103 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_104 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_105 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_106 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_107 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_108 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_109 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 12 }}
+        random_country = { limit = { has_country_flag = tho_country_select_110 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_111 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_112 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_113 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_114 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_115 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_116 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_117 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_118 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_119 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 13 }}
+        random_country = { limit = { has_country_flag = tho_country_select_120 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_121 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_122 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_123 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_124 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_125 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_126 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_127 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_128 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_129 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 14 }}
+        random_country = { limit = { has_country_flag = tho_country_select_130 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_131 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_132 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_133 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_134 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_135 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_136 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_137 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_138 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_139 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 15 }}
+        random_country = { limit = { has_country_flag = tho_country_select_140 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_141 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_142 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_143 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_144 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_145 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_146 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_147 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_148 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_149 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 16 }}
+        random_country = { limit = { has_country_flag = tho_country_select_150 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_151 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_152 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_153 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_154 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_155 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_156 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_157 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_158 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_159 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 17 }}
+        random_country = { limit = { has_country_flag = tho_country_select_160 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_161 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_162 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_163 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_164 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_165 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_166 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_167 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_168 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_169 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 18 }}
+        random_country = { limit = { has_country_flag = tho_country_select_170 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_171 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_172 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_173 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_174 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_175 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_176 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_177 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_178 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_179 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 19 }}
+        random_country = { limit = { has_country_flag = tho_country_select_180 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_181 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_182 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_183 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_184 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_185 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_186 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_187 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_188 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_189 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+    if = {
+        limit = { check_variable = { which = Tho_country_select_page value = 20 }}
+        random_country = { limit = { has_country_flag = tho_country_select_190 } save_global_event_target_as = tho_country_select_target_1 }
+        random_country = { limit = { has_country_flag = tho_country_select_191 } save_global_event_target_as = tho_country_select_target_2 }
+        random_country = { limit = { has_country_flag = tho_country_select_192 } save_global_event_target_as = tho_country_select_target_3 }
+        random_country = { limit = { has_country_flag = tho_country_select_193 } save_global_event_target_as = tho_country_select_target_4 }
+        random_country = { limit = { has_country_flag = tho_country_select_194 } save_global_event_target_as = tho_country_select_target_5 }
+        random_country = { limit = { has_country_flag = tho_country_select_195 } save_global_event_target_as = tho_country_select_target_6 }
+        random_country = { limit = { has_country_flag = tho_country_select_196 } save_global_event_target_as = tho_country_select_target_7 }
+        random_country = { limit = { has_country_flag = tho_country_select_197 } save_global_event_target_as = tho_country_select_target_8 }
+        random_country = { limit = { has_country_flag = tho_country_select_198 } save_global_event_target_as = tho_country_select_target_9 }
+        random_country = { limit = { has_country_flag = tho_country_select_199 } save_global_event_target_as = tho_country_select_target_10 }
+    }
+}
+tho_clear_country_event_targets = {
+    optimize_memory
+    if = { limit = { exists = event_target:tho_country_select_target_1 } clear_global_event_target = tho_country_select_target_1 }
+    if = { limit = { exists = event_target:tho_country_select_target_2 } clear_global_event_target = tho_country_select_target_2 }
+    if = { limit = { exists = event_target:tho_country_select_target_3 } clear_global_event_target = tho_country_select_target_3 }
+    if = { limit = { exists = event_target:tho_country_select_target_4 } clear_global_event_target = tho_country_select_target_4 }
+    if = { limit = { exists = event_target:tho_country_select_target_5 } clear_global_event_target = tho_country_select_target_5 }
+    if = { limit = { exists = event_target:tho_country_select_target_6 } clear_global_event_target = tho_country_select_target_6 }
+    if = { limit = { exists = event_target:tho_country_select_target_7 } clear_global_event_target = tho_country_select_target_7 }
+    if = { limit = { exists = event_target:tho_country_select_target_8 } clear_global_event_target = tho_country_select_target_8 }
+    if = { limit = { exists = event_target:tho_country_select_target_9 } clear_global_event_target = tho_country_select_target_9 }
+    if = { limit = { exists = event_target:tho_country_select_target_10 } clear_global_event_target = tho_country_select_target_10 }
+}
+
+#选择
+tho_country_start_select = {
+    tho_give_country_flag = yes
+    tho_set_country_select_page_flag = yes
+    tho_save_country_event_trigger = yes
+    Tho_country_select_page_check = yes
+}
+#清理
+tho_clear_all_country_flags = {
+    tho_clear_country_flag = yes
+    tho_clear_country_select_page_flag = yes
+    tho_clear_country_event_targets = yes
+}

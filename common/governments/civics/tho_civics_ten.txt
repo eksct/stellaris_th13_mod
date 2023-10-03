@@ -1,0 +1,36 @@
+civic_Ten_Desires = {
+    cost = 0
+    icon = "gfx/interface/icons/governments/shenlingmiao.dds"
+    modification = no
+    possible = {
+        ethics = {
+            OR = {
+                value = ethic_spiritualist
+                value = ethic_fanatic_spiritualist
+            }
+            OR = {
+                value = ethic_fanatic_militarist
+                value = ethic_militarist
+                value = ethic_fanatic_xenophile
+                value = ethic_xenophile
+            }
+            NOT = {
+                value = ethic_gestalt_consciousness
+            }
+        }
+        civics = {
+            NOT = {
+                value = civic_pleasure_seekers
+                value = civic_reanimated_armies
+                value = civic_fanatic_purifiers
+                value = civic_aristocratic_elite
+            }
+        }
+    }
+
+    modifier ={
+        country_leader_cap_add = 3
+        happy_planet = 1
+    }
+    random_weight = { base = 0 }
+}

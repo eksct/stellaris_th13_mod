@@ -1,0 +1,108 @@
+#END IF
+# 建筑消耗 建筑时间
+# 全资源产出 1024+% 岗位维护费减少50% 研究速度256% 市场中介费-50%
+# 增加资源容量
+#END
+
+ 东方资源统合部(全国唯一)
+building_Tho_Resource_integration = {
+    base_buildtime = @costTime5
+    base_cap_amount = 1
+    capital = yes
+    can_demolish = no
+    can_be_ruined = no
+    can_be_disabled = no
+    can_build = no
+    category = government
+    icon = integration
+    empire_limit = {
+        base = 1
+    }
+	potential = {
+        exists = owner
+        NOT = { has_modifier = resort_colony }
+        NOT = { has_modifier = slave_colony }
+
+        owner = {
+            has_civic = civic_Ten_Desires
+        }
+	}
+    planet_modifier = {
+        POP_RESETTLEMENT_COST_MULT = -0.25
+        planet_jobs_upkeep_mult = -0.15
+        planet_building_build_speed_mult = 0.3
+        planet_decision_enact_speed_mult = 0.2
+        planet_pops_consumer_goods_upkeep_mult = -0.1
+    }
+    country_modifier = {
+        country_trade_fee = -0.2
+        country_resource_max_add = 99999
+    }
+    triggered_country_modifier = {
+        mult = owner.trigger:count_owned_megastructure
+        megastructure_build_speed_mult = 1
+    }
+
+    resources = {
+        category = planet_jobs
+        upkeep = {
+            mult =value:Resource_integration_upkeep
+            energy = 1
+            alloys = 1
+        }
+        produces = {
+            mult =value:Resource_integration_pro
+            energy = 1
+            alloys = 1
+        }
+    }
+    ai_weight = {
+        weight = 125
+    }
+}
+
+#阿空(唯一大电)
+#核融合控制中心
+building_Reiuzi_Utuho = {
+    base_buildtime = @costTime5
+    category = resource
+    can_demolish = no
+    can_be_ruined = no
+    can_be_disabled = yes
+    icon = Nuclear_Fusion
+	potential = {
+	    exists = owner
+	    owner = {
+        		    has_country_flag = buildings_tho_ex
+        		    #has_civic = civic_gensokyo
+        		}
+        NOT = { has_modifier = resort_colony }
+        NOT = { has_modifier = slave_colony }
+        NOT = { is_planet_class = pc_habitat }
+
+	}
+    empire_limit = {
+        base = 1
+    }
+
+    resources = {
+        category = planet_buildings
+        produces ={
+           energy = @producesup5
+        }
+
+        cost = {
+            minerals = @costResource7
+            alloys = @costResource7
+            sr_lingli = @costResource7
+        }
+        upkeep = {
+            sr_lingli = 64
+            alloys = 64
+            minerals = 64
+        }
+    }
+    ai_weight = {
+        weight = 50
+    }
+}

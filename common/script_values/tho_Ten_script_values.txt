@@ -1,0 +1,131 @@
+Resource_integration_upkeep = {
+    base = 0
+    complex_trigger_modifier = {
+        trigger = num_pops
+        trigger_scope = owner
+        mult = 0.1
+        mode = add
+    }
+    complex_trigger_modifier = {
+        trigger = num_districts
+        trigger_scope = planet
+        mult = 0.2
+        mode = add
+    }
+    ceiling = yes
+    complex_trigger_modifier = {
+        trigger = count_owned_leader
+        trigger_scope = owner
+        mode = add
+    }
+    complex_trigger_modifier = {
+        trigger = num_buildings
+        #trigger_scope = planet
+        mode = add
+    }
+    #mult = 0.5
+    ceiling = yes
+}
+Resource_integration_pro = {
+    base = 0
+    complex_trigger_modifier = {
+        trigger = num_districts
+        trigger_scope = planet
+        mode = add
+    }
+    complex_trigger_modifier = {
+        trigger = count_owned_megastructure
+        trigger_scope = owner
+        mode = add
+    }
+    complex_trigger_modifier = {
+        trigger = count_owned_planet
+        trigger_scope = owner
+        mult = 0.2
+        mode = add
+    }
+    complex_trigger_modifier = {
+        trigger = count_country
+        parameters = {
+            limit = {
+                is_overlord_to = root
+            }
+        }
+        mode = add
+    }
+    #add = planet.leader.trigger:has_skill
+    mult = 2
+    ceiling = yes
+}
+district_Ten_Desires_alloys_pro = {
+    #add = planet.leader.trigger:has_skill
+    complex_trigger_modifier = {
+        trigger = num_modifiers
+        trigger_scope = planet
+        mult = 0.5
+        mode = add
+    }
+    ceiling = yes
+    complex_trigger_modifier = {
+        trigger = num_ascension_perks
+        trigger_scope = owner
+        mult = 0.7
+        mode = add
+    }
+    ceiling = yes
+    complex_trigger_modifier = {
+        trigger = planet_size
+        mult = 0.2
+        mode = add
+    }
+    mult = 0.05
+    ceiling = yes
+}
+district_Ten_Desires_upkeep = {
+    complex_trigger_modifier = {
+        trigger = num_districts
+        parameters = {
+            type = district_$TYPE$
+        }
+        mode = add
+    }
+    complex_trigger_modifier = {
+        trigger = num_pops
+        trigger_scope = $SCOPE$
+        mult = 0.5
+        mode = add
+    }
+    complex_trigger_modifier = {
+        trigger = planet_size
+        mult = 0.1
+        mode = add
+    }
+    ceiling = yes
+    add = planet.modifier:planet_jobs_produces_mult
+    mult = 0.1
+    ceiling = yes
+}
+district_Ten_Desires_pro = {
+    #add = planet.leader.trigger:has_skill
+    complex_trigger_modifier = {
+        trigger = num_ascension_perks
+        trigger_scope = owner
+        mult = 0.7
+        mode = add
+    }
+    complex_trigger_modifier = {
+        trigger = num_pops
+        trigger_scope = planet
+        mult = 0.5
+        mode = add
+    }
+    complex_trigger_modifier = {
+        trigger = num_districts
+        parameters = {
+            type = district_$TYPE$
+        }
+        mode = add
+    }
+    mult = 0.5
+    floor = yes
+}

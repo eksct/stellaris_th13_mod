@@ -1,0 +1,502 @@
+namespace = tho
+
+#局势situation
+situation_event = {
+	id = tho.0
+	title = crisis.6050.name
+	desc = tho.0.desc
+	picture = GFX_evt_vortex
+	is_triggered_only = yes
+	situation = this
+	force_open = yes
+	option = {
+		name = ENDBUILDSF
+		custom_tooltip = "ENDBUILDSFDESC"
+		owner = {
+            add_modifier = {
+                modifier = pop_happiness_up
+                years = 10
+            }
+		}
+	}
+	after = {
+	    hidden_effect = {
+	        owner = {
+                set_country_flag = buildings_tho_ex
+                remove_country_flag = buildings_tho_1
+                remove_country_flag = buildings_tho_2
+                remove_country_flag = buildings_tho_3
+            }
+	    }
+
+		destroy_situation = this
+	}
+}
+
+#一次需求經費
+situation_event = {
+	id = tho.1
+	title = THO_bulid_1
+	desc = THO_bulid_1.desc
+	picture = GFX_evt_gray_gooed_planet
+	is_triggered_only = yes
+	situation = this
+	force_open = yes
+	location = target
+	option = {#维持现状
+		name = option_bulids_tho_op.a
+	}
+    option = {#支援经费
+        name =  option_bulids_tho_op.b
+        custom_tooltip = "ONE_COST"
+        trigger = { NOT = {current_situation_approach = approach25 }}
+        set_situation_approach = approach25
+         hidden_effect = {
+            set_situation_flag = approach_hidden_1
+             owner = {
+                set_country_flag = buildings_tho_1
+            }
+        }
+        owner = {
+            add_resource = {
+                 #sr_lingli = -512
+                 energy = -1024
+                 alloys = -128
+             }
+        }
+        allow = {
+            owner = {
+                resource_stockpile_compare = {
+                    resource = alloys
+                    value >= 128
+                }
+                resource_stockpile_compare = {
+                    resource = energy
+                    value >= 1024
+                }
+                #resource_stockpile_compare = {
+                #    resource = sr_lingli
+                #    value >= 512
+                #}
+            }
+        }
+    }
+    option = {
+        name = option_bulids_tho_op.b
+        custom_tooltip = "ONE_COST"
+        trigger =  { current_situation_approach = approach25 }
+        hidden_effect = {
+            set_situation_flag = approach_hidden_1
+            owner = {
+                set_country_flag = buildings_tho_1
+            }
+        }
+        owner = {
+
+            add_resource = {
+                # sr_lingli = -512
+                 energy = -1024
+                 alloys = -128
+             }
+        }
+        allow = {
+            owner = {
+                resource_stockpile_compare = {
+                    resource = alloys
+                    value >= 128
+                }
+                resource_stockpile_compare = {
+                    resource = energy
+                    value >= 1024
+                }
+                #resource_stockpile_compare = {
+                #    resource = sr_lingli
+                #    value >= 512
+                #}
+            }
+        }
+
+    }
+	#after = {
+	#	destroy_situation = this
+	#}
+}
+#二次次需求經費
+situation_event = {
+	id = tho.2
+	title = THO_bulid_1
+	desc = THO_bulid_2.desc
+	picture = GFX_evt_gas_giant_station
+
+	is_triggered_only = yes
+	situation = this
+	force_open = yes
+	location = target
+	option = {#维持现状
+		name = option_bulids_tho_op.a
+	}
+    option = {#支援经费
+        name =  option_bulids_tho_op.b
+        custom_tooltip = "TWO_COST"
+        trigger = { NOT = {current_situation_approach = approach50 }}
+        set_situation_approach = approach50
+        hidden_effect ={
+            set_situation_flag = approach_hidden_2
+            owner = {
+                set_country_flag = buildings_tho_2
+            }
+        }
+        owner = {
+
+            add_resource = {
+                # sr_lingli = -1024
+                 energy = -1024
+                 alloys = -128
+             }
+        }
+        allow = {
+            owner = {
+                resource_stockpile_compare = {
+                    resource = alloys
+                    value >= 128
+                }
+                resource_stockpile_compare = {
+                    resource = energy
+                    value >= 1024
+                }
+                #resource_stockpile_compare = {
+                #    resource = sr_lingli
+                #    value >= 1024
+                #}
+            }
+        }
+    }
+    option = {
+        name = option_bulids_tho_op.b
+        custom_tooltip = "TWO_COST"
+        trigger =  { current_situation_approach = approach50 }
+
+        hidden_effect ={
+            owner = {
+                set_country_flag = buildings_tho_2
+            }
+        }
+        owner = {
+
+            add_resource = {
+              #   sr_lingli = -1024
+                 energy = -1024
+                 alloys = -128
+             }
+        }
+        allow = {
+            owner = {
+                resource_stockpile_compare = {
+                    resource = alloys
+                    value >= 128
+                }
+                resource_stockpile_compare = {
+                    resource = energy
+                    value >= 1024
+                }
+                #resource_stockpile_compare = {
+                #    resource = sr_lingli
+                #    value >= 1024
+                #}
+            }
+        }
+    }
+	#after = {
+	#	destroy_situation = this
+	#}
+}
+#三次次次需求經費
+situation_event = {
+	id = tho.3
+	title = THO_bulid_1
+	desc = tho.3.desc
+	picture = GFX_evt_physics_research
+
+	is_triggered_only = yes
+	situation = this
+	force_open = yes
+	location = target
+	option = {#维持现状
+		name = option_bulids_tho_op.a
+	}
+    option = {#支援经费
+        name =  option_bulids_tho_op.b
+        custom_tooltip = "THREE_COST"
+        trigger = { NOT = {current_situation_approach = approach100 }}
+        set_situation_flag = approach_hidden_3
+        set_situation_approach = approach100
+        hidden_effect ={
+            owner = {
+                set_country_flag = buildings_tho_3
+            }
+
+        }
+        owner = {
+            add_resource = {
+                # sr_lingli = -512
+                 energy = -1024
+                 alloys = -256
+             }
+        }
+        allow = {
+            owner = {
+                resource_stockpile_compare = {
+                    resource = alloys
+                    value >= 256
+                }
+                resource_stockpile_compare = {
+                    resource = energy
+                    value >= 1024
+                }
+                #resource_stockpile_compare = {
+                #    resource = sr_lingli
+                #    value >= 512
+                #}
+            }
+        }
+    }
+    option = {
+        name = option_bulids_tho_op.b
+        custom_tooltip = "THREE_COST"
+        trigger =  { current_situation_approach = approach100 }
+        hidden_effect = {
+            owner = {
+                set_country_flag = buildings_tho_3
+            }
+            set_situation_flag = approach_hidden_3
+        }
+        owner = {
+
+            add_resource = {
+                # sr_lingli = -1024
+                 energy = -2048
+                 alloys = -256
+             }
+        }
+        allow = {
+            owner = {
+                resource_stockpile_compare = {
+                    resource = alloys
+                    value >= 256
+                }
+                resource_stockpile_compare = {
+                    resource = energy
+                    value >= 2048
+                }
+                #resource_stockpile_compare = {
+                #    resource = sr_lingli
+                #    value >= 1024
+                #}
+            }
+        }
+    }
+	#after = {
+	#	destroy_situation = this
+	#}
+}
+#
+situation_event = {
+	id = tho.4
+	title = tho.4.name
+	desc = tho.4.desc
+	picture = GFX_evt_physics_research
+
+	is_triggered_only = yes
+	situation = this
+	force_open = yes
+	location = target
+	option = {#维持现状
+		name = option_bulids_tho_op.a
+		custom_tooltip = "tho.dfx"
+		hidden_effect = {
+		    if = {
+        		    limit = {
+        		        OR = {
+        		        current_situation_approach = approach25
+        		        current_situation_approach = approach0
+        		        }
+                    }
+                    set_situation_approach = approach25
+        		    set_situation_flag = approach_hidden_1
+        		    set_situation_flag = approach_hidden_3
+        		    set_situation_flag = approach_hidden_4
+        		}
+        		else_if = {
+        		    limit = {current_situation_approach = approach50}
+        		        set_situation_approach = approach50
+                        set_situation_flag = approach_hidden_1
+                        set_situation_flag = approach_hidden_2
+                        set_situation_flag = approach_hidden_4
+        		}
+        		else_if = {
+        		    limit = {current_situation_approach = approach100}
+        		        set_situation_approach = approach100
+                        set_situation_flag = approach_hidden_1
+                        set_situation_flag = approach_hidden_2
+                        set_situation_flag = approach_hidden_3
+        		}
+        		else_if = {
+        		    limit = {current_situation_approach = approach10}
+        		        set_situation_approach = approach10
+                        set_situation_flag = approach_hidden_4
+                        set_situation_flag = approach_hidden_2
+                        set_situation_flag = approach_hidden_3
+        		}
+            }
+
+	}
+    option = {
+        name = option_bulids_tho_op.e
+        custom_tooltip = "tho.dfx"
+        #trigger =  { NOT = {current_situation_approach = approach25} }
+        hidden_effect = {
+            remove_situation_flag = approach_hidden_2
+            set_situation_approach = approach25
+             if = {
+                    limit = {
+                        NOT = {has_situation_flag = approach_hidden_1}
+                    }
+                set_situation_flag = approach_hidden_1
+             }
+             if = {
+                 limit = {NOT = {has_situation_flag = approach_hidden_3}}
+                 set_situation_flag = approach_hidden_3
+             }
+             set_situation_flag = approach_hidden_4
+         }
+    }
+    option = {
+        name =  option_bulids_tho_op.c
+        custom_tooltip = "tho.dfx"
+        #trigger = { NOT = {current_situation_approach = approach50 }}
+        hidden_effect = {
+            remove_situation_flag = approach_hidden_3
+            set_situation_approach = approach50
+             if = {
+                limit = {NOT = {has_situation_flag = approach_hidden_1}}
+                set_situation_flag = approach_hidden_1
+             }
+              if = {
+                 limit = {NOT = {has_situation_flag = approach_hidden_2}}
+                 set_situation_flag = approach_hidden_2
+              }
+              set_situation_flag = approach_hidden_4
+        }
+    }
+    option = {
+        name = option_bulids_tho_op.d
+        custom_tooltip = "tho.dfx"
+        #trigger =  { NOT = {current_situation_approach = approach100} }
+        hidden_effect = {
+            set_situation_approach = approach100
+             if = {
+                limit = {NOT = {has_situation_flag = approach_hidden_1}}
+                set_situation_flag = approach_hidden_1
+             }
+              if = {
+                 limit = {NOT = {has_situation_flag = approach_hidden_3}}
+                 set_situation_flag = approach_hidden_3
+              }
+
+              if = {
+                 limit = {NOT = {has_situation_flag = approach_hidden_2}}
+                 set_situation_flag = approach_hidden_2
+              }
+        }
+    }
+
+	#after = {
+	#	destroy_situation = this
+	#}
+}
+
+#行星
+planet_event = {
+    id = tho.100
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        OR = {
+            #has_building = building_auto_lingli
+            has_building = building_Tho_Resource_integration
+        }
+        owner = {
+            NOT = {has_country_flag = upkeep_data}
+        }
+    }
+    immediate = {
+        owner = {
+            set_country_flag = upkeep_data
+            country_event = {
+                id = tho.101
+                days = 10
+            }
+        }
+    }
+}
+planet_event = {
+    id = tho.120
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        owner = {
+            has_country_flag = upkeep_data
+        }
+    }
+    immediate = {
+         owner = {
+            remove_country_flag = upkeep_data
+         }
+
+    }
+}
+
+#幻梦维护费
+country_event = {
+    id = tho.101
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+         owner = {
+            has_country_flag = upkeep_data
+         }
+    }
+    immediate = {
+        export_resource_stockpile_to_variable = {
+            resource = sr_lingli
+            variable = integration_upkeep
+        }
+        if = {
+            limit = {
+                check_variable = {
+					 which = integration_upkeep
+					 value < 2000000
+                }
+            }
+            multiply_variable = {
+                which = integration_upkeep
+                value = 0.01
+            }
+        }
+        else = {
+            multiply_variable = {
+                which = integration_upkeep
+                value = 0.1
+            }
+        }
+        add_modifier = {
+             multiplier = integration_upkeep
+             modifier = integration_upkeep
+             days = 360
+        }
+        country_event = {
+            id = tho.101
+            days = 365
+        }
+    }
+}

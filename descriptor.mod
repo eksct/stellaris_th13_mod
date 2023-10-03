@@ -1,0 +1,10 @@
+version="3.*.*"
+tags={
+	"Buildings"
+	"Events"
+	"Leaders"
+	"Balance"
+}
+name="tho东方神灵庙"
+supported_version="3.*.*"
+remote_file_id="3025929701"

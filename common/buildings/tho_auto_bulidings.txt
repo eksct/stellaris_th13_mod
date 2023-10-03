@@ -1,0 +1,63 @@
+#自拓灵力
+building_auto_lingli = {
+    category = resource
+    #base_buildtime = 2
+    base_cap_amount = 1
+    potential ={
+        #exists = owner
+        owner = {
+            has_ascension_perk = ap_open_buildings
+        }
+    }
+     resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 512
+            alloys = 64
+        }
+        upkeep = {
+            energy = 5
+        }
+     }
+    planet_modifier = {
+        #job_auto_lingli_add = 1
+        job_auto_lingli_per_pop = 1
+    }
+    ai_weight = {
+        weight = 5
+        modifier = {
+            factor = 10
+            resource_stockpile_compare = {
+                resource = sr_lingli
+                value < 1024
+            }
+        }
+    }
+}
+#自拓基础
+building_auto_resourcest = {
+    category = resource
+    base_cap_amount = 1
+    potential ={
+        owner = {
+            has_ascension_perk = ap_open_buildings
+        }
+        #has_ascension_perk = ap_open_buildings
+    }
+     resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 200
+            alloys = 32
+        }
+        upkeep = {
+            energy = 5
+        }
+     }
+    planet_modifier = {
+        job_auto_resourcest_per_pop = 1
+    }
+    ai_weight = {
+        weight = 10
+    }
+}

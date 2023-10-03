@@ -1,0 +1,190 @@
+#「吾乃天道也」
+miko_fuka = {
+    solar_system = {
+        every_fleet_in_system = {
+            limit = {
+                owner = {
+                    is_ai = yes
+                }
+                not = { has_fleet_flag = toyousatomimi_atk }
+            }
+            set_timed_fleet_flag = {
+                flag = toyousatomimi_atk
+                days = 15
+            }
+            every_owned_ship = {
+                reduce_hp = 1000
+            }
+        }
+    }
+}
+#「承诏必慎」
+target_country_fire = {
+    add_modifier = { modifier = toyousatomimi_country_debuffzreo }
+    every_owned_planet = {
+        #set_planet_flag = miko_fire
+        kill_leader = { show_notification = yes }
+        #while = {
+        #    count = 5
+        #    create_army = {
+        #        owner = event_target:root_fire_atk
+        #        type = swarm_army
+        #    }
+        #}
+        add_planet_devastation = 100
+    }
+}
+#运气「破局的开门」
+futo_fuka_po = {
+    owner = {save_event_target_as = cuntry}
+    solar_system = {
+        every_fleet_in_system = {
+            limit =  { owner = {NOT = {is_same_empire = event_target:country } is_at_war_with = root } }
+            add_modifier = { modifier = Futo_fuka_debuff1 days = 365 }
+        }
+    }
+}
+#蛊毒皿的积重
+futo_fuka_duwu = {
+    fromfrom = {
+            change_variable = { which = "futo_level" value = 1}
+            add_modifier = { modifier = Futo_fuka_addbuff1 mult = futo_level  }
+    }
+}
+#欲符「赚钱欲灵招来」
+yoshoka_add = {
+    add_resource = {
+        energy = 100
+        mult = FromFromFrom.value:count_districts|TYPE|generator|
+    }
+    add_resource = {
+        minerals = 100
+        mult = FromFromFrom.value:count_districts|TYPE|mining|
+    }
+    add_resource = {
+        food = 100
+        mult = FromFromFrom.value:count_districts|TYPE|farming|
+    }
+    # Basic Resources - Uncapped Districts
+    add_resource = {
+        energy = 100
+        mult = FromFromFrom.value:count_districts|TYPE|generator_uncapped|
+    }
+    add_resource = {
+        minerals = 100
+        mult = FromFromFrom.value:count_districts|TYPE|mining_uncapped|
+    }
+    add_resource = {
+        food = 100
+        mult = FromFromFrom.value:count_districts|TYPE|farming_uncapped|
+    }
+    # Basic Resources - Habitat Districts
+    add_resource = {
+        energy = 100
+        mult = FromFromFrom.value:count_districts|TYPE|hab_energy|
+    }
+    add_resource = {
+        minerals = 100
+        mult = FromFromFrom.value:count_districts|TYPE|hab_mining|
+    }
+    # Basic Resources - Ringworld Districts
+    add_resource = {
+        energy = 100
+        mult = FromFromFrom.value:count_ringworld_districts_equiv|TYPE|rw_generator|
+    }
+    add_resource = {
+        food = 100
+        mult = FromFromFrom.value:count_ringworld_districts_equiv|TYPE|rw_farming|
+    }
+}
+yoshoka_add2 = {
+    # Advanced Resources - Regular Districts
+    add_resource = {
+        alloys = 50
+        mult = FromFromFrom.value:count_districts|TYPE|industrial|
+    }
+    add_resource = {
+        consumer_goods = 50
+        mult = FromFromFrom.value:count_districts|TYPE|industrial|
+    }
+    # Advanced Resources - Habitat Districts
+    add_resource = {
+        alloys = 50
+        mult = FromFromFrom.value:count_districts|TYPE|hab_industrial|
+    }
+    add_resource = {
+        consumer_goods = 50
+        mult = FromFromFrom.value:count_districts|TYPE|hab_industrial|
+    }
+    # Advanced Resources - Ecu Districts
+    add_resource = {
+        alloys = 50
+        mult = FromFromFrom.value:count_ecu_districts_equiv|TYPE|arcology_arms_industry|
+    }
+    add_resource = {
+        consumer_goods = 50
+        mult = FromFromFrom.value:count_ecu_districts_equiv|TYPE|arcology_civilian_industry|
+    }
+    # Advanced Resources - Ringworld Districts
+    add_resource = {
+        alloys = 50
+        mult = FromFromFrom.value:count_ringworld_districts_equiv|TYPE|rw_industrial|
+    }
+    add_resource = {
+        consumer_goods = 50
+        mult = FromFromFrom.value:count_ringworld_districts_equiv|TYPE|rw_industrial|
+    }
+}
+yoshoka_add3 = {
+    # Research - Habitat Districts
+    add_resource = {
+        physics_research = 25
+        society_research = 25
+        engineering_research = 25
+        mult = FromFromFrom.value:count_districts|TYPE|hab_science|
+    }
+    # Research - Ringworld Districts
+    add_resource = {
+        physics_research = 25
+        society_research = 25
+        engineering_research = 25
+        mult = FromFromFrom.value:count_ringworld_districts_equiv|TYPE|rw_science|
+    }
+}
+frie_futo = {
+    every_combatant_fleet = {
+        change_variable = { which = futo_level_frie value = 1 }
+        export_modifier_to_variable = {
+            modifier = ship_hull_regen_add_perc
+            variable = ship_hull_frie_perc
+        }
+        export_modifier_to_variable = {
+            modifier = ship_hull_regen_add_static
+            variable = ship_hull_frie_static
+        }
+        export_modifier_to_variable = {
+            modifier = ship_armor_regen_add_perc
+            variable = ship_armor_frie_perc
+        }
+        export_modifier_to_variable = {
+            modifier = ship_armor_regen_add_static
+            variable = ship_armor_frie_static
+        }
+        export_modifier_to_variable = {
+            modifier = ship_shield_regen_add_perc
+            variable = ship_shield_frie_perc
+        }
+        export_modifier_to_variable = {
+            modifier = ship_shield_regen_add_static
+            variable = ship_shield_frie_static
+        }
+        add_modifier = { modifier = futo_frie_armor_perc mult = ship_armor_frie_perc }
+        add_modifier = { modifier = futo_frie_armor_static mult = ship_armor_frie_static }
+        add_modifier = { modifier = futo_frie_shield_static mult = ship_shield_frie_static }
+        add_modifier = { modifier = futo_frie_shield_perc mult = ship_shield_frie_perc }
+        add_modifier = { modifier = futo_frie_hull_perc mult = ship_hull_frie_perc }
+        add_modifier = { modifier = futo_frie_hull_static mult = ship_hull_frie_static }
+    }
+}
+
+

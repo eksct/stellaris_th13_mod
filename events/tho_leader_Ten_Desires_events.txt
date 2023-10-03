@@ -1,0 +1,396 @@
+namespace = tho_leader
+
+country_event = {
+    id = tho_leader.1
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_civic = civic_Ten_Desires
+    }
+    immediate = {
+        country_event = {
+            id = th13_tho.0
+        }
+        unlock_council_slots = 2
+    }
+}
+#霍青娥
+country_event = {
+    id = tho_leader.13
+    hide_window = yes
+    is_triggered_only = yes
+    #fire_only_once = yes
+    #picture = GFX_evt_legendary_leader
+     immediate = {
+        #log = "霍青娥"
+        create_leader = {
+            event_leader = yes
+            class = admiral
+            species = owner_main_species
+            #name = "Seiga_NyanNyan"
+            name = "霍青娥"
+            gender = female
+            set_age = 20
+            hide_age = yes
+            background_ethic = ethic_spiritualist
+            #event_leader = yes
+            custom_description = NyanNya_backstory
+            #portrait = NyanNyan
+            #randomize_traits = yes
+            #leader_portrait = NyanNyan
+            traits = {
+                trait = leader_trait_NyanNyan_immortal
+                trait = leader_trait_NyanNyan_immortalB
+                trait = leader_trait_NyanNyan_council_atk
+                trait = leader_trait_NyanNyan_council_builds
+                trait = leader_trait_NyanNyan
+                trait = leader_trait_Ten_Desires
+            }
+
+                #save_event_target_as = T_NyanNyan
+            effect = {
+                set_leader_flag = T_Seiga_NyanNyan
+                save_global_event_target_as = NyanNya_leader
+            }
+        }
+        last_created_leader = {
+            set_leader_flag = T_Seiga_NyanNyan
+            change_leader_portrait = NyanNyan
+        }
+        #ethic_leader_creator = {
+          #  change_leader_portrait = NyanNyan
+         #   LEADER_PORTRAIT = NyanNyan
+        #}
+        country_event = {
+            id = tho_s.1
+        }
+         country_event = {
+             id = tho_s.19
+         }
+     }
+}
+
+#丰聪耳神子
+country_event = {
+    id = tho_leader.14
+    #hide_window = yes
+    title = tho_leader.14_name
+    desc = tho_leader.14_desc
+    is_triggered_only = yes
+    event_window_type = leader_recruit
+    picture = GFX_evt_legendary_leader
+    #fire_only_once = yes
+    trigger = {
+        #NOT = { has_global_flag = Ten_leader_init }
+    }
+     immediate = {
+         set_global_flag = Ten_leader_init
+         random_owned_planet = {
+             limit = {is_capital = yes}
+             solar_system = {
+                 save_global_event_target_as = Ten_Desires_satr_init
+             }
+         }
+         create_country = {
+             #auto_delete = yes
+             name = root
+             type = global_event
+             effect = {
+                 establish_communications_no_message = root.owner
+                save_event_target_as = targer_country_leader
+             }
+         }
+         event_target:targer_country_leader = {
+             create_leader = {
+                 event_leader = yes
+                 class = governor
+                 species = root.species
+                 name = "丰聪耳神子"
+                 gender = female
+                 set_age = 20
+                 hide_age = yes
+                 background_ethic = ethic_fanatic_xenophile
+                 custom_description = Toyosatomimi_backstory
+                 traits = {
+                     trait = leader_trait_Toyosatomimi
+                     trait = leader_trait_Miko
+                     trait = leader_trait_Shoutoku
+                     trait = leader_trait_Shoutoku_forever
+                     trait = leader_trait_Ten_Desires
+                 }
+                 effect = {
+                     set_leader_flag = T_Toyosatomimi_no_Miko
+                     set_variable = { which = Miko_war_count value = 0 }
+                     save_global_event_target_as = toyosatomimi_leader
+                 }
+             }
+             last_created_leader = {
+                 set_leader_flag = T_Toyosatomimi_no_Miko
+                 change_leader_portrait = Miko
+             }
+         }
+     }
+    picture_event_data = {
+        portrait = event_target:toyosatomimi_leader
+        room = from
+    }
+    option = {
+        name = "tho_leader.14_opt1"
+        response_text = response.14.opt1
+        is_dialog_only = yes
+    }
+    option = {
+        name = "tho_leader.14_opt2"
+        response_text =response.14.opt2
+        is_dialog_only = yes
+    }
+    option = {
+        name = "tho_leader.14_opt4"
+        response_text =response.14.opt3
+        is_dialog_only = yes
+    }
+    option = {
+        name = "tho_leader.14_ok"
+        tag = hire_leader
+        add_modifier = { modifier = pop_citizenry_happiness mult = 2 days = 180 }
+        hidden_effect = {
+            hire_event_leader_effect = {
+                LEADER = toyosatomimi_leader
+            }
+            assign_leader = last_created_leader
+        }
+
+        #response_text =
+        #is_dialog_only = yes
+    }
+    option = {
+        name = "tho_leader.14_okdef"
+        tag = dismiss_leader
+        add_modifier = { modifier = pop_citizenry_happiness mult = 2 days = 180 }
+        hidden_effect = {
+            hire_event_leader_effect = {
+                LEADER = toyosatomimi_leader
+            }
+            assign_leader = last_created_leader
+        }
+        #response_text =
+        #is_dialog_only = yes
+    }
+    after = {
+        hidden_effect = {
+            event_target:targer_country_leader = {
+                destroy_country = yes
+            }
+            country_event = {
+                id = tho_leader.13
+            }
+            country_event = {
+
+                id = tho_leader.15
+            }
+            country_event = {
+
+                id = tho_leader.17
+            }
+            country_event = {
+                id = tho_leader.18
+            }
+            country_event = {
+                id = tho_init.100
+            }
+        }
+    }
+
+}
+#宫古芳香
+country_event = {
+    id = tho_leader.15
+    hide_window = yes
+    is_triggered_only = yes
+    #fire_only_once = yes
+     immediate = {
+        create_leader = {
+            event_leader = yes
+            class = general
+            species = owner_main_species
+            name = "宫古芳香"
+            gender = female
+            set_age = 20
+            hide_age = yes
+            background_ethic = ethic_spiritualist
+            custom_description = Miyako_Yoshika_backstory
+            traits = {
+                trait = leader_trait_Miyako_Yoshika
+                trait = leader_trait_Zombie
+                trait = leader_trait_Rigid_Paradise_council
+                trait = leader_trait_Yoshika
+                trait = leader_trait_Ten_Desires
+                trait = leader_trait_honored_warmaster
+            }
+            effect = {
+                set_leader_flag = T_Miyako_Yoshika
+            }
+        }
+        last_created_leader = {
+            set_leader_flag = T_Miyako_Yoshika
+            change_leader_portrait = Yoshika
+
+        }
+
+     }
+}
+#物部布都
+country_event = {
+    id = tho_leader.17
+    hide_window = yes
+    is_triggered_only = yes
+    #fire_only_once = yes
+     immediate = {
+        create_leader = {
+            event_leader = yes
+            class = admiral
+            species = owner_main_species
+            name = "物部布都"
+            gender = female
+            set_age = 20
+            hide_age = yes
+            background_ethic = ethic_militarist
+            custom_description = Mononobe_no_Futo_backstory
+            traits = {
+                trait = leader_trait_Mononobe_no_Futo
+                trait = leader_trait_Oomiwashinwaden
+                trait = leader_trait_shui
+                trait = leader_trait_Ten_Desires
+            }
+
+                #save_event_target_as = T_NyanNyan
+            effect = {
+                set_leader_flag = T_Mononobe_no_Futo
+                set_variable = { which = "futo_level" value = 0 }
+            }
+        }
+        last_created_leader = {
+            set_leader_flag = T_Mononobe_no_Futo
+            change_leader_portrait = Futo
+        }
+     }
+}
+#苏我屠自古
+country_event = {
+    id = tho_leader.18
+    hide_window = yes
+    is_triggered_only = yes
+    #fire_only_once = yes
+     immediate = {
+        create_leader = {
+            event_leader = yes
+            class = scientist
+            species = owner_main_species
+            name = "苏我屠自古"
+            gender = female
+            set_age = 20
+            hide_age = yes
+            # 修改
+            background_ethic = ethic_militarist
+            custom_description = Soga_no_Tojiko_backstory
+            traits = {
+                trait = leader_trait_Soga_no_Tojiko
+                trait = leader_trait_Toziko
+                trait = leader_trait_Mausoleum
+                trait = leader_trait_Ten_Desires
+            }
+
+                #save_event_target_as = T_NyanNyan
+            effect = {
+                set_leader_flag = T_Soga_no_Tojiko
+            }
+        }
+        last_created_leader = {
+            set_leader_flag = T_Soga_no_Tojiko
+            change_leader_portrait = Tojiko
+        }
+    
+     }
+}
+country_event = {
+    id = tho_leader.1234
+    title =tho_leader.888.name
+    desc =tho_leader.888.desc
+    picture = GFX_evt_throne_room
+    trigger = {
+        owner = { has_country_flag = tojiko_flag }
+    }
+    mean_time_to_happen = {
+        years = 5
+    }
+    immediate = {
+        add_random_research_option = {
+            add_progress = 0.5
+            ignore_prereqs = no
+        }
+    }
+}
+#复活
+country_event = {
+    id = tho_leader.1029
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        from = {
+            OR = {
+                has_trait = leader_trait_NyanNyan
+                has_trait = leader_trait_Toyosatomimi
+                has_trait = leader_trait_Miyako_Yoshika
+                has_trait = leader_trait_Soga_no_Tojiko
+                has_trait = leader_trait_Mononobe_no_Futo
+            }
+        }
+    }
+    immediate = {
+        #复活
+        from = {
+            save_event_target_as = resurrection_leader
+        }
+        if = {
+            limit = {
+                from = { has_trait = leader_trait_Mononobe_no_Futo}
+            }
+            clone_leader = {
+                effect = {
+                    set_variable = { which = "futo_level" value = 0 }
+                    set_variable = { which = futo_level_frie value = 1 }
+                }
+                target = event_target:resurrection_leader
+            }
+        }
+        else_if = {
+            limit = {from = { has_trait = leader_trait_Toyosatomimi}}
+            clone_leader = {
+                effect = {
+                    set_leader_flag = T_Toyosatomimi_no_Miko
+                    set_variable = { which = Miko_war_count value = 0 }
+                }
+                target = event_target:resurrection_leader
+            }
+            assign_leader = last_created_leader
+        }
+        else = {
+            clone_leader = {
+                target = event_target:resurrection_leader
+            }
+        }
+    }
+}
+#country_event = {
+#    id = tho_leader.909
+#    event_window_type = leader_recruit
+#    is_triggered_only = yes
+#    picture = GFX_evt_legendary_leader
+#    picture_event_data = {
+#        portrait = event_target:NyanNya_leader
+#        room = from
+#    }
+#    option = {
+#        name = "alloy_producing_knights"
+#    }
+#}

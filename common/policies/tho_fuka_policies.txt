@@ -1,0 +1,44 @@
+fuka_select_init = {
+    potential = {
+        is_ai = no
+    }
+    option = {
+        name = off_fuka
+        policy_flags = {
+            off_fuka
+        }
+    }
+    option = {
+        name = on_fuka
+         policy_flags = {
+            on_fuka
+        }
+    }
+}
+NyanNyan_init = {
+    potential = {
+        is_ai = no
+    }
+    option = {
+        name = energy_buff
+        policy_flags = {
+            evergy_buff_nyan
+        }
+        on_enabled = {
+            hidden_effect = {
+                country_event = { id = tho_s.19 }
+            }
+        }
+    }
+    option = {
+        name = sr_lingli_buff
+        policy_flags = {
+            sr_lingli_buff_nyan
+        }
+        on_enabled = {
+            hidden_effect = {
+                country_event = { id = tho_s.1 }
+            }
+        }
+    }
+}

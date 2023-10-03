@@ -1,0 +1,23 @@
+#decision_tho_xianren = {
+#    owned_planets_only = yes
+#    sound = event_administrative_work
+#    #icon =
+#    enactment_time = 2400
+#    resources = {
+#        category = decisions
+#        cost = {
+#            mult = value:xianrenliancheng_tho
+#            unity = 2500
+#            consumer_goods = 2500
+#            energy = 5000
+#        }
+#    }
+#    potential = {
+#        check_variable = { value   < 9 }
+#    }
+#    effect = {
+#        planet_event = {
+#            id = tho_th13.0
+#        }
+#    }
+#}

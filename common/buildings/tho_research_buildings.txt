@@ -1,0 +1,202 @@
+
+#花田
+building_research_flower = {
+    base_buildtime = @costTime3
+    category = research
+    icon = Garden
+	potential = {
+	    exists = owner
+
+        NOT = { has_modifier = resort_colony }
+        NOT = { has_modifier = slave_colony }
+        owner = {
+		    OR = {
+                has_country_flag = buildings_tho_ex
+                has_country_flag = buildings_tho_2
+            }
+            #has_civic = civic_gensokyo
+		}
+	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 512
+            sr_lingli = 512
+        }
+        produces ={
+            physics_research = 25
+            society_research = 25
+            engineering_research = 25
+
+        }
+        produces = {
+            trigger = {
+                owner ={
+                        has_technology = tech_basic_science_lab_2
+                        has_technology = tech_rare_crystals
+                }
+            }
+            physics_research = 5
+            society_research = 5
+            engineering_research = 5
+
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_basic_science_lab_2
+                    has_technology = tech_volatile_motes
+                }
+            }
+            physics_research = 6
+            society_research = 7
+            engineering_research = 6
+
+        }
+        produces = {
+            trigger = {
+                owner ={
+                    has_technology = tech_basic_science_lab_3
+                    has_technology = tech_exotic_gases
+                }
+            }
+            physics_research = 17
+            society_research = 19
+            engineering_research = 17
+
+        }
+        produces = {
+            trigger = {
+                owner ={
+                    has_technology = tech_basic_science_lab_3
+                    has_technology = tech_rare_crystals
+                     has_technology = tech_volatile_motes
+                     has_technology = tech_exotic_gases
+                }
+            }
+            physics_research = 20
+            society_research = 25
+            engineering_research = 20
+        }
+        upkeep = {
+            energy = 5
+            sr_lingli = 5
+            consumer_goods = 5
+        }
+        upkeep = {
+            trigger = {
+                owner ={
+                    has_technology = tech_basic_science_lab_3
+                    has_technology = tech_rare_crystals
+                     has_technology = tech_volatile_motes
+                     has_technology = tech_exotic_gases
+                }
+            }
+            energy = 10
+            sr_lingli = 10
+            consumer_goods = 10
+        }
+    }
+    ai_weight = {
+        weight =10
+    }
+}
+
+#大蛤蟆之池
+building_research_geyser = {
+    base_buildtime = @costTime2
+    category = research
+    icon = Giant
+	potential = {
+	    exists = owner
+        NOT = { has_modifier = resort_colony }
+        NOT = { has_modifier = slave_colony }
+        owner = {
+		    OR = {
+                has_country_flag = buildings_tho_ex
+                has_country_flag = buildings_tho_2
+            }
+            #has_civic = civic_gensokyo
+		}
+	}
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 256
+            sr_lingli = 256
+        }
+        produces ={
+            physics_research = 5
+            society_research = 35
+            engineering_research = 5
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_basic_science_lab_2
+                    has_technology = tech_power_hub_1
+                }
+            }
+            physics_research = 5
+            society_research = 10
+            engineering_research = 5
+
+        }
+        produces = {
+            trigger = {
+                owner ={
+                    has_technology = tech_basic_science_lab_2
+                    has_technology = tech_mineral_purification_1
+                }
+            }
+            physics_research = 5
+            society_research = 10
+            engineering_research = 5
+
+        }
+        produces = {
+            trigger = {
+                owner ={
+                    has_technology = tech_basic_science_lab_3
+                    has_technology = tech_hydroponics
+                }
+            }
+            physics_research = 10
+            society_research = 20
+            engineering_research = 10
+
+        }
+        produces = {
+            trigger = {
+                owner ={
+                    has_technology = tech_basic_science_lab_3
+                    has_technology = tech_mineral_purification_1
+                    has_technology = tech_power_hub_1
+                    has_technology = tech_hydroponics
+                }
+            }
+            physics_research = 10
+            society_research = 20
+            engineering_research = 10
+        }
+        upkeep = {
+            sr_lingli = 15
+            energy = 5
+        }
+        upkeep = {
+            trigger = {
+                owner ={
+                    has_technology = tech_basic_science_lab_3
+                    has_technology = tech_mineral_purification_1
+                    has_technology = tech_power_hub_1
+                    has_technology = tech_hydroponics
+                }
+            }
+            sr_lingli = 3
+            energy = 3
+        }
+    }
+    ai_weight = {
+        weight =10
+    }
+}

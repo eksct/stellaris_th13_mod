@@ -1,0 +1,113 @@
+tho_is_star_a = {
+    optimize_memory
+    OR = {
+        is_star_class = sc_a
+    }
+}
+tho_is_star_b = {
+    optimize_memory
+    OR = {
+        is_star_class = sc_b
+    }
+}
+tho_is_star_f = {
+    optimize_memory
+    OR = {
+        is_star_class = sc_f
+    }
+}
+tho_is_star_g = {
+    optimize_memory
+    OR = {
+        is_star_class = sc_g
+    }
+}
+tho_is_star_k = {
+    optimize_memory
+    OR = {
+        is_star_class = sc_k
+    }
+}
+tho_is_star_m = {
+    optimize_memory
+    OR = {
+        is_star_class = sc_m
+        is_star_class = sc_m_giant
+    }
+}
+tho_is_star_t = {
+    optimize_memory
+    OR = {
+        is_star_class = sc_t
+    }
+}
+tho_is_star_pulsar = {
+    optimize_memory
+    OR = {
+        is_star_class = sc_pulsar
+    }
+}
+tho_is_star_neutrom = {
+    optimize_memory
+    OR = {
+        is_star_class = sc_neutron_star
+    }
+}
+tho_is_star_black_hole = {
+    optimize_memory
+    OR = {
+        is_star_class = sc_black_hole
+    }
+}
+tho_is_star_binary = {
+    optimize_memory
+    OR = {
+        is_star_class = sc_binary_1
+        is_star_class = sc_binary_2
+        is_star_class = sc_binary_3
+        is_star_class = sc_binary_4
+        is_star_class = sc_binary_5
+        is_star_class = sc_binary_6
+        is_star_class = sc_binary_7
+        is_star_class = sc_binary_8
+        is_star_class = sc_binary_9
+        is_star_class = sc_binary_10
+    }
+}
+tho_is_star_tri = {
+    optimize_memory
+    OR = {
+        is_star_class = sc_trinary_1
+        is_star_class = sc_trinary_2
+        is_star_class = sc_trinary_3
+        is_star_class = sc_trinary_4
+    }
+}
+tho_is_counrty_list = {
+        optimize_memory
+        OR = {
+            is_country_type = default
+            is_country_type = fallen_empire
+            is_country_type = awakened_fallen_empire
+            is_country_type = awakened_marauders
+            is_country_type = primitive
+            is_country_type = swarm
+            is_country_type = extradimensional
+            is_country_type = extradimensional_2
+            is_country_type = extradimensional_3
+            is_country_type = ai_empire
+            is_country_type = gate_builders
+            is_country_type = gray_goo
+        }
+}
+tho_is_ship_class = {
+    OR = {
+        is_ship_class =shipclass_starbase
+        is_ship_class = shipclass_research_station
+        is_ship_class = shipclass_science_ship
+        is_ship_class = shipclass_military_station
+        is_ship_class = shipclass_mining_station
+        is_ship_class = shipclass_constructor
+        is_ship_class = shipclass_observation_station
+    }
+}

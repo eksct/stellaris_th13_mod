@@ -1,0 +1,90 @@
+NyanNyan_chuansong = {
+    potential = {}
+    allow = {}
+    effect = {
+        hidden_effect  = {
+            if = { limit = {is_scope_type = planet} }
+            solar_system = {
+                save_event_target_as = THO_NyanNyan_planet
+            }
+            event_target:target_country_NyanNyan = {
+                random_owned_fleet = {
+                    limit = {exists = leader leader = {has_trait = leader_trait_NyanNyan}}
+                    solar_system = {
+                        every_fleet_in_system = {
+                            limit = {
+                                owner = {is_same_value = event_target:target_country_NyanNyan }
+                                NOT = {
+                                    tho_is_ship_class = yes
+                                }
+                            }
+                            clear_orders = yes
+                            order_forced_return = yes
+                            set_location = event_target:THO_NyanNyan_planet.star
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+NyanNyan_time_ghost = {
+    potential = {}
+    allow = {
+        custom_tooltip = {
+            fail_text = time_fries
+            this = {
+                OR = {
+                    is_scope_type = planet
+                    is_scope_type = megastructure
+                    is_scope_type = starbase
+                    is_star = yes
+                    is_scope_type = fleet
+                }
+            }
+        }
+        hidden_trigger = { from = {NOT = { has_global_flag = time_ghost }} }
+        custom_tooltip = {
+            fail_text = time_years_1
+            years_passed >= 20
+        }
+    }
+    effect = {
+        hidden_effect = {
+            if = {
+                limit = {
+                    OR = {
+                        is_scope_type = planet
+                        is_scope_type = megastructure
+                        is_scope_type = starbase
+                        is_star = yes
+                        is_scope_type = fleet
+                    }
+                }
+                solar_system = {
+                    from = {set_timed_global_flag ={ flag = time_ghost days = 356}}
+                    save_global_event_target_as = ghost_solar_system
+                    every_fleet_in_system = {
+                        set_timed_fleet_flag = {
+                            flag = time_ghost
+                            days = 180
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+NyanNyan_fate_destruction = {
+    potential = {}
+    allow = {
+        custom_tooltip = {
+            fail_text =time_years_2
+            years_passed >= 30
+        }
+    }
+    effect = {
+
+    }
+}

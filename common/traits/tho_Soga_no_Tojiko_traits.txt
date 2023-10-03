@@ -1,0 +1,89 @@
+#苏我屠自古
+leader_trait_Soga_no_Tojiko = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+
+    #修改
+	inline_script = {
+        script = trait/icon_psionic
+        CLASS = leader
+        ICON = "GFX_leader_trait_tojiko"
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    custom_tooltip_with_modifiers = leader_trait_Soga_no_Tojiko_tooltip
+    modifier = {
+        category_psionics_research_speed_mult = 0.2
+        country_engineering_research_produces_mult = 0.3
+    }
+}
+#神明后裔的亡灵
+leader_trait_Toziko = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    #councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+    custom_tooltip_with_modifiers = leader_trait_Tojiko_tooltip
+	#修改
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_knowledge_for_the_masses"
+        RARITY = paragon
+        COUNCIL = yes
+        TIER = none
+    }
+    self_modifier = {
+    }
+    modifier = {
+        category_statecraft_research_speed_mult = 0.3
+        category_psionics_research_speed_mult = 0.3
+        ASSIST_RESEARCH_MULT = 0.3
+        ship_anomaly_fail_risk = -0.2
+        ship_anomaly_research_speed_mult = 0.3
+    }
+}
+#夢殿大祀廟
+leader_trait_Mausoleum = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    #councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+
+	#修改
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_mengdian"
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    modifier = {
+        ship_speed_mult = 0.3
+        science_ship_survey_speed = 0.3
+        ship_anomaly_generation_chance_mult = 0.3
+
+    }
+    triggered_self_modifier = {
+		leader_scientists_society_research_produces_add = 0.5
+        ship_archaeological_site_clues_add = 0.5
+        ship_archaeological_site_excavation_speed_mult = 0.2
+        mult = trigger:has_skill
+    }
+}
