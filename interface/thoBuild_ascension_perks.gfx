@@ -1,0 +1,99 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_tho_bridship"
+        texturefile = "gfx/interface/icons/modules/bridship.dds"
+    }
+    spriteType = {
+        name = "GFX_ap_open_buildings"
+        texturefile = "gfx/interface/icons/ascension_perks/ap_open_buildings.dds"
+        alwaystransparent = yes
+    }
+    spriteType = {
+        name = "GFX_event_buildings_down"
+        texturefile = "gfx/interface/icons/traits/trait_psionic_species.dds"
+        noOfFrames = 3
+    }
+    spriteType = {
+        name = "GFX_event_buildings_low"
+        texturefile = "gfx/interface/icons/planet_modifiers/pm_stellar_devourer_trophy.dds"
+        noOfFrames = 3
+    }
+	spriteType = {
+		name = "GFX_leader_trait_NyanNyan"
+		texturefile = "gfx/interface/icons/traits/NyanNyan.dds"
+	}
+    spriteType = {
+        name = "GFX_leader_trait_xiantianbagua"
+        texturefile = "gfx/interface/icons/traits/xiantianbagua.dds"
+    }
+    spriteType = {
+        name = "GFX_leader_trait_fulu"
+        texturefile = "gfx/interface/icons/traits/fulu.dds"
+    }
+    spriteType = {
+        name = "GFX_leader_trait_fazan"
+        texturefile = "gfx/interface/icons/traits/fazan.dds"
+    }
+    spriteType = {
+        name = "GFX_leader_trait_peijianshenzi"
+        texturefile = "gfx/interface/icons/traits/shenzipeijian.dds"
+    }
+    spriteType = {
+        name = "GFX_leader_trait_shenlingmiao"
+        texturefile = "gfx/interface/icons/traits/shenlingmiao_t.dds"
+    }
+    spriteType = {
+        name = "GFX_leader_trait_futo"
+        texturefile = "gfx/interface/icons/traits/futo.dds"
+    }
+    spriteType = {
+        name = "GFX_leader_trait_mengdian"
+        texturefile = "gfx/interface/icons/traits/mengdian.dds"
+    }
+    spriteType = {
+        name = "GFX_leader_trait_tojiko"
+        texturefile = "gfx/interface/icons/traits/tuzigu.dds"
+    }
+    spriteType = {
+        name = "GFX_leader_trait_no_miko"
+        texturefile = "gfx/interface/icons/traits/he.dds"
+    }
+    spriteType = {
+        name = "GFX_shenlingmiao"
+        texturefile = "gfx/interface/icons/governments/shenlingmiao.dds"
+    }
+    spriteType = {
+        name = "GFX_evt_red_or_bule"
+        texturefile = "gfx/event_pictures/red_or_bule.dds"
+        masking_texture = "gfx/interface/situation_log/event_mask.dds"
+        alwaystransparent = yes
+    }
+    spriteType = {
+        name = "GFX_evt_guang"
+        texturefile = "gfx/event_pictures/guang.dds"
+        masking_texture = "gfx/interface/situation_log/event_mask.dds"
+        alwaystransparent = yes
+    }
+    spriteType = {
+        name = "GFX_NyanNyan_bg"
+        texturefile = "gfx/interface/gui_list/gui_bg.dds"
+    }
+    spriteType = {
+        name = "GFX_NyanNyan_button"
+        texturefile = "gfx/interface/gui_list/button.dds"
+    }
+    spriteType = {
+        name = "GFX_NyanNyan_tittle"
+        texturefile = "gfx/interface/gui_list/title.dds"
+    }
+
+    spriteType = {
+        name = "GFX_NyanNyan_top_bg"
+        texturefile = "gfx/interface/gui_list/top_bg.dds"
+    }
+    spriteType = {
+        name = "GFX_NyanNyan_down_bg"
+        texturefile = "gfx/interface/gui_list/down_bg.dds"
+    }
+
+}

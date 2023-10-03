@@ -1,0 +1,130 @@
+#神子
+leader_trait_Toyosatomimi = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    #councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+    #修改
+	inline_script = {
+        script = trait/icon_psionic
+        CLASS = leader
+        ICON = "GFX_leader_trait_no_miko"
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    custom_tooltip_with_modifiers = leader_trait_Toyosatomimi_tooltip
+    self_modifier = {
+        #hieend_effect = {
+
+        #}
+    }
+	triggered_modifier = {
+		PLANET_STABILITY_ADD = 1
+		PLANET_CRIME_NO_HAPPINESS_ADD = -2
+        mult = trigger:has_skill
+	}
+}
+#全能且为人而动的道士
+leader_trait_Miko = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+
+    inline_script = {
+        script = trait/icon_psionic
+        CLASS = leader
+        ICON = "GFX_leader_trait_peijianshenzi"
+        RARITY = paragon
+        COUNCIL = yes
+        TIER = none
+    }
+    custom_tooltip_with_modifiers = leader_trait_Miko_tooltip
+    modifier = {
+		pop_demotion_time_mult = -20
+		#COUNTRY_SUBJECT_TRIBUTE_MULT = -0.3
+
+		#POP_RESOURCE_OUTPUT = 0.3
+
+    }
+    triggered_modifier = {
+        planet_jobs_produces_mult = 0.02
+        POP_GROWTH_SPEED = 0.03
+        planet_pops_upkeep_mult = -0.04
+        pop_happiness = 0.02
+        mult = trigger:has_skill
+    }
+}
+#圣德道士
+leader_trait_Shoutoku = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+
+	#修改
+    inline_script = {
+        script = trait/icon
+        CLASS = governor
+        ICON = GFX_leader_trait_shroud_preacher
+        RARITY = paragon
+        COUNCIL = yes
+        TIER = none
+    }
+    modifier = {
+		planet_orbital_bombardment_damage = -0.25
+		deposit_blockers_cost_mult = -0.1
+		COUNTRY_SOCIETY_TECH_RESEARCH_SPEED = 0.02
+		MEGASTRUCTURE_BUILD_SPEED_MULT = 0.1
+		COUNTER_INTEL_GAIN_SPEED = -9.99
+    }
+}
+#圣德传说
+leader_trait_Shoutoku_forever = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+
+	#修改
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = governor
+		ICON = "GFX_leader_trait_psionic_chosen_one"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+    modifier = {
+		country_society_research_produces_mult = 0.1
+		COUNTRY_WAR_EXHAUSTION_MULT = -0.2
+		edicts_upkeep_mult = -0.12
+		ADD_BASE_COUNTRY_INTEL = 30
+        category_psionics_research_speed_mult = 0.3
+        all_technology_research_speed = 0.3
+    }
+    triggered_self_modifier ={
+        country_physics_research_produces_mult = 0.02
+        country_society_research_produces_mult = 0.02
+        country_engineering_research_produces_mult = 0.02
+        mult = trigger:has_skill
+
+    }
+}

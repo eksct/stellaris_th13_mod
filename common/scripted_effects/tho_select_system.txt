@@ -1,0 +1,753 @@
+tho_star_list_select = {#搜索
+    optimize_memory
+    every_system = {
+        if = { limit = {root = {has_country_flag = tho_select_a} tho_is_star_a = yes} set_star_flag = THO_star_select_search }
+        if = { limit = {root = {has_country_flag = tho_select_b} tho_is_star_b = yes} set_star_flag = THO_star_select_search }
+        if = { limit = {root = {has_country_flag = tho_select_f} tho_is_star_f = yes} set_star_flag = THO_star_select_search }
+        if = { limit = {root = {has_country_flag = tho_select_g} tho_is_star_g = yes} set_star_flag = THO_star_select_search }
+        if = { limit = {root = {has_country_flag = tho_select_k} tho_is_star_k = yes} set_star_flag = THO_star_select_search }
+        if = { limit = {root = {has_country_flag = tho_select_m} tho_is_star_m = yes} set_star_flag = THO_star_select_search }
+        if = { limit = {root = {has_country_flag = tho_select_t} tho_is_star_t = yes} set_star_flag = THO_star_select_search }
+        if = { limit = {root = {has_country_flag = tho_select_bh} tho_is_star_black_hole = yes} set_star_flag = THO_star_select_search }
+        if = { limit = {root = {has_country_flag = tho_select_nue} tho_is_star_neutrom = yes} set_star_flag = THO_star_select_search }
+        if = { limit = {root = {has_country_flag = tho_select_pul} tho_is_star_pulsar = yes} set_star_flag = THO_star_select_search }
+        if = { limit = {root = {has_country_flag = tho_select_binary} tho_is_star_binary = yes} set_star_flag = THO_star_select_search }
+        if = { limit = {root = {has_country_flag = tho_select_tri} tho_is_star_tri = yes} set_star_flag = THO_star_select_search }
+    }
+}
+tho_star_search_clear = {#删
+    optimize_memory
+    every_system = {
+        remove_star_flag = THO_star_select_search
+    }
+    remove_country_flag = tho_select_a
+    remove_country_flag = tho_select_bh
+    remove_country_flag = tho_select_binary
+    remove_country_flag = tho_select_b
+    remove_country_flag = tho_select_f
+    remove_country_flag = tho_select_g
+    remove_country_flag = tho_select_k
+    remove_country_flag = tho_select_m
+    remove_country_flag = tho_select_t
+    remove_country_flag = tho_select_tri
+    remove_country_flag = tho_select_nue
+    remove_country_flag = tho_select_pul
+}
+tho_star_select_page_flag = {#分页
+    optimize_memory
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_0 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_1 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_2 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_3 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_4 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_5 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_6 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_7 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_8 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_9 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_10 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_11 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_12 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_13 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_14 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_15 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_16 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_17 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_18 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_19 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_20 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_21 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_22 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_23 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_24 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_25 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_26 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_27 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_28 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_29 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_30 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_31 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_32 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_33 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_34 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_35 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_36 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_37 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_38 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_39 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_40 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_41 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_42 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_43 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_44 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_45 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_46 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_47 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_48 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_49 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_50 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_51 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_52 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_53 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_54 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_55 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_56 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_57 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_58 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_59 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_60 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_61 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_62 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_63 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_64 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_65 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_66 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_67 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_68 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_69 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_70 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_71 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_72 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_73 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_74 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_75 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_76 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_77 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_78 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_79 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_80 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_81 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_82 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_83 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_84 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_85 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_86 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_87 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_88 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_89 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_90 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_91 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_92 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_93 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_94 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_95 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_96 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_97 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_98 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_99 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_100 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_101 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_102 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_103 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_104 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_105 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_106 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_107 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_108 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_109 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_110 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_111 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_112 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_113 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_114 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_115 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_116 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_117 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_118 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_119 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_120 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_121 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_122 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_123 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_124 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_125 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_126 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_127 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_128 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_129 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_130 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_131 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_132 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_133 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_134 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_135 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_136 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_137 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_138 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_139 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_140 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_141 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_142 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_143 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_144 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_145 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_146 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_147 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_148 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_149 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_150 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_151 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_152 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_153 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_154 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_155 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_156 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_157 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_158 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_159 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_160 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_161 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_162 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_163 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_164 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_165 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_166 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_167 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_168 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_169 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_170 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_171 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_172 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_173 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_174 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_175 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_176 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_177 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_178 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_179 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_180 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_181 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_182 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_183 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_184 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_185 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_186 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_187 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_188 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_189 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_190 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_191 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_192 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_193 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_194 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_195 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_196 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_197 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_198 }
+    random_system = { limit = { has_star_flag = THO_star_select_search  NOT = { has_star_flag = THO_star_select_search_locked }} set_star_flag = THO_star_select_search_locked set_star_flag = THO_star_select_search_199 }
+}
+tho_clear_star_select_page_flag = {
+    optimize_memory
+    every_system = {
+        remove_star_flag = THO_star_select_search_locked
+        remove_star_flag = THO_star_select_search_0
+        remove_star_flag = THO_star_select_search_1
+        remove_star_flag = THO_star_select_search_2
+        remove_star_flag = THO_star_select_search_3
+        remove_star_flag = THO_star_select_search_4
+        remove_star_flag = THO_star_select_search_5
+        remove_star_flag = THO_star_select_search_6
+        remove_star_flag = THO_star_select_search_7
+        remove_star_flag = THO_star_select_search_8
+        remove_star_flag = THO_star_select_search_9
+        remove_star_flag = THO_star_select_search_10
+        remove_star_flag = THO_star_select_search_11
+        remove_star_flag = THO_star_select_search_12
+        remove_star_flag = THO_star_select_search_13
+        remove_star_flag = THO_star_select_search_14
+        remove_star_flag = THO_star_select_search_15
+        remove_star_flag = THO_star_select_search_16
+        remove_star_flag = THO_star_select_search_17
+        remove_star_flag = THO_star_select_search_18
+        remove_star_flag = THO_star_select_search_19
+        remove_star_flag = THO_star_select_search_20
+        remove_star_flag = THO_star_select_search_21
+        remove_star_flag = THO_star_select_search_22
+        remove_star_flag = THO_star_select_search_23
+        remove_star_flag = THO_star_select_search_24
+        remove_star_flag = THO_star_select_search_25
+        remove_star_flag = THO_star_select_search_26
+        remove_star_flag = THO_star_select_search_27
+        remove_star_flag = THO_star_select_search_28
+        remove_star_flag = THO_star_select_search_29
+        remove_star_flag = THO_star_select_search_30
+        remove_star_flag = THO_star_select_search_31
+        remove_star_flag = THO_star_select_search_32
+        remove_star_flag = THO_star_select_search_33
+        remove_star_flag = THO_star_select_search_34
+        remove_star_flag = THO_star_select_search_35
+        remove_star_flag = THO_star_select_search_36
+        remove_star_flag = THO_star_select_search_37
+        remove_star_flag = THO_star_select_search_38
+        remove_star_flag = THO_star_select_search_39
+        remove_star_flag = THO_star_select_search_40
+        remove_star_flag = THO_star_select_search_41
+        remove_star_flag = THO_star_select_search_42
+        remove_star_flag = THO_star_select_search_43
+        remove_star_flag = THO_star_select_search_44
+        remove_star_flag = THO_star_select_search_45
+        remove_star_flag = THO_star_select_search_46
+        remove_star_flag = THO_star_select_search_47
+        remove_star_flag = THO_star_select_search_48
+        remove_star_flag = THO_star_select_search_49
+        remove_star_flag = THO_star_select_search_50
+        remove_star_flag = THO_star_select_search_51
+        remove_star_flag = THO_star_select_search_52
+        remove_star_flag = THO_star_select_search_53
+        remove_star_flag = THO_star_select_search_54
+        remove_star_flag = THO_star_select_search_55
+        remove_star_flag = THO_star_select_search_56
+        remove_star_flag = THO_star_select_search_57
+        remove_star_flag = THO_star_select_search_58
+        remove_star_flag = THO_star_select_search_59
+        remove_star_flag = THO_star_select_search_60
+        remove_star_flag = THO_star_select_search_61
+        remove_star_flag = THO_star_select_search_62
+        remove_star_flag = THO_star_select_search_63
+        remove_star_flag = THO_star_select_search_64
+        remove_star_flag = THO_star_select_search_65
+        remove_star_flag = THO_star_select_search_66
+        remove_star_flag = THO_star_select_search_67
+        remove_star_flag = THO_star_select_search_68
+        remove_star_flag = THO_star_select_search_69
+        remove_star_flag = THO_star_select_search_70
+        remove_star_flag = THO_star_select_search_71
+        remove_star_flag = THO_star_select_search_72
+        remove_star_flag = THO_star_select_search_73
+        remove_star_flag = THO_star_select_search_74
+        remove_star_flag = THO_star_select_search_75
+        remove_star_flag = THO_star_select_search_76
+        remove_star_flag = THO_star_select_search_77
+        remove_star_flag = THO_star_select_search_78
+        remove_star_flag = THO_star_select_search_79
+        remove_star_flag = THO_star_select_search_80
+        remove_star_flag = THO_star_select_search_81
+        remove_star_flag = THO_star_select_search_82
+        remove_star_flag = THO_star_select_search_83
+        remove_star_flag = THO_star_select_search_84
+        remove_star_flag = THO_star_select_search_85
+        remove_star_flag = THO_star_select_search_86
+        remove_star_flag = THO_star_select_search_87
+        remove_star_flag = THO_star_select_search_88
+        remove_star_flag = THO_star_select_search_89
+        remove_star_flag = THO_star_select_search_90
+        remove_star_flag = THO_star_select_search_91
+        remove_star_flag = THO_star_select_search_92
+        remove_star_flag = THO_star_select_search_93
+        remove_star_flag = THO_star_select_search_94
+        remove_star_flag = THO_star_select_search_95
+        remove_star_flag = THO_star_select_search_96
+        remove_star_flag = THO_star_select_search_97
+        remove_star_flag = THO_star_select_search_98
+        remove_star_flag = THO_star_select_search_99
+        remove_star_flag = THO_star_select_search_100
+        remove_star_flag = THO_star_select_search_101
+        remove_star_flag = THO_star_select_search_102
+        remove_star_flag = THO_star_select_search_103
+        remove_star_flag = THO_star_select_search_104
+        remove_star_flag = THO_star_select_search_105
+        remove_star_flag = THO_star_select_search_106
+        remove_star_flag = THO_star_select_search_107
+        remove_star_flag = THO_star_select_search_108
+        remove_star_flag = THO_star_select_search_109
+        remove_star_flag = THO_star_select_search_110
+        remove_star_flag = THO_star_select_search_111
+        remove_star_flag = THO_star_select_search_112
+        remove_star_flag = THO_star_select_search_113
+        remove_star_flag = THO_star_select_search_114
+        remove_star_flag = THO_star_select_search_115
+        remove_star_flag = THO_star_select_search_116
+        remove_star_flag = THO_star_select_search_117
+        remove_star_flag = THO_star_select_search_118
+        remove_star_flag = THO_star_select_search_119
+        remove_star_flag = THO_star_select_search_120
+        remove_star_flag = THO_star_select_search_121
+        remove_star_flag = THO_star_select_search_122
+        remove_star_flag = THO_star_select_search_123
+        remove_star_flag = THO_star_select_search_124
+        remove_star_flag = THO_star_select_search_125
+        remove_star_flag = THO_star_select_search_126
+        remove_star_flag = THO_star_select_search_127
+        remove_star_flag = THO_star_select_search_128
+        remove_star_flag = THO_star_select_search_129
+        remove_star_flag = THO_star_select_search_130
+        remove_star_flag = THO_star_select_search_131
+        remove_star_flag = THO_star_select_search_132
+        remove_star_flag = THO_star_select_search_133
+        remove_star_flag = THO_star_select_search_134
+        remove_star_flag = THO_star_select_search_135
+        remove_star_flag = THO_star_select_search_136
+        remove_star_flag = THO_star_select_search_137
+        remove_star_flag = THO_star_select_search_138
+        remove_star_flag = THO_star_select_search_139
+        remove_star_flag = THO_star_select_search_140
+        remove_star_flag = THO_star_select_search_141
+        remove_star_flag = THO_star_select_search_142
+        remove_star_flag = THO_star_select_search_143
+        remove_star_flag = THO_star_select_search_144
+        remove_star_flag = THO_star_select_search_145
+        remove_star_flag = THO_star_select_search_146
+        remove_star_flag = THO_star_select_search_147
+        remove_star_flag = THO_star_select_search_148
+        remove_star_flag = THO_star_select_search_149
+        remove_star_flag = THO_star_select_search_150
+        remove_star_flag = THO_star_select_search_151
+        remove_star_flag = THO_star_select_search_152
+        remove_star_flag = THO_star_select_search_153
+        remove_star_flag = THO_star_select_search_154
+        remove_star_flag = THO_star_select_search_155
+        remove_star_flag = THO_star_select_search_156
+        remove_star_flag = THO_star_select_search_157
+        remove_star_flag = THO_star_select_search_158
+        remove_star_flag = THO_star_select_search_159
+        remove_star_flag = THO_star_select_search_160
+        remove_star_flag = THO_star_select_search_161
+        remove_star_flag = THO_star_select_search_162
+        remove_star_flag = THO_star_select_search_163
+        remove_star_flag = THO_star_select_search_164
+        remove_star_flag = THO_star_select_search_165
+        remove_star_flag = THO_star_select_search_166
+        remove_star_flag = THO_star_select_search_167
+        remove_star_flag = THO_star_select_search_168
+        remove_star_flag = THO_star_select_search_169
+        remove_star_flag = THO_star_select_search_170
+        remove_star_flag = THO_star_select_search_171
+        remove_star_flag = THO_star_select_search_172
+        remove_star_flag = THO_star_select_search_173
+        remove_star_flag = THO_star_select_search_174
+        remove_star_flag = THO_star_select_search_175
+        remove_star_flag = THO_star_select_search_176
+        remove_star_flag = THO_star_select_search_177
+        remove_star_flag = THO_star_select_search_178
+        remove_star_flag = THO_star_select_search_179
+        remove_star_flag = THO_star_select_search_180
+        remove_star_flag = THO_star_select_search_181
+        remove_star_flag = THO_star_select_search_182
+        remove_star_flag = THO_star_select_search_183
+        remove_star_flag = THO_star_select_search_184
+        remove_star_flag = THO_star_select_search_185
+        remove_star_flag = THO_star_select_search_186
+        remove_star_flag = THO_star_select_search_187
+        remove_star_flag = THO_star_select_search_188
+        remove_star_flag = THO_star_select_search_189
+        remove_star_flag = THO_star_select_search_190
+        remove_star_flag = THO_star_select_search_191
+        remove_star_flag = THO_star_select_search_192
+        remove_star_flag = THO_star_select_search_193
+        remove_star_flag = THO_star_select_search_194
+        remove_star_flag = THO_star_select_search_195
+        remove_star_flag = THO_star_select_search_196
+        remove_star_flag = THO_star_select_search_197
+        remove_star_flag = THO_star_select_search_198
+        remove_star_flag = THO_star_select_search_199
+    }
+}
+tho_star_select_page_trigger = {
+    optimize_memory
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 1 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_0 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_1 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_2 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_3 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_4 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_5 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_6 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_7 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_8 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_9 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 2 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_10 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_11 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_12 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_13 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_14 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_15 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_16 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_17 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_18 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_19 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 3 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_20 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_21 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_22 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_23 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_24 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_25 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_26 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_27 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_28 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_29 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 4 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_30 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_31 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_32 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_33 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_34 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_35 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_36 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_37 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_38 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_39 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 5 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_40 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_41 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_42 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_43 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_44 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_45 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_46 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_47 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_48 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_49 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 6 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_50 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_51 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_52 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_53 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_54 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_55 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_56 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_57 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_58 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_59 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 7 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_60 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_61 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_62 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_63 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_64 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_65 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_66 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_67 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_68 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_69 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 8 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_70 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_71 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_72 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_73 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_74 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_75 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_76 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_77 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_78 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_79 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 9 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_80 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_81 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_82 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_83 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_84 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_85 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_86 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_87 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_88 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_89 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 10 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_90 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_91 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_92 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_93 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_94 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_95 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_96 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_97 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_98 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_99 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 11 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_100 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_101 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_102 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_103 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_104 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_105 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_106 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_107 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_108 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_109 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 12 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_110 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_111 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_112 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_113 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_114 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_115 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_116 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_117 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_118 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_119 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 13 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_120 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_121 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_122 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_123 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_124 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_125 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_126 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_127 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_128 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_129 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 14 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_130 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_131 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_132 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_133 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_134 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_135 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_136 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_137 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_138 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_139 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 15 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_140 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_141 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_142 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_143 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_144 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_145 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_146 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_147 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_148 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_149 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 16 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_150 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_151 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_152 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_153 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_154 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_155 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_156 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_157 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_158 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_159 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 17 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_160 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_161 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_162 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_163 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_164 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_165 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_166 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_167 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_168 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_169 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 18 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_170 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_171 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_172 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_173 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_174 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_175 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_176 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_177 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_178 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_179 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 19 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_180 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_181 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_182 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_183 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_184 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_185 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_186 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_187 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_188 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_189 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+    if = {
+        limit = { check_variable = { which = tho_star_select_search_page value = 20 }}
+        random_system = { limit = { has_star_flag = THO_star_select_search_190 } save_global_event_target_as = tho_system_selectlock_system_1 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_191 } save_global_event_target_as = tho_system_selectlock_system_2 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_192 } save_global_event_target_as = tho_system_selectlock_system_3 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_193 } save_global_event_target_as = tho_system_selectlock_system_4 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_194 } save_global_event_target_as = tho_system_selectlock_system_5 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_195 } save_global_event_target_as = tho_system_selectlock_system_6 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_196 } save_global_event_target_as = tho_system_selectlock_system_7 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_197 } save_global_event_target_as = tho_system_selectlock_system_8 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_198 } save_global_event_target_as = tho_system_selectlock_system_9 }
+        random_system = { limit = { has_star_flag = THO_star_select_search_199 } save_global_event_target_as = tho_system_selectlock_system_10 }
+    }
+}
+tho_clear_system_event_targets = {
+    optimize_memory
+    if = { limit = { exists = event_target:tho_system_selectlock_system_1 } clear_global_event_target = tho_system_selectlock_system_1 }
+    if = { limit = { exists = event_target:tho_system_selectlock_system_2 } clear_global_event_target = tho_system_selectlock_system_2 }
+    if = { limit = { exists = event_target:tho_system_selectlock_system_3 } clear_global_event_target = tho_system_selectlock_system_3 }
+    if = { limit = { exists = event_target:tho_system_selectlock_system_4 } clear_global_event_target = tho_system_selectlock_system_4 }
+    if = { limit = { exists = event_target:tho_system_selectlock_system_5 } clear_global_event_target = tho_system_selectlock_system_5 }
+    if = { limit = { exists = event_target:tho_system_selectlock_system_6 } clear_global_event_target = tho_system_selectlock_system_6 }
+    if = { limit = { exists = event_target:tho_system_selectlock_system_7 } clear_global_event_target = tho_system_selectlock_system_7 }
+    if = { limit = { exists = event_target:tho_system_selectlock_system_8 } clear_global_event_target = tho_system_selectlock_system_8 }
+    if = { limit = { exists = event_target:tho_system_selectlock_system_9 } clear_global_event_target = tho_system_selectlock_system_9 }
+    if = { limit = { exists = event_target:tho_system_selectlock_system_10 } clear_global_event_target = tho_system_selectlock_system_10 }
+
+}
+tho_star_select_page_check = {#页数
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_10 } } root = { set_variable = { which = tho_stars_page_num value = 1 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_20 } } root = { set_variable = { which = tho_stars_page_num value = 2 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_30 } } root = { set_variable = { which = tho_stars_page_num value = 3 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_40 } } root = { set_variable = { which = tho_stars_page_num value = 4 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_50 } } root = { set_variable = { which = tho_stars_page_num value = 5 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_60 } } root = { set_variable = { which = tho_stars_page_num value = 6 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_70 } } root = { set_variable = { which = tho_stars_page_num value = 7 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_80 } } root = { set_variable = { which = tho_stars_page_num value = 8 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_90 } } root = { set_variable = { which = tho_stars_page_num value = 9 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_100 } } root = { set_variable = { which = tho_stars_page_num value = 10 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_110 } } root = { set_variable = { which = tho_stars_page_num value = 11 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_120 } } root = { set_variable = { which = tho_stars_page_num value = 12 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_130 } } root = { set_variable = { which = tho_stars_page_num value = 13 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_140 } } root = { set_variable = { which = tho_stars_page_num value = 14 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_150 } } root = { set_variable = { which = tho_stars_page_num value = 15 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_160 } } root = { set_variable = { which = tho_stars_page_num value = 16 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_170 } } root = { set_variable = { which = tho_stars_page_num value = 17 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_180 } } root = { set_variable = { which = tho_stars_page_num value = 18 }}}
+    if = { limit = { any_system = { has_star_flag = THO_star_select_search_190 } } root = { set_variable = { which = tho_stars_page_num value = 19 }}}
+}
+tho_system_class_select = {#恒星类型
+    tho_star_list_select = yes
+    tho_star_select_page_flag = yes
+    tho_star_select_page_trigger = yes
+    tho_star_select_page_check = yes
+}
+tho_cleat_system_class_select = {#删flag
+    tho_star_search_clear = yes
+    tho_clear_star_select_page_flag = yes
+    tho_clear_system_event_targets = yes
+}

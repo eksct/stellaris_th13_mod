@@ -1,0 +1,102 @@
+NyanNyan_country_updata = {
+    base = 0
+    #add = trigger:empire_size
+    set = NyanNyan_updata
+
+}
+NyanNyan_country_updata_1 = {
+    base = 1
+    complex_trigger_modifier = {
+        trigger = resource_stockpile_compare
+        parameters = {
+            resource = sr_lingli
+        }
+        mode = add
+    }
+   abs = yes
+   floor = yes
+}
+NyanNyan_fate_destruction_resource = {
+    base = 0
+    complex_trigger_modifier = {
+        trigger = resource_revenue_compare
+        trigger_scope = owner
+        parameters = {
+            resource = $resource$
+        }
+        mode = add
+    }
+    abs = yes
+}
+#NyanNyan_fate_army ={
+#    base = 0
+#    complex_trigger_modifier = {
+#        trigger = count_ground_combat_defender
+#        trigger_scope = planet
+#        parameters = {
+#            count = all
+#        }
+#        mode = add
+#    }
+#}
+Alloys_cost = {
+    base = 0
+    complex_trigger_modifier = {
+        trigger = num_pops
+        trigger_scope = owner
+        mode = add
+    }
+
+}
+
+starbase_size_upkeep = {
+    base = 2
+}
+Pop_resource_up = {
+    base = 1
+    complex_trigger_modifier = {
+        trigger = num_pops
+        trigger_scope = owner
+        mode = add
+    }
+}
+
+NyanNyan_fate_fleet ={
+    base = -1
+    complex_trigger_modifier = {
+        trigger = count_owned_fleet
+        trigger_scope = owner
+        mode = add
+    }
+}
+NyanNyan_fate_tech ={
+    base = 0.75
+    complex_trigger_modifier = {
+        trigger = count_tech_options
+        trigger_scope = owner
+        mode = mult
+    }
+}
+xiexian_nums_tho = {
+    base = 0
+    complex_trigger_modifier = {
+        trigger = count_owned_pop
+        trigger_scope = planet
+        parameters = {
+            limit = {has_modifier = tho_xiexian}
+        }
+        mode = add
+    }
+}
+xianrenliancheng_tho = {
+    base = 1
+    complex_trigger_modifier = {
+        trigger = count_owned_pop
+        trigger_scope = owner
+        parameters = {
+            limit = {has_modifier = tho_xianren}
+        }
+        mode = add
+    }
+    mult = 0.5
+}

@@ -1,0 +1,7 @@
+portraits = {
+    NyanNyan = { texturefile = "gfx/models/portraits/th13/NyanNyan.dds"}
+    Miko = { texturefile = "gfx/models/portraits/th13/Miko.dds"}
+    Futo ={texturefile = "gfx/models/portraits/th13/budu.dds"}
+    Yoshika = { texturefile = "gfx/models/portraits/th13/Yoshika.dds"}
+    Tojiko = { texturefile = "gfx/models/portraits/th13/tojiko.dds"}
+}

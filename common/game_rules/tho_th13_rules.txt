@@ -1,0 +1,78 @@
+#领袖计数
+# this = leader
+should_count_towards_leader_cap = {
+    NOR = {
+        leader_class = envoy
+        AND = {
+            owner = { is_gestalt = yes }
+            is_councilor = yes
+            # We count all rulers as well
+            NOT = { is_ruler = yes }
+        }
+        has_leader_flag = marauder_merc_leader
+        has_leader_flag = hired_admiral_merc_leader
+        has_leader_flag = legendary_leader
+        has_leader_flag = f_npc    #NPC不计数
+        has_leader_flag = machine_idol
+        has_leader_flag = shadow_leader  #质量投影不计数
+        has_trait = leader_trait_Ten_Desires#神灵庙领袖不计数
+        AND = {
+            has_trait_tier1or2 = { TRAIT = leader_trait_eager }
+            has_skill < 4
+        }
+    }
+}
+# this = leader
+can_dismiss_leader = {
+    if = {
+        limit = {
+            leader_class = admiral
+            is_idle = no
+            # Rulers and heirs can't be dismissed any way and can be non-idle
+            is_ruler = no
+            is_heir = no
+        }
+        custom_tooltip = {
+            fail_text = "requires_fleet_control"
+            exists = fleet
+            fleet = {
+                controller = {
+                    is_same_value = prev.owner
+                    is_same_value = prevprev.owner
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            OR = {
+                is_heir = yes
+                is_ruler = yes
+            }
+        }
+        custom_tooltip = {
+            always = no
+            fail_text = "can_not_dismiss_rulers"
+        }
+    }
+    #希灵投影与剧情人物无法被解雇
+    custom_tooltip = {
+        fail_text = "requires_dismissed_leader_not_npc"
+        NOT = {
+            has_leader_flag = f_npc
+        }
+    }
+    custom_tooltip = {
+        fail_text = "requires_dismissed_leader_not_shadow"
+        NOT = {
+            has_leader_flag = shadow_leader
+        }
+    }
+    #神灵庙领袖无法遣散
+    custom_tooltip = {
+        fail_text = "leader_not_Ten_Desires"
+        NOT = {
+            has_trait = leader_trait_Ten_Desires
+        }
+    }
+}

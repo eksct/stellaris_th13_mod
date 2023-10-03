@@ -1,0 +1,89 @@
+#物部布都
+leader_trait_Mononobe_no_Futo = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+    #修改
+	inline_script = {
+        script = trait/icon_psionic
+        CLASS = leader
+        ICON = "GFX_leader_trait_xiantianbagua"
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    custom_tooltip_with_modifiers = leader_trait_Mononobe_no_Futo_tooltip
+    modifier = {
+    
+    }
+}
+#大神神话传
+leader_trait_Oomiwashinwaden = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    #councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+
+	#修改
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_supreme_admiral"
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    triggered_modifier = {
+        SHIP_HULL_REGEN_ADD_PERC = 0.01
+        SHIP_ARMOR_REGEN_ADD_PERC = 0.01
+        SHIP_SHIELD_REGEN_ADD_PERC = 0.01
+        SHIP_EVASION_ADD = 1
+        SHIP_JUMPDRIVE_COOLDOWN_MULT = -0.01
+        mult = trigger:has_skill
+    }
+}
+#司掌龙脉的风水师
+leader_trait_shui = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    #councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+
+	#修改
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = GFX_leader_trait_mediator
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    triggered_modifier = {
+        SHIP_SPEED_MULT = 0.2
+        SHIP_ORBIT_UPKEEP_MULT = -0.05
+        SHIP_FTL_JUMPDRIVE_RANGE_MULT = -0.1
+        SHIP_SHIELD_REDUCTION = -0.01
+        SHIP_ARMOR_REDUCTION = -0.01
+        SHIP_CLOAKING_STRENGTH_ADD = 0.5
+        SHIP_CLOAKING_DETECTION_ADD = 0.5
+        multiplier = trigger:has_skill
+
+    }
+    triggered_self_modifier = {
+		#leader_scientists_engineering_research_produces_add = 2.5
+        mult = trigger:has_skill
+    }
+}

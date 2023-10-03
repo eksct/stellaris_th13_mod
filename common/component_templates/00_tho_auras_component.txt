@@ -1,0 +1,20 @@
+utility_component_template = {
+    key = "STARBASE_AURA_BRID_SHIP"
+    size = medium
+    icon = "GFX_ship_part_aura_snare"
+    icon_frame = 1
+    power = 0
+    class_restriction = { shipclass_starbase }
+    hostile_aura = {
+        name = "STARBASE_AURA_BRID_SHIP_frie_or_field"
+        system_wide = yes
+        stack_info = {
+            id = "aura_brid_ship"
+            priority = 20
+        }
+        modifier = {
+            ship_shield_mult = -0.2
+            ship_armor_mult = -0.2
+        }
+    }
+}

@@ -1,0 +1,170 @@
+#仙术 虫洞监牢
+NyanNyan_time_ghost = {
+    hidden_effect = {
+        solar_system = {
+            from = { set_timed_global_flag = { flag = time_ghost days = 356 } }
+            save_global_event_target_as = ghost_solar_system
+            every_fleet_in_system = {
+                set_timed_fleet_flag = {
+                    flag = time_ghost
+                    days = 180
+                }
+            }
+        }
+    }
+}
+#仙术「穿墙虫洞」
+NyanNyan_chuansong = {
+    root = {
+        random_owned_fleet = {
+            limit = { exists = leader leader = { has_trait = leader_trait_NyanNyan } }
+            solar_system = {
+                every_fleet_in_system = {
+                    limit = {
+                        owner = { is_same_value = event_target:target_country_NyanNyan }
+                        NOT = {
+                            tho_is_ship_class = yes
+                        }
+                    }
+                    set_location = event_target:ghost_solar_system.star
+
+                }
+            }
+            clear_orders = yes
+        }
+    }
+}
+#邪符「孤魂野鬼」
+nskill_Lunatic_guhunyegui = {
+    owner  = {save_event_target_as = target_country}
+
+    random_combatant_fleet = {
+        #solar_system = {
+        #    random_fleet_in_system = {
+        set_name = "NAME_LIST_YOKIFO"
+        set_fleet_flag = xiefu
+        set_owner = root
+        #    }
+        #}
+    }
+    set_fleet_flag = 4_dao
+}
+#入魔「过剩走火入魔」-70%船体-70%盾甲 300%伤害 150%射速 精度命中150% 脱离-100%
+nskill_Lunatic_rumo = {
+    owner = { save_event_target_as = target_country }
+    solar_system = {
+        every_fleet_in_system = {
+            limit = { owner = { is_same_empire = event_target:target_country } }
+            add_modifier = { modifier = Lunatic_4_rumo days = 30}
+        }
+    }
+    set_fleet_flag = 4_ri2
+}
+#通灵「通灵芳香」
+nskill_Lunatic_tongling = {
+    set_fleet_flag = 4_tongling
+        create_leader = {
+            class = admiral
+            species = owner_main_species
+            name = "宫古芳香"
+            skill = 10
+            hide_age = yes
+            traits = {
+                trait = leader_trait_Miko_fleet
+            }
+            effect = {
+                set_age = 0
+                set_leader_flag = Yoshika_leader_flag
+                #save_event_target_as = Yoshika_leader
+                #set_disable_at_health = 0.1
+            }
+        }
+    create_fleet = {
+        name = "通灵「通灵芳香」"
+        effect = {
+            set_owner = root
+            set_location = prev
+            set_fleet_flag = Yoshika_fleet
+            while = {
+                count = 1
+                create_ship = {
+                    name = " 123465"
+                    design = "Miyako_Yoshika"
+                    effect = {
+                        set_ship_flag = Yoshika_ship_2
+                    }
+                }
+            }
+            assign_leader = last_created_leader
+        }
+    }
+    owner = { save_event_target_as = target_country }
+    solar_system = {
+        every_fleet_in_system = {
+            limit = {
+                owner = { is_same_empire = event_target:target_country }
+                OR = {
+                    has_fleet_flag = Yoshika_fleet
+                    #has_fleet_flag = TAO
+                    #has_fleet_flag = T_in_battle
+                }
+            }
+            every_owned_ship = {
+                add_modifier = { modifier = fleet_time days = 30  }
+                set_disable_at_health = 0.1
+            }
+        }
+    }
+
+}
+#道符「タオ胎動」
+nskill_Lunatic_dao = {
+    owner  = {
+        save_event_target_as = target_country
+    }
+    set_fleet_flag = TAOatk
+    every_combatant_fleet = {
+        add_modifier = { modifier = TAO_modifier }
+    }
+}
+resource_reversal = {
+    add_modifier = { modifier = NyanNyan_fate_evergy_resource_tool mult = value:NyanNyan_fate_destruction_resource|resource|energy| days = 365 }
+    add_modifier = { modifier = NyanNyan_fate_goods_resource_tool mult = value:NyanNyan_fate_destruction_resource|resource|consumer_goods| days = 365}
+    add_modifier = { modifier = NyanNyan_fate_food_resource_tool mult = value:NyanNyan_fate_destruction_resource|resource|food| days = 365}
+    add_modifier = { modifier = NyanNyan_fate_alloys_resource_tool mult = value:NyanNyan_fate_destruction_resource|resource|alloys| days = 365}
+    add_modifier = { modifier = NyanNyan_fate_minerals_resource_tool mult = value:NyanNyan_fate_destruction_resource|resource|minerals| days = 365}
+}
+army_reversal_swarm = {
+    every_owned_planet = {
+        #limit = {is_capital = no}
+        while = {
+            count = 5
+            create_army = {
+                species = owner
+                type = swarm_army
+                owner = event_target:drone_country
+            }
+        }
+    }
+}
+fleet_reversal = {
+    random_owned_fleet = {
+        limit = {
+            NOT = { tho_is_ship_class = yes }
+        }
+        set_owner = event_target:drone_country
+        hidden_effect = {
+            add_modifier = { modifier = futo_frie_buff mult = value:NyanNyan_fate_fleet }
+        }
+    }
+}
+copy_research_tech= {
+    while = {
+        count = value:NyanNyan_fate_tech
+        root = {
+            copy_random_tech_from = {
+                who = prev
+            }
+        }
+    }
+}

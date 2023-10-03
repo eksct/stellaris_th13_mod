@@ -1,0 +1,86 @@
+ship_section_template = {
+	key = "YOSHIKA"
+	ship_size = tho_n_ship
+	fits_on_slot = mid
+	entity = "warship_large_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	component_slot = {
+		name = "SMALL_GUN_11"
+		template = "small_turret"
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_10"
+		template = "small_turret"
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_09"
+		template = "small_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_08"
+		template = "small_turret"
+		locatorname = "large_gun_02"
+		is_side_slot = yes
+	}
+	component_slot = {
+		name = "SMALL_GUN_07"
+		template = "small_turret"
+		locatorname = "large_gun_02"
+		is_side_slot = yes
+	}
+	component_slot = {
+		name = "SMALL_GUN_06"
+		template = "small_turret"
+		locatorname = "large_gun_02"
+		is_side_slot = yes
+	}
+	component_slot = {
+		name = "SMALL_GUN_05"
+		template = "small_turret"
+		locatorname = "large_gun_02"
+		is_side_slot = yes
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "small_turret"
+		locatorname = "medium_gun_03"
+	}
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "small_turret"
+		locatorname = "medium_gun_04"
+	}
+
+	large_utility_slots = 12
+	aux_utility_slots = 4
+}
+ship_section_template = {
+	key = "TAO_ship"
+	ship_size = tho_n_ship
+	fits_on_slot = mid
+	entity = "warship_large_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "medium_missile_turret"
+		locatorname = "medium_gun_01"
+	}
+
+	large_utility_slots = 12
+	aux_utility_slots = 4
+}

@@ -1,0 +1,29 @@
+namespace = tho_init
+event = {
+    id = tho_init.0
+    hide_window = yes
+    immediate = {
+        set_global_flag = THO_INIT_SEQUEL
+    }
+}
+country_event = {
+    id = tho_init.100
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_civic = civic_Ten_Desires
+    }
+    immediate = {
+        event_target:Ten_Desires_satr_init = {
+            spawn_system = {
+                min_distance = 10
+                max_distance = 15
+                min_jumps = 0
+                max_jumps = 0
+                initializer = Ten_Desires_System_init
+                hyperlane = no
+            }
+
+        }
+    }
+}

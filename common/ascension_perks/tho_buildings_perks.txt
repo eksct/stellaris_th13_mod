@@ -1,0 +1,41 @@
+ap_open_buildings = {
+    potential = {
+        NOR = {
+         has_ascension_perk = ap_open_buildings
+         }
+         owner = {
+            has_valid_civic = civic_Ten_Desires
+         }
+    }
+    #possible = {
+    #    num_ascension_perks >= 3
+    #}
+
+    on_enabled = {
+        custom_tooltip = "ap_open_buildings_custom"
+        hidden_effect ={
+            owner = {
+                start_situation = { type = situation_bulilds_development }
+            }
+        }
+    }
+    modifier = {
+        building_time_mult = -0.2
+        planet_buildings_cost_mult = -0.2
+    }
+    ai_weight = {
+        weight = 15
+        modifier = {
+            factor = 2
+            is_ai = yes
+        }
+        modifier = {
+            factor = 4
+            has_authority = auth_gensokyo
+        }
+        modifier = {
+            factor = 0
+            NOT = {has_authority = auth_gensokyo}
+        }
+    }
+}

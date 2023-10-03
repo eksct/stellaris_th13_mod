@@ -1,0 +1,200 @@
+situation_bulilds_development = {
+    category = positive
+    picture = GFX_evt_vortex
+    fail_icon = GFX_topbar_situation_button
+    fail_icon_frame = GFX_situation_outcome_frame_green
+    complete_icon =GFX_situation_outcome_meh
+    complete_icon_frame = GFX_situation_outcome_frame_blue
+    on_start = {
+        #set_situation_flag =
+    }
+    start_value = 0
+#	on_monthly = {
+#		random_events = {
+#		}
+#	}
+
+    on_progress_complete = {
+        #country_defaulted_in_situation_tooltip = yes
+        custom_tooltip = "NO_EFF"
+        hidden_effect = {
+            situation_event = { id = tho.0 }
+        }
+    }
+    on_fail = { hidden_effect = { destroy_situation = this }  }
+	stages  = {
+	    stage_1 = {
+            icon = GFX_situation_stage_1
+            icon_background = GFX_situation_stage_frame_blue
+            end = 10
+	    }
+	    stage_2 = {
+            icon = GFX_situation_stage_2
+            icon_background = GFX_situation_stage_frame_blue
+            end = 20
+            on_first_enter = {
+                situation_event = { id = tho.1 }
+            }
+	    }
+	    stage_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_blue
+			end = 30
+	    }
+	    stage_4 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_blue
+			end = 40
+            on_first_enter = {
+                situation_event = { id = tho.2 }
+            }
+	    }
+
+	    stage_5 = {
+			icon = GFX_situation_stage_5
+			icon_background = GFX_situation_stage_frame_blue
+			end = 80
+            on_first_enter = {
+                situation_event = { id = tho.3 }
+            }
+	    }
+	    stage_6 = {
+			icon = GFX_situation_stage_6
+			icon_background = GFX_situation_stage_frame_blue
+            on_first_enter = {
+                situation_event = { id = tho.4 }
+            }
+			end = 100
+	    }
+	}
+    #什么也不干 0
+    approach ={
+        name = approach0
+        icon = GFX_situation_approach_research
+        icon_background = GFX_situation_approach_bg_yellow
+        default = yes
+        potential = {
+             NOT = {has_situation_flag = approach_hidden_1}
+        }
+        allow = {
+             NOT = {has_situation_flag = approach_hidden_1}
+        }
+    }
+    #一阶削减10%产出供给1
+    approach ={
+        name = approach10
+        icon = GFX_situation_approach_research
+        icon_background = GFX_situation_approach_bg_green
+        triggered_modifier = {
+            mult = trigger:num_pops
+            country_produces_mult = -0.1
+            all_technology_research_speed = -0.1
+        }
+        potential = {
+             NOT = {has_situation_flag = approach_hidden_1}
+        }
+        allow = {
+             NOT = {has_situation_flag = approach_hidden_1}
+        }
+    }
+    #二阶投资削减25%产出供给3
+    approach ={
+        name = approach25
+        icon = GFX_situation_approach_research
+        icon_background = GFX_situation_approach_bg_yellow
+        triggered_modifier = {
+            mult = trigger:num_pops
+            country_produces_mult = -0.25
+            all_technology_research_speed = -0.25
+
+
+        }
+        potential = {
+             NOT = {has_situation_flag = approach_hidden_2}
+        }
+        allow = {
+             NOT = {has_situation_flag = approach_hidden_2}
+        }
+    }
+    #三阶投资削减50%产出供给5
+    approach ={
+        name = approach50
+        icon = GFX_situation_approach_research
+        icon_background = GFX_situation_approach_bg_red
+
+        triggered_modifier = {
+            mult = trigger:num_pops
+            country_produces_mult = -0.5
+            all_technology_research_speed = -0.5
+        }
+        potential = {
+               NOT = {has_situation_flag = approach_hidden_3}
+        }
+        allow = {
+             NOT = {has_situation_flag = approach_hidden_3}
+        }
+    }
+    approach = {
+        name = approach100
+        icon = GFX_situation_approach_research
+        icon_background = GFX_situation_approach_bg_red
+        triggered_modifier = {
+            mult = trigger:num_pops
+            country_produces_mult = -1
+            all_technology_research_speed = -1
+        }
+        potential = {
+             OR = {
+                  current_stage = stage_5
+                  current_stage = stage_6
+                  has_situation_flag = approach_hidden_2
+             }
+              NOT = {has_situation_flag = approach_hidden_4}
+        }
+    }
+    monthly_progress = {
+        base = 0
+        modifier = {
+            add = 5
+            #desc = string_not_in_deficit_consumer_goods
+            current_situation_approach = approach50
+        }
+        modifier = {
+            add = 3
+            #desc = string_not_in_deficit_consumer_goods
+             current_situation_approach = approach25
+        }
+        modifier = {
+            add = 1
+            #desc = string_not_in_deficit_consumer_goods
+            current_situation_approach = approach10
+        }
+        #事件触发
+        modifier = {
+            add = 10
+            #desc = string_not_in_deficit_consumer_goods
+            current_situation_approach = approach100
+        }
+        modifier = {
+            subtract = 2
+            owner = {
+                NOT = {has_country_flag = buildings_tho_1}
+            }
+            current_situation_approach = approach100
+        }
+        modifier = {
+            subtract = 2
+            owner = {
+                NOT = {has_country_flag = buildings_tho_2}
+            }
+            current_situation_approach = approach100
+        }
+        modifier = {
+            subtract = 1
+            owner = {
+                NOT = {has_country_flag = buildings_tho_3}
+            }
+            current_situation_approach = approach100
+        }
+    }
+}

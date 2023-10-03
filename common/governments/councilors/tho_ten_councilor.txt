@@ -1,0 +1,31 @@
+councilor_Ten_xiexian ={
+    leader_class = { admiral general }
+    is_leader_possible = {
+        OR = {
+            leader_class = admiral
+            leader_class = general
+        }
+    }
+    modifier = {
+        ships_upkeep_mult = -0.03
+        ship_experience_gain_mult = 0.05
+        planet_max_buildings_add = 0.5
+
+    }
+    civic = civic_Ten_Desires
+    #icon = GFX_leader_trait_fulu
+}
+councilor_Ten_diezi = {
+    leader_class = { general admiral }
+    is_leader_possible = {
+        OR = {
+            leader_class = admiral
+            leader_class = general
+        }
+    }
+    modifier = {
+        trade_value_mult = 0.05
+        council_agenda_progress_speed = 0.05
+    }
+    civic = civic_Ten_Desires
+}

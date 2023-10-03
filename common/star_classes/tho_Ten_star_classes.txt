@@ -1,0 +1,11 @@
+Ten_Desires_star_class = {
+    class 			= neutron_star
+    planet			= { key = pc_neutron_star }
+    spawn_odds 		=  0.4
+    num_planets 	= { min = 4 max = 10 }
+    icon_scale = 1.5
+    is_environmental_hazard = yes
+    modifier = {
+
+    }
+}

@@ -1,0 +1,57 @@
+#旧地狱
+building_military_Animism = {
+	base_buildtime = @costTime5
+	#base_cap_amount = 1
+	can_be_ruined = no
+	category = army
+	icon =  Former_Hell
+	empire_limit = {
+        base = 1
+    }
+	potential = {
+	    exists = owner
+        owner = {
+		    OR = {
+                has_country_flag = buildings_tho_ex
+                has_country_flag = buildings_tho_3
+            }
+            #has_civic = civic_gensokyo
+		}
+        NOT = { has_modifier = resort_colony }
+        NOT = { has_modifier = slave_colony }
+	}
+
+    army_modifier = {
+        army_starting_experience_add = 450
+        ARMY_DEFENSE_HEALTH_MULT = 0.05
+        ARMY_EXPERIENCE_GAIN_MULT = 1
+        army_attack_damage_mult = 0.25
+        army_attack_morale_mult = 0.25
+        ARMY_DAMAGE_MULT = 0.25
+        armies_upkeep_mult = 0.25
+        ARMY_ATTACK_HEALTH_MULT = 0.25
+    }
+    #modifier = {}
+    planet_modifier = {
+        PLANET_HOUSING_ADD = 120
+        PLANET_AMENITIES_ADD = -50
+        PLANET_STABILITY_ADD = -25
+        #PLANET_ORBITAL_BOMBARDMENT_DAMAGE  = -0.75
+        POP_DEFENSE_ARMIES_ADD =1
+    }
+    resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 8096
+			sr_lingli = 8096
+			consumer_goods = 8096
+		}
+		upkeep = {
+			energy = 25
+			sr_lingli = 15
+		}
+	}
+	ai_weight = {
+	    weight = 100
+	}
+}

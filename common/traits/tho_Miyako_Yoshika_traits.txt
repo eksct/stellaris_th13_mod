@@ -1,0 +1,160 @@
+#宫古芳香
+leader_trait_Miyako_Yoshika = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    #councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+
+    #修改
+	inline_script = {
+        script = trait/icon_psionic
+        CLASS = leader
+        ICON = "GFX_leader_trait_fulu"
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    custom_tooltip_with_modifiers = leader_trait_Miyako_Yoshika_tooltip
+    self_modifier = {
+	}
+	system_modifier = {
+		pop_happiness = -0.2
+	}
+}
+#忠诚的尸体（进攻）
+#逝者军势100%
+leader_trait_Zombie = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    #councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+
+	#修改
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_deep_space_explorer"
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    triggered_modifier = {
+        army_morale = 0.03
+        army_damage_mult = 0.03
+        army_disengage_chance_mult = -1
+		army_morale_damage_mult = 0.02
+		army_collateral_damage_mult = 0.01
+        mult = trigger:has_skill
+    }
+
+}
+#芳香族
+leader_trait_Yoshika = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    #councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+
+	#修改
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_survivalist"
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    triggered_modifier = {
+		army_defense_morale_mult = 0.05
+		army_defense_health_mult = 0.01
+		army_defense_damage_mult = 0.05
+        multiplier = trigger:has_skill
+    }
+	#system_modifier = {}
+		
+}
+#僵硬的乐园
+leader_trait_Rigid_Paradise_council = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+
+	#修改
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_totalitarian"
+        RARITY = paragon
+        COUNCIL = yes
+        TIER = none
+    }
+    triggered_modifier = {
+		armies_cost_mult = -0.03
+		armies_upkeep_mult = -0.03
+		planet_army_build_time_mult = -0.05
+		army_experience_gain_mult = -0.05
+		pop_happiness = -0.02
+		country_war_exhaustion_mult = -0.05
+        mult = trigger:has_skill
+    }
+}
+#宫古芳香(舰队)
+leader_trait_Miko_fleet = {
+    cost = 0
+    destiny_trait = yes
+    ethic_destiny_trait = yes
+    immortal_leaders = yes
+    #councilor_trait = yes
+    initial = no
+    randomized = no
+    leader_class = { admiral scientist general governor }
+
+	#修改
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_fazan"
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    modifier = {
+        ship_disengage_chance_mult = -10
+        ship_armor_mult = 1
+        ship_shield_mult = 1
+    }
+}
+#leader_trait_aggressive_2 = {
+#    replace_traits = { "leader_trait_aggressive" }
+#    inline_script = {
+#        script = trait/icon
+#        CLASS = admiral
+#        ICON = GFX_leader_trait_aggressive
+#        RARITY = common
+#        COUNCIL = no
+#        TIER = 2
+#    }
+#    modifier = {
+#        ship_fire_rate_mult = 0.05
+#        ship_weapon_damage = 0.05
+#    }
+#    leader_class = { admiral }
+#    opposites = { leader_trait_cautious }
+#}

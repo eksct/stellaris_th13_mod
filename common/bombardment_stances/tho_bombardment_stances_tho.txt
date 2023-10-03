@@ -1,0 +1,25 @@
+
+futo_fuka_fire = {
+    trigger = {
+        exists = leader
+        leader = {
+            has_trait = leader_trait_Mononobe_no_Futo
+        }
+        owner = {
+            has_policy_flag = on_fuka
+        }
+    }
+
+    default = no
+    planet_damage = 5
+    army_damage =  3.5
+    kill_pop_chance = {
+        base = 3
+    }
+    stop_when_armies_dead = no
+    # root = fleet
+    # from = planet
+    ai_weight = {
+        base = 0
+    }
+}

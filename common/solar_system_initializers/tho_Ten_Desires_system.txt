@@ -1,0 +1,66 @@
+Ten_Desires_System_init = {
+    name =leader_trait_Ten_Desires
+    flags = { Ten_Desires_System }
+    class = Ten_Desires_star_class
+    planet = {
+        class = pc_neutron_star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = 20
+        has_ring = no
+        init_effect = {
+            prevent_anomaly = yes
+            clear_deposits = yes
+            create_starbase = {
+                size = starbase_citadel
+                module = shipyard
+                module = shipyard
+            }
+            #solar_system = {
+            #    spawn_megastructure = {
+            #        type = lgate_rs
+            #    }
+            #}
+        }
+    }
+    change_orbit = 200
+    #神灵庙
+    planet = {
+        count = 1
+        class = Ten_planet_hve
+        orbit_distance = 10
+        has_ring = no
+        size = { max = 30 min = 25 }
+        init_effect = {
+            set_planet_flag = Ten_System_star
+            set_owner = root
+            set_capital = yes
+            prevent_anomaly = yes
+            clear_deposits = yes
+            create_starbase = {
+                size = orbital_ring_tier_3
+            }
+            while = {
+                count = 1
+                create_pop = {
+                    species = owner_main_species
+                    ethos = root
+                }
+                create_army = {
+                    owner = root
+                    type = Ten_def
+                    name = random
+                    species = owner_main_species
+                }
+            }
+            set_name = Ten_planet_hve
+            remove_building = building_colony_shelter
+            add_building = building_Tho_Resource_integration
+            #add_district = district_Ten_Desires
+            #add_district = district_Ten_Desires_alloys
+            #add_district = district_Ten_Desires_page2
+            clear_global_event_target = Ten_Desires_satr_init
+
+        }
+    }
+}

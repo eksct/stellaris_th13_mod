@@ -1,0 +1,130 @@
+namespace = th13_tho
+country_event = {
+    id = th13_tho.0
+    title = th13_tho.0.name
+    is_triggered_only = yes
+    desc = th13_tho.0.desc
+    picture = GFX_evt_think_tank
+    option = {
+        name =  "option_th13.0_1"
+        add_resource = {
+            unity = 2500
+        }
+    }
+    option = {
+        name = "option_th13.0_2"
+        add_resource = {
+            unity = 2500
+        }
+    }
+    option = {
+        trigger = {OR = { has_ethic =ethic_fanatic_xenophobe has_ethic = ethic_xenophobe } }
+        name = "option_th13.0_3"
+        add_resource = {
+            unity = 2500
+        }
+    }
+    after = {
+        country_event = { id = th13_tho.1 days = 10}
+    }
+}
+country_event = {
+    id = th13_tho.1
+    title = th13_tho.1.name
+    is_triggered_only = yes
+    picture = GFX_evt_news_room
+    desc = th13_tho.1.desc
+    option = {
+        name = "option_th13.1_1"
+        add_resource = { food = 100 }
+    }
+    option = {
+        name = "option_th13.1_2"
+        add_resource = { energy = 100 }
+    }
+    option = {
+        name = "option_th13.1_3"
+        add_modifier = {
+            modifier = pop_citizenry_happiness
+            mult = -0.05
+            years = 1
+        }
+    }
+    option = {
+        name = "option_th13.1_4"
+        trigger = {OR = { has_ethic = ethic_xenophobe has_ethic = ethic_fanatic_xenophobe } }
+        add_resource = { alloys = 1000 }
+    }
+    after = {
+        country_event = { id = th13_tho.2 days = 360 }
+    }
+}
+country_event = {
+    id = th13_tho.2
+    title = th13_tho.2.name
+    is_triggered_only = yes
+    desc = th13_tho.2.desc
+    picture = GFX_evt_news_room
+    option = {
+        name = "option_th13.2_1"
+        add_resource = { unity = 100 }
+    }
+    option = {
+        name = "option_th13.2_2"
+        add_resource = { energy = 100 }
+        add_modifier = { modifier = consumer_goods_rationing days = 180 }
+    }
+    option = {
+        name = "option_th13.2_3"
+        add_modifier = {
+            modifier = pop_citizenry_happiness
+            days = 180
+        }
+    }
+    after = {country_event = { id = th13_tho.3 days = 180 }}
+}
+country_event = {
+    id = th13_tho.3
+    title = th13_tho.3.name
+    is_triggered_only = yes
+    desc = th13_tho.3.desc
+    picture = GFX_evt_guang
+    option = {
+        name = "option_th13.3_1"
+        add_resource = { unity = 1000 }
+        add_modifier = { modifier = pop_citizenry_happiness mult = 2 days = 256 }
+    }
+    option = {
+        name = "option_th13.3_2"
+        add_resource = { unity = 1000 }
+        add_modifier = { modifier = pop_citizenry_happiness mult = 2 days = 256 }
+    }
+    option = {
+        name = "option_th13.3_3"
+        add_resource = { unity = 1000 }
+        add_modifier = { modifier = pop_citizenry_happiness mult = 2 days = 256 }
+    }
+    after = {country_event = { id = th13_tho.4 days = 30 }}
+}
+country_event = {
+    id = th13_tho.4
+    title = th13_tho.4.name
+    is_triggered_only = yes
+    desc = th13_tho.4.desc
+    picture = GFX_evt_news_room
+    option = {
+        name = "option_th13.4_1"
+        add_resource = { unity = 1000 }
+        add_modifier = { modifier = pop_citizenry_happiness mult = 2 days = 256 }
+        country_event = { id = tho_leader.14  }
+        country_event = { id = th13_tho.5 }
+    }
+}
+country_event = {
+    id = th13_tho.5
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+
+    }
+}

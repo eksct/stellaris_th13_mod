@@ -1,0 +1,49 @@
+namespace = tho_dest
+#娘娘舰船被击毁则删除符卡召唤
+country_event = {
+    id =tho_dest.131
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        fromfrom = {
+            OR = {
+                has_fleet_flag = T_in_battle
+            }
+        }
+    }
+    immediate = {
+        fromfrom.solar_system = {
+            every_fleet_in_system = {
+                limit = {
+                    OR = {
+                        has_fleet_flag = Yoshika_fleet
+                        has_fleet_flag = TAO
+                        has_fleet_flag = xiefu
+                    }
+                }
+                delete_fleet = this
+            }
+        }
+    }
+}
+#通灵消失重新释放
+country_event = {
+    id = tho_dest.133
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        fromfrom = {
+            has_fleet_flag = Yoshika_fleet
+        }
+    }
+    immediate = {
+        fromfrom.solar_system = {
+            random_fleet_in_system = {
+                limit = {
+                    has_fleet_flag= T_in_battle
+                }
+                remove_fleet_flag = 4_tongling
+            }
+        }
+    }
+}

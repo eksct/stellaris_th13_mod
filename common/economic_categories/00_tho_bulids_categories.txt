@@ -1,0 +1,26 @@
+planet_auto_lingli = {
+    parent = planet_administrators
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = pop
+}
+planet_auto_resourcest = {
+    parent = planet_administrators
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	modifier_category = pop
+	use_for_ai_budget = yes
+}
+

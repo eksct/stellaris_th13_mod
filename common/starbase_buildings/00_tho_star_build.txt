@@ -1,0 +1,22 @@
+track01 = {
+    construction_days = 360
+    icon = "GFX_tho_bridship"
+    resources = {
+        category = starbase_buildings
+        cost = {
+            mult = value:Alloys_cost
+            alloys = 120
+        }
+        upkeep = {
+            mult = value:starbase_size_upkeep
+            energy = 4
+        }
+        produces = {
+            mult = value:Pop_resource_up
+            engineering_research = 1
+            society_research = 1
+            physics_research = 1
+        }
+    }
+    equipped_component = "STARBASE_AURA_BRID_SHIP"
+}

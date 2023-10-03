@@ -1,0 +1,989 @@
+namespace = tho_battle
+#娘娘进入战斗
+country_event = {
+	id = tho_battle.20
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+	        FromFrom = {
+	            exists = leader
+	            leader = {
+	                  has_trait = leader_trait_NyanNyan
+			    }
+			    NOT = { has_fleet_flag = T_in_battle }
+                owner = {has_policy_flag = on_fuka}
+	        }
+	}
+	immediate = {
+	    FromFrom = {
+	    		set_fleet_flag = T_in_battle
+	    		fleet_event = { id = tho_battle.21 }
+	    }
+	}
+}
+fleet_event = {
+    id = tho_battle.21
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        has_fleet_flag = T_in_battle
+    }
+    immediate = {
+        if = {
+            limit = {
+                is_in_combat = yes
+                exists = leader
+                leader = {
+                    has_trait = leader_trait_NyanNyan
+                }
+            }
+            owner = {save_event_target_as = target_country}
+            random_list = {
+                25 = {
+                #入魔「过剩走火入魔」
+                    modifier = {
+                        factor = 0
+                        has_fleet_flag = 4_ri2
+                    }
+                 nskill_Lunatic_rumo = yes
+                }
+                #邪符「孤魂野鬼」
+                25 = {
+                    modifier = {
+                        factor = 0
+                        has_fleet_flag = 4_dao
+                    }
+                  nskill_Lunatic_guhunyegui = yes
+                }
+                #通灵「通灵芳香」
+                25 = {
+                    modifier = {
+                        factor = 0
+                        has_fleet_flag = 4_tongling
+                    }
+                    nskill_Lunatic_tongling = yes
+                }
+                ##道符「ＴＡＯ胎動　～道～」
+                25 = {
+                    modifier = {
+                        factor = 0
+                        has_fleet_flag = TAOatk
+                    }
+                    nskill_Lunatic_dao = yes
+                }
+            }
+            fleet_event = {
+                id = tho_battle.21
+                days = 5
+            }
+        }
+        else = {
+            remove_fleet_flag = T_in_battle
+            remove_fleet_flag = 4_ri2
+            remove_fleet_flag = 4_tongling
+            remove_fleet_flag = 4_dao
+            remove_fleet_flag = TAOatk
+            solar_system = {
+                every_fleet_in_system = {
+                    limit = { OR = {has_fleet_flag = TAO has_fleet_flag = Yoshika_fleet has_fleet_flag = xiefu } }
+                    kill_leader = { show_notification = no }
+                    delete_fleet = this
+                }
+            }
+        }
+    }
+}
+#无敌
+ship_event = {
+	id = tho_battle.22
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+             solar_system = {
+                any_fleet_in_system = {
+                    OR = {
+                        exists = leader
+                        leader = {
+                            has_leader_flag = T_Seiga_NyanNyan
+                        }
+                         has_fleet_flag = Yoshika_fleet
+                         has_fleet_flag = TAO
+                    }
+                }
+        }
+	}
+	immediate = {
+		if  = {
+            limit = {
+                has_modifier = fleet_time
+            }
+            set_disabled = no
+            repair_ship = yes
+            set_disable_at_health = 0.1
+        }
+        else = {
+            set_disabled = no
+            set_disable_at_health = -1
+        }
+	}
+}
+#芳香逝者
+country_event = {
+    id = tho_battle.30
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        fromfrom = {
+            has_policy_flag = on_fuka
+            #has_country_flag = yoshika_army
+        }
+    }
+    immediate = {
+        fromfromfrom = {
+            if = {
+                limit = {any_ground_combat_defender = {is_same_value = root.from}}
+                random_ground_combat_attacker = {
+                    limit = {exists = leader leader = {has_trait = leader_trait_Zombie}}
+                    leader = {save_event_target_as = atk_zombie}
+                }
+                create_army = {
+                    species = root.from.species
+                    type =  undead_army
+                    owner = root.fromfrom
+                }
+            }
+            if = {
+                limit = {any_ground_combat_attacker = {NOT = { is_same_value = root.from }}}
+                random_ground_combat_defender = {
+                    limit = {exists = leader leader = {has_trait = leader_trait_Zombie}}
+                    leader = {save_event_target_as = atk_zombie}
+                    fromfromfrom = {
+                        create_army = {
+                            species = root.from.species
+                            type =  undead_army
+                            owner = root.fromfrom
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#欲符「赚钱欲灵招来」
+country_event = {
+    id = tho_battle.31
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        fromfrom = {
+            has_policy_flag = on_fuka
+        }
+    }
+    immediate = {
+        fromfromfrom = {
+            if = { limit = {any_ground_combat_defender = {is_same_value = root.from}} }
+            random_ground_combat_attacker = {
+                limit = {exists = leader leader = {has_trait = leader_trait_Miyako_Yoshika}}
+                leader = {save_event_target_as = atk_miyako }
+            }
+        }
+        if = {
+            limit ={exists = event_target:atk_miyako}
+            fromfrom = {
+                if = {
+                    limit = {
+                        event_target:atk_miyako = {
+                            has_trait = leader_trait_Miyako_Yoshika
+                        }
+                    }
+                    random_list = {
+                        40 = {
+                            yoshoka_add = yes
+                        }
+                        40 = {
+                            yoshoka_add2 = yes
+                        }
+                        20 = {
+                            yoshoka_add3 = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#炎符「太乙真火」
+planet_event = {
+    id = tho_battle.880
+    title = fe_xeno_keeper_ms_FR
+    desc = failed_betrayal_status_quo
+    is_triggered_only = yes
+    trigger = {
+        OR = {
+            planet_devastation >= 100
+        }
+        has_orbital_bombardment_stance = futo_fuka_fire
+        habitable_planet = yes
+    }
+    immediate ={
+        change_pc = pc_molten
+        remove_all_buildings = yes
+    }
+}
+planet_event = {
+    id = tho_battle.881
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_orbital_bombardment_stance = futo_fuka_fire
+        habitable_planet = yes
+    }
+    immediate ={
+        change_pc = pc_molten
+    }
+}
+##蛊毒皿的积重
+country_event = {
+    hide_window = yes
+    id = tho_battle.40
+    is_triggered_only = yes
+    trigger = {
+        fromfrom = {
+                exists = leader
+                leader = {has_trait = leader_trait_Mononobe_no_Futo}
+            #owner = {has_policy_flag = on_fuka}
+        }
+    }
+    immediate = {
+        futo_fuka_duwu = yes
+    }
+}
+#「大火改新」
+country_event = {
+    id =tho_battle.41
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        fromfrom ={
+            exists = leader
+            leader = {has_trait = leader_trait_Mononobe_no_Futo}
+            NOT = { has_fleet_flag = Futo_Battle_flag }
+        }
+    }
+    immediate = {
+        fromfrom = {
+            set_fleet_flag = Futo_Battle_flag
+            fleet_event = { id = tho_battle.42 }
+        }
+    }
+}
+fleet_event = {
+    id = tho_battle.42
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_fleet_flag = Futo_Battle_flag
+    }
+    immediate = {
+        if = {
+            limit = {
+                is_in_combat = yes
+            }
+            frie_futo = yes
+            if = {
+                limit = {
+                    check_variable = { which = futo_level_frie value >= 20 }
+                }
+                add_modifier = { modifier = futo_frie_buff days = 15 mult = 20 }
+            }
+            else = {
+                add_modifier = { modifier = futo_frie_buff days = 15 mult = futo_level_frie }
+            }
+            fleet_event = { id = tho_battle.42 days = 15 }
+        }
+        else = {
+            remove_fleet_flag = Futo_Battle_flag
+            set_variable = { which = futo_frie_buff value = 1 }
+        }
+    }
+}
+#怨灵「入鹿之雷」
+country_event = {
+    hide_window = yes
+    id = tho_battle.50
+    is_triggered_only = yes
+    trigger = {
+        fromfrom = {
+            exists = leader
+            leader = {
+                has_trait = leader_trait_Soga_no_Tojiko
+            }
+            owner = {has_policy_flag = on_fuka}
+        }
+    }
+    immediate = {
+        fromfrom = {
+            every_combatant_fleet = {
+                kill_leader = { show_notification = yes }
+                add_modifier = { modifier = tojiko_fuka_debuff1 days = 365 }
+            }
+        }
+    }
+}
+#娘娘gui
+event = {
+    id = tho_battle.8088
+    diplomatic = yes
+    is_triggered_only = yes
+    title = edict_NyanNyan_fate
+    custom_gui = ten_windows
+    custom_gui_option = option_ten
+    immediate = {
+        save_global_event_target_as = target_country_NyanNyan
+        remove_global_flag = NyanNyan_chuansong
+    }
+    option = {
+        name = "NyanNyan"
+        allow = {
+            custom_tooltip = {
+               text =  NyanNyan_tooltip
+            }
+        }
+
+        #NyanNyan_chuansong = yes
+        hidden_effect = {
+            set_global_flag = NyanNyan_chuansong
+            country_event = {
+                id =tho_battle.8080
+            }
+        }
+    }
+    option = {
+        name = time_ghost
+        allow = {
+            custom_tooltip = {
+                fail_text = time_fries
+                hidden_trigger = { this = {NOT = { has_global_flag = time_ghost }} }
+            }
+        }
+        hidden_effect = {
+
+            country_event = {
+                 id = tho_battle.8080
+            }
+        }
+    }
+    option = {
+        name = NyanNyan_fate_destruction
+        allow = {
+            custom_tooltip = {
+                fail_text = NyanNyan_fate_destruction_tooltip
+                hidden_trigger = { this = {NOT = {  has_global_flag = NyanNyan_fate }} }
+            }
+        }
+        hidden_effect = {
+            set_variable = { which = Tho_country_select_page value = 1 }
+            set_variable = { which = tho_country_page_num value = 1 }
+            tho_country_start_select = yes
+            country_event = {
+                id = tho_battle.8081
+            }
+        }
+    }
+}
+
+country_event = {
+    id = tho_battle.8080
+    diplomatic = yes
+    is_triggered_only = yes
+    custom_gui = ten_windows
+    custom_gui_option = option_ten
+    immediate = {
+        hidden_effect = {
+            set_variable = { which = tho_star_select_search_page value = 1 }
+            set_variable = { which = tho_stars_page_num value = 1 }
+        }
+    }
+    option = {
+        name = "option_a"
+        set_country_flag = tho_select_a
+            hidden_effect = {
+                tho_system_class_select = yes
+                country_event = { id = tho_battle.8082 }
+            }
+
+
+    }
+    option = {
+        name = "option_b"
+        set_country_flag = tho_select_b
+        hidden_effect = {
+            tho_system_class_select = yes
+            country_event = { id  =tho_battle.8082}
+        }
+    }
+    option = {
+        name = "option_f"
+        set_country_flag = tho_select_f
+        hidden_effect = {
+            tho_system_class_select = yes
+            country_event = { id  =tho_battle.8082}
+        }
+    }
+    option = {
+        name = "option_g"
+        set_country_flag = tho_select_g
+        hidden_effect = {
+            tho_system_class_select = yes
+            country_event = { id  =tho_battle.8082}
+        }
+    }
+    option = {
+        name = "option_k"
+        set_country_flag = tho_select_k
+        hidden_effect = {
+            tho_system_class_select = yes
+            country_event = { id  =tho_battle.8082}
+        }
+    }
+    option = {
+        name = "option_m"
+        set_country_flag = tho_select_m
+        hidden_effect = {
+            tho_system_class_select = yes
+            country_event = { id  =tho_battle.8082}
+        }
+    }
+    option = {
+        name = "option_t"
+        set_country_flag = tho_select_t
+        hidden_effect = {
+            tho_system_class_select = yes
+            country_event = { id  =tho_battle.8082}
+        }
+    }
+    option = {
+        name = "option_bh"
+        set_country_flag = tho_select_bh
+        hidden_effect = {
+            tho_system_class_select = yes
+            country_event = { id  =tho_battle.8082}
+        }
+    }
+    option = {
+        name = "option_nue"
+        set_country_flag = tho_select_nue
+        hidden_effect = {
+            tho_system_class_select = yes
+            country_event = { id  =tho_battle.8082}
+        }
+    }
+    option = {
+        name = "option_pul"
+        set_country_flag = tho_select_pul
+        hidden_effect = {
+            tho_system_class_select = yes
+            country_event = { id  =tho_battle.8082}
+        }
+
+    }
+    option = {
+        name = "option_bi"
+        set_country_flag = tho_select_bi
+        hidden_effect = {
+            tho_system_class_select = yes
+            country_event = { id  =tho_battle.8082}
+        }
+    }
+    option = {
+        name = "option_tri"
+        set_country_flag = tho_select_tri
+        hidden_effect = {
+            tho_system_class_select = yes
+            country_event = { id  =tho_battle.8082}
+        }
+    }
+    option = {
+        name = exit
+        hidden_effect = {
+            country_event = {
+                id = tho_battle.8088
+            }
+        }
+    }
+}
+country_event = {
+    id = tho_battle.8082
+    is_triggered_only = yes
+    diplomatic = yes
+    custom_gui = ten_windows
+    custom_gui_option = option_ten
+    immediate = {
+    }
+    option = {
+        name = "THO_select_system_01"
+        trigger = {exists = event_target:tho_system_selectlock_system_1}
+        event_target:tho_system_selectlock_system_1 = {
+            save_global_event_target_as = ghost_solar_system
+            if = {
+                limit = {has_global_flag = NyanNyan_chuansong}
+                NyanNyan_chuansong = yes
+            }
+            else = {
+                every_fleet_in_system = {
+                    set_timed_fleet_flag = {
+                        flag = time_ghost
+                        days = 180
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = "THO_select_system_02"
+        trigger = {exists = event_target:tho_system_selectlock_system_2}
+        event_target:tho_system_selectlock_system_2 = {
+            save_global_event_target_as = ghost_solar_system
+            if = {
+                limit = {has_global_flag = NyanNyan_chuansong}
+                NyanNyan_chuansong = yes
+            }
+            else = {
+                every_fleet_in_system = {
+                    set_timed_fleet_flag = {
+                        flag = time_ghost
+                        days = 180
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = "THO_select_system_03"
+        trigger = {exists = event_target:tho_system_selectlock_system_3}
+        event_target:tho_system_selectlock_system_3 = {
+            save_global_event_target_as = ghost_solar_system
+            if = {
+                limit = {has_global_flag = NyanNyan_chuansong}
+                NyanNyan_chuansong = yes
+            }
+            else = {
+                every_fleet_in_system = {
+                    set_timed_fleet_flag = {
+                        flag = time_ghost
+                        days = 180
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = "THO_select_system_04"
+        trigger = {exists = event_target:tho_system_selectlock_system_4}
+        event_target:tho_system_selectlock_system_4 = {
+            save_global_event_target_as = ghost_solar_system
+            if = {
+                limit = {has_global_flag = NyanNyan_chuansong}
+                NyanNyan_chuansong = yes
+            }
+            else = {
+                every_fleet_in_system = {
+                    set_timed_fleet_flag = {
+                        flag = time_ghost
+                        days = 180
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = "THO_select_system_05"
+        trigger = {exists = event_target:tho_system_selectlock_system_5}
+        event_target:tho_system_selectlock_system_5 = {
+            save_global_event_target_as = ghost_solar_system
+            if = {
+                limit = {has_global_flag = NyanNyan_chuansong}
+                NyanNyan_chuansong = yes
+            }
+            else = {
+                every_fleet_in_system = {
+                    set_timed_fleet_flag = {
+                        flag = time_ghost
+                        days = 180
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = "THO_select_system_06"
+        trigger = {exists = event_target:tho_system_selectlock_system_6}
+        event_target:tho_system_selectlock_system_6 = {
+            save_global_event_target_as = ghost_solar_system
+            if = {
+                limit = {has_global_flag = NyanNyan_chuansong}
+                NyanNyan_chuansong = yes
+            }
+            else = {
+                every_fleet_in_system = {
+                    set_timed_fleet_flag = {
+                        flag = time_ghost
+                        days = 180
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = "THO_select_system_07"
+        trigger = {exists = event_target:tho_system_selectlock_system_7}
+        event_target:tho_system_selectlock_system_7 = {
+            save_global_event_target_as = ghost_solar_system
+            if = {
+                limit = {has_global_flag = NyanNyan_chuansong}
+                NyanNyan_chuansong = yes
+            }
+            else = {
+                every_fleet_in_system = {
+                    set_timed_fleet_flag = {
+                        flag = time_ghost
+                        days = 180
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = "THO_select_system_08"
+        trigger = {exists = event_target:tho_system_selectlock_system_8}
+        event_target:tho_system_selectlock_system_8 = {
+            save_global_event_target_as = ghost_solar_system
+            if = {
+                limit = {has_global_flag = NyanNyan_chuansong}
+                NyanNyan_chuansong = yes
+            }
+            else = {
+                every_fleet_in_system = {
+                    set_timed_fleet_flag = {
+                        flag = time_ghost
+                        days = 180
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = "THO_select_system_09"
+        trigger = {exists = event_target:tho_system_selectlock_system_9}
+        event_target:tho_system_selectlock_system_9 = {
+            save_global_event_target_as = ghost_solar_system
+            if = {
+                limit = {has_global_flag = NyanNyan_chuansong}
+                NyanNyan_chuansong = yes
+            }
+            else = {
+                every_fleet_in_system = {
+                    set_timed_fleet_flag = {
+                        flag = time_ghost
+                        days = 180
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = "THO_select_system_10"
+        trigger = {exists = event_target:tho_system_selectlock_system_10}
+        event_target:tho_system_selectlock_system_10 = {
+            save_global_event_target_as = ghost_solar_system
+            if = {
+                limit = {has_global_flag = NyanNyan_chuansong}
+                NyanNyan_chuansong = yes
+            }
+            else = {
+                every_fleet_in_system = {
+                    set_timed_fleet_flag = {
+                        flag = time_ghost
+                        days = 180
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = "THO_select_page_up"
+        allow = {
+            custom_tooltip = "check_select_page"
+            check_variable = { which = tho_star_select_search_page value > 1  }
+        }
+        tho_clear_system_event_targets = yes
+        subtract_variable = { which = tho_star_select_search_page value = 1 }
+        change_variable = { which = tho_stars_page_num value = 1 }
+        tho_star_select_page_trigger =yes
+        country_event = { id = tho_battle.8082 }
+    }
+    option = {
+        name = "THO_select_page_down"
+        allow = {
+            custom_tooltip = "check_select_page_num"
+            check_variable = { which = tho_stars_page_num value > 1  }
+        }
+        tho_clear_system_event_targets = yes
+        change_variable = { which = tho_star_select_search_page value = 1 }
+        subtract_variable = { which = tho_stars_page_num value = 1 }
+        tho_star_select_page_trigger =yes
+        country_event = { id = tho_battle.8082 }
+    }
+    option = {
+        name = exit
+        hidden_effect = {
+            tho_cleat_system_class_select = yes
+            country_event = {
+                id = tho_battle.8080
+            }
+        }
+    }
+    #after = {
+    #    tho_cleat_system_class_select = yes
+    #}
+}
+country_event = {
+    id = tho_battle.8081
+    diplomatic = yes
+    is_triggered_only = yes
+    custom_gui = ten_windows
+    custom_gui_option = option_ten
+    immediate = {
+    }
+    option = {
+        name = tho_target_country_01
+        trigger = {exists = event_target:tho_country_select_target_1}
+        event_target:tho_country_select_target_1 = {
+            hidden_effect = {
+                random_list = {
+                    25 = { resource_reversal = yes }
+                    25 = { army_reversal_swarm = yes }
+                    25 = { fleet_reversal = yes }
+                    25 = { copy_research_tech = yes }
+                }
+                prev = {
+                    set_timed_global_flag = {
+                        years = 3
+                        flag =NyanNyan_fate
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_02
+        trigger = {exists = event_target:tho_country_select_target_2}
+        event_target:tho_country_select_target_2 = {
+            hidden_effect = {
+                random_list = {
+                    25 = { resource_reversal = yes }
+                    25 = { army_reversal_swarm = yes }
+                    25 = { fleet_reversal = yes }
+                    25 = { copy_research_tech = yes }
+                }
+                prev = {
+                    set_timed_global_flag = {
+                        years = 3
+                        flag =NyanNyan_fate
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_03
+        trigger = {exists = event_target:tho_country_select_target_3}
+        event_target:tho_country_select_target_3 = {
+            hidden_effect = {
+                random_list = {
+                    25 = { resource_reversal = yes }
+                    25 = { army_reversal_swarm = yes }
+                    25 = { fleet_reversal = yes }
+                    25 = { copy_research_tech = yes }
+                }
+                prev = {
+                    set_timed_global_flag = {
+                        years = 3
+                        flag =NyanNyan_fate
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_04
+        trigger = {exists = event_target:tho_country_select_target_4}
+        event_target:tho_country_select_target_4 = {
+            hidden_effect = {
+                random_list = {
+                    25 = { resource_reversal = yes }
+                    25 = { army_reversal_swarm = yes }
+                    25 = { fleet_reversal = yes }
+                    25 = { copy_research_tech = yes }
+                }
+                prev = {
+                    set_timed_global_flag = {
+                        years = 3
+                        flag =NyanNyan_fate
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_05
+        trigger = {exists = event_target:tho_country_select_target_5}
+        event_target:tho_country_select_target_5 = {
+            hidden_effect = {
+                random_list = {
+                    25 = { resource_reversal = yes }
+                    25 = { army_reversal_swarm = yes }
+                    25 = { fleet_reversal = yes }
+                    25 = { copy_research_tech = yes }
+                }
+                prev = {
+                    set_timed_global_flag = {
+                        years = 3
+                        flag =NyanNyan_fate
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_06
+        trigger = {exists = event_target:tho_country_select_target_6}
+        event_target:tho_country_select_target_6 = {
+            hidden_effect = {
+                random_list = {
+                    25 = { resource_reversal = yes }
+                    25 = { army_reversal_swarm = yes }
+                    25 = { fleet_reversal = yes }
+                    25 = { copy_research_tech = yes }
+                }
+                prev = {
+                    set_timed_global_flag = {
+                        years = 3
+                        flag =NyanNyan_fate
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_07
+        trigger = {exists = event_target:tho_country_select_target_7}
+        event_target:tho_country_select_target_7 = {
+            hidden_effect = {
+                random_list = {
+                    25 = { resource_reversal = yes }
+                    25 = { army_reversal_swarm = yes }
+                    25 = { fleet_reversal = yes }
+                    25 = { copy_research_tech = yes }
+                }
+                prev = {
+                    set_timed_global_flag = {
+                        years = 3
+                        flag =NyanNyan_fate
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_08
+        trigger = {exists = event_target:tho_country_select_target_8}
+        event_target:tho_country_select_target_8 = {
+            hidden_effect = {
+                random_list = {
+                    25 = { resource_reversal = yes }
+                    25 = { army_reversal_swarm = yes }
+                    25 = { fleet_reversal = yes }
+                    25 = { copy_research_tech = yes }
+                }
+                prev = {
+                    set_timed_global_flag = {
+                        years = 3
+                        flag =NyanNyan_fate
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_09
+        trigger = {exists = event_target:tho_country_select_target_9}
+        event_target:tho_country_select_target_9 = {
+            hidden_effect = {
+                random_list = {
+                    25 = { resource_reversal = yes }
+                    25 = { army_reversal_swarm = yes }
+                    25 = { fleet_reversal = yes }
+                    25 = { copy_research_tech = yes }
+                }
+                prev = {
+                    set_timed_global_flag = {
+                        years = 3
+                        flag =NyanNyan_fate
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_10
+        trigger = {exists = event_target:tho_country_select_target_10}
+        event_target:tho_country_select_target_10 = {
+            hidden_effect = {
+                random_list = {
+                    25 = { resource_reversal = yes }
+                    25 = { army_reversal_swarm = yes }
+                    25 = { fleet_reversal = yes }
+                    25 = { copy_research_tech = yes }
+                }
+                prev = {
+                    set_timed_global_flag = {
+                        years = 3
+                        flag =NyanNyan_fate
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = "THO_select_page_up"
+        allow = {
+            custom_tooltip = "check_select_page"
+            check_variable = { which = Tho_country_select_page value > 1  }
+        }
+        tho_clear_country_event_targets = yes
+        subtract_variable = { which = Tho_country_select_page value = 1 }
+        change_variable = { which = tho_country_page_num value = 1 }
+        tho_save_country_event_trigger =yes
+        country_event = { id = tho_battle.8081 }
+    }
+    option = {
+        name = "THO_select_page_down"
+        allow = {
+            custom_tooltip = "check_select_page_num"
+            check_variable = { which = tho_country_page_num value > 0  }
+        }
+        tho_clear_country_event_targets = yes
+        change_variable = { which = Tho_country_select_page value = 1 }
+        subtract_variable = { which = tho_country_page_num value = 1 }
+        tho_save_country_event_trigger =yes
+        country_event = { id = tho_battle.8081 }
+    }
+    option = {
+        name = exit
+        tho_clear_all_country_flags = yes
+        country_event = { id = tho_battle.8088 }
+    }
+}
+

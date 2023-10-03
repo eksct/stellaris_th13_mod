@@ -1,0 +1,457 @@
+namespace = tho_war
+#「承诏必慎」
+country_event = {
+    id = tho_war.0
+    is_triggered_only = yes
+    hide_window = yes
+    immediate = {
+        set_variable = { which = Tho_country_select_page value = 1 }
+        set_variable = { which = tho_country_page_num value = 1 }
+        tho_country_start_select = yes
+        country_event = { id = tho_war.1 }
+    }
+}
+country_event = {
+    id = tho_war.101
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        set_variable = { which = Tho_country_select_page value = 1 }
+        set_variable = { which = tho_country_page_num value = 1 }
+        tho_country_start_select = yes
+        country_event = { id = tho_war.10 }
+    }
+}
+country_event = {
+    id =tho_war.1
+    title = tho_war.1.name
+    desc = tho_war.1.desc
+    event_window_type = leader_story
+    show_sound = event_factions
+    picture = GFX_evt_legendary_leader
+    is_triggered_only = yes
+    immediate = {
+
+    }
+    picture_event_data = {
+        portrait = root.ruler
+        room = from
+    }
+    trigger = {
+        check_variable = { which = Miko_war_count value < 3 }
+    }
+    option = {
+        name = tho_target_country_01
+        trigger = {
+            event_target:tho_country_select_target_1 = {
+                is_at_war_with = root
+            }
+        }
+        change_variable = { which = Miko_war_count value = 1 }
+        event_target:tho_country_select_target_1 = {
+            country_event = {
+                id = tho_war.2
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_02
+        trigger = {
+            event_target:tho_country_select_target_2 = {
+                is_at_war_with = root
+            }
+        }
+        change_variable = { which = Miko_war_count value = 1 }
+        event_target:tho_country_select_target_2 = {
+            country_event = {
+                id = tho_war.2
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_03
+        trigger = {
+            event_target:tho_country_select_target_3 = {
+                is_at_war_with = root
+            }
+        }
+        change_variable = { which = Miko_war_count value = 1 }
+        event_target:tho_country_select_target_3 = {
+            country_event = {
+                id = tho_war.2
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_04
+        trigger = {
+            event_target:tho_country_select_target_4 = {
+                is_at_war_with = root
+            }
+        }
+        change_variable = { which = Miko_war_count value = 1 }
+        event_target:tho_country_select_target_4 = {
+            country_event = {
+                id = tho_war.2
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_05
+        trigger = {
+            event_target:tho_country_select_target_5 = {
+                is_at_war_with = root
+            }
+        }
+        change_variable = { which = Miko_war_count value = 1 }
+        event_target:tho_country_select_target_5 = {
+            country_event = {
+                id = tho_war.2
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_06
+        trigger = {
+            event_target:tho_country_select_target_6 = {
+                is_at_war_with = root
+            }
+        }
+        change_variable = { which = Miko_war_count value = 1 }
+        event_target:tho_country_select_target_6 = {
+            country_event = {
+                id = tho_war.2
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_07
+        trigger = {
+            event_target:tho_country_select_target_7 = {
+                is_at_war_with = root
+            }
+        }
+        change_variable = { which = Miko_war_count value = 1 }
+        event_target:tho_country_select_target_7 = {
+            country_event = {
+                id = tho_war.2
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_08
+        trigger = {
+            event_target:tho_country_select_target_8 = {
+                is_at_war_with = root
+            }
+        }
+        change_variable = { which = Miko_war_count value = 1 }
+        event_target:tho_country_select_target_8 = {
+            country_event = {
+                id = tho_war.2
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_09
+        trigger = {
+            event_target:tho_country_select_target_9 = {
+                is_at_war_with = root
+            }
+        }
+        change_variable = { which = Miko_war_count value = 1 }
+        event_target:tho_country_select_target_9 = {
+            country_event = {
+                id = tho_war.2
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_10
+        trigger = {
+            event_target:tho_country_select_target_10 = {
+                is_at_war_with = root
+            }
+        }
+        change_variable = { which = Miko_war_count value = 1 }
+        event_target:tho_country_select_target_10 = {
+            country_event = {
+                id = tho_war.2
+            }
+        }
+    }
+    option = {
+        name = "THO_select_page_up"
+        allow = {
+            custom_tooltip = "check_select_page"
+            check_variable = { which = Tho_country_select_page value > 1  }
+        }
+        tho_clear_country_event_targets = yes
+        subtract_variable = { which = Tho_country_select_page value = 1 }
+        change_variable = { which = tho_country_page_num value = 1 }
+        tho_save_country_event_trigger =yes
+        country_event = { id = tho_war.1 }
+    }
+    option = {
+        name = "THO_select_page_down"
+        allow = {
+            custom_tooltip = "check_select_page_num"
+            check_variable = { which = tho_country_page_num value > 0  }
+        }
+        tho_clear_country_event_targets = yes
+        change_variable = { which = Tho_country_select_page value = 1 }
+        subtract_variable = { which = tho_country_page_num value = 1 }
+        tho_save_country_event_trigger =yes
+        country_event = { id = tho_war.1 }
+    }
+    option = {
+        name = exit
+        tho_clear_all_country_flags = yes
+    }
+}
+country_event = {
+    id = tho_war.2
+    title = tho_war.2.name
+    desc = tho_war.2.desc
+    #picture = GFX_evt_sapient_AI
+    is_triggered_only = yes
+    option = {
+        name = option_war_2
+        target_country_fire = yes
+    }
+}
+#红蓝披风选择
+country_event = {
+    id = tho_war.10
+    title = tho_war.10.name
+    desc = tho_war.10.desc
+    is_triggered_only = yes
+    event_window_type = leader_story
+    show_sound = event_factions
+    picture = GFX_evt_red_or_bule
+    immediate = {
+
+    }
+    picture_event_data = {
+        portrait = root.ruler
+        room = from
+    }
+    option = {
+        name = tho_target_country_01
+        trigger = {
+            event_target:tho_country_select_target_1 = {
+                is_at_war_with = root
+            }
+        }
+
+        event_target:tho_country_select_target_1 = {
+            country_event = {
+                id = tho_war.11
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_02
+        trigger = {
+            event_target:tho_country_select_target_2 = {
+                is_at_war_with = root
+            }
+        }
+
+        event_target:tho_country_select_target_2 = {
+            country_event = {
+                id = tho_war.11
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_03
+        trigger = {
+            event_target:tho_country_select_target_3 = {
+                is_at_war_with = root
+            }
+        }
+
+        event_target:tho_country_select_target_3 = {
+            country_event = {
+                id = tho_war.11
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_04
+        trigger = {
+            event_target:tho_country_select_target_4 = {
+                is_at_war_with = root
+            }
+        }
+
+        event_target:tho_country_select_target_4 = {
+            country_event = {
+                id = tho_war.11
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_05
+        trigger = {
+            event_target:tho_country_select_target_5 = {
+                is_at_war_with = root
+            }
+        }
+
+        event_target:tho_country_select_target_5 = {
+            country_event = {
+                id = tho_war.11
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_06
+        trigger = {
+            event_target:tho_country_select_target_6 = {
+                is_at_war_with = root
+            }
+        }
+
+        event_target:tho_country_select_target_6 = {
+            country_event = {
+                id = tho_war.11
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_07
+        trigger = {
+            event_target:tho_country_select_target_7 = {
+                is_at_war_with = root
+            }
+        }
+
+        event_target:tho_country_select_target_7 = {
+            country_event = {
+                id = tho_war.11
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_08
+        trigger = {
+            event_target:tho_country_select_target_8 = {
+                is_at_war_with = root
+            }
+        }
+
+        event_target:tho_country_select_target_8 = {
+            country_event = {
+                id = tho_war.11
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_09
+        trigger = {
+            event_target:tho_country_select_target_9 = {
+                is_at_war_with = root
+            }
+        }
+
+        event_target:tho_country_select_target_9 = {
+            country_event = {
+                id = tho_war.11
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_10
+        trigger = {
+            event_target:tho_country_select_target_10 = {
+                is_at_war_with = root
+            }
+        }
+
+        event_target:tho_country_select_target_10 = {
+            country_event = {
+                id = tho_war.11
+            }
+        }
+    }
+    option = {
+        name = "THO_select_page_up"
+        allow = {
+            custom_tooltip = "check_select_page"
+            check_variable = { which = Tho_country_select_page value > 1  }
+        }
+        tho_clear_country_event_targets = yes
+        subtract_variable = { which = Tho_country_select_page value = 1 }
+        change_variable = { which = tho_country_page_num value = 1 }
+        tho_save_country_event_trigger =yes
+        country_event = { id = tho_war.10 }
+    }
+    option = {
+        name = "THO_select_page_down"
+        allow = {
+            custom_tooltip = "check_select_page_num"
+            check_variable = { which = tho_country_page_num value > 0  }
+        }
+        tho_clear_country_event_targets = yes
+        change_variable = { which = Tho_country_select_page value = 1 }
+        subtract_variable = { which = tho_country_page_num value = 1 }
+        tho_save_country_event_trigger =yes
+        country_event = { id = tho_war.10 }
+    }
+    option = {
+        name = exit
+        hidden_effect = {tho_clear_all_country_flags = yes}
+    }
+}
+#披风选择
+country_event = {
+    id = tho_war.11
+    title = tho_war.11.name
+    desc = tho_war.11.desc
+    picture = GFX_evt_red_or_bule
+    is_triggered_only = yes
+    immediate = {
+        from = {
+            random_owned_leader = {
+                limit = {has_trait = leader_trait_Toyosatomimi}
+               set_variable = {
+                   which = toyousatomimi_country_buffzreo
+                   value = trigger:has_skill
+               }
+                set_variable = {
+                    which = toyousatomimi_country_buffone
+                    value = trigger:has_skill
+                }
+            }
+        }
+    }
+    option = {
+        name = red_option
+        from = {
+            add_modifier = { modifier = toyousatomimi_country_buffzreo days = 180 }
+            country_event = { id = tho_war.12 }
+        }
+    }
+    option = {
+        name = blue_option
+        from = {
+            add_modifier = { modifier = toyousatomimi_country_buffone days = 180}
+            country_event = { id = tho_war.13 }
+        }
+    }
+}
+#选择通知
+country_event = {
+    id = tho_war.12
+    title = tho_war_12.name
+    desc = tho_war_12.desc
+    is_triggered_only = yes
+}
+country_event = {
+    id = tho_war.13
+    title = tho_war_13.name
+    desc = tho_war_13.desc
+    is_triggered_only = yes
+}
