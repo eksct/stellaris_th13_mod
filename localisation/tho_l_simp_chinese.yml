@@ -3,6 +3,11 @@
  #轰炸模块
  bombardment_futo_fuka_fire: "§H炎符「太乙真火」§!"
  bombardment_futo_fuka_fire_desc: "$leader_trait_Mononobe_no_Futo$以自身火气引导行星火气释放$bombardment_futo_fuka_fire$焚烧行星人口聚集区与守军驻扎地并诱发火山喷发、地壳开裂、地下熔岩上升对行星造成二次伤害\n- 对§Y陆军§!造成§E重度§!伤害\n- 对§Y星球§!造成§E重度§!伤害\n- 对§R人口§!造成§R重度§!伤害\n使行星变成§R$pc_molten$§!"
+ LastWord_Toy_num:"§H「承诏必慎」§!使用次数:[LastWord_Toy](最多3次)"
+ LastWord_Toy_num_3:"§H「承诏必慎」§!使用次数以达上限"
+ building_clone_army_clone_vat_tho:"§Y$building_clone_army_clone_vat$§!"
+ building_clone_army_clone_vat_tho_desc:"$building_clone_army_clone_vat_desc$"
+ building_clone_army_clone_vat_effect_tho_desc:"无承载上限,组装并维护多个人口"
  option_f_0:0"[country_event_target_0.GetName]"
  option_f_1:0"[country_event_target_1.GetName]"
  option_f_2:0"[country_event_target_2.GetName]"
@@ -111,9 +116,12 @@
  Ten_def:"§R$shroud_army$§!"
  sm_track01: "太空鸟居"
  sm_track01_desc: "外界的人类发射到太空的太空站,因与地面失去通讯而飘荡在太空"
- district_Ten_Desires_ex: "SEQUEL blight"
- district_Ten_Desires_ex_desc: "SEQUEL blight(笑)"
-
+ district_Ten_Desires_ex: "§YSEQUEL blight§!"
+ district_Ten_Desires_ex_desc: "SEQUEL blight(待定)"
+ trait_Ten_Desires: "$leader_trait_Ten_Desires$"
+ trait_Ten_Desires_desc: "$leader_trait_Ten_Desires_desc$"
+ Ten_Desires_fallen_empire_mod: "§Y绝对存续§!"
+ Ten_Desires_fallen_empire_mod_desc: ""
 
 
 

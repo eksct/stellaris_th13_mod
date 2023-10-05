@@ -100,7 +100,19 @@ tho_is_counrty_list = {
             is_country_type = gray_goo
         }
 }
+tho_is_crisis_or_war_country_list = {
+    optimize_memory
+    OR = {
+        is_at_war_with = from.owner
+        is_country_type = extradimensional
+        is_country_type = extradimensional_2
+        is_country_type = extradimensional_3
+        is_country_type = ai_empire
+        is_country_type = swarm
+    }
+}
 tho_is_ship_class = {
+    optimize_memory
     OR = {
         is_ship_class =shipclass_starbase
         is_ship_class = shipclass_research_station

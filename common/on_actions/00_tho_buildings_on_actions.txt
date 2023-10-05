@@ -5,7 +5,7 @@ on_game_start = {
 }
 on_game_start_country = {
     events = {
-        tho_leader.1
+        #tho_leader.1
     }
 }
 on_building_complete = {
@@ -68,14 +68,14 @@ on_game_start = {
 on_add_to_imperial_council = {
     events = {
         tho_council.123
-        tho_council.125
+
         #tho_council.127
     }
 }
 on_remove_from_imperial_council = {
     events = {
         tho_council.124
-        tho_council.126
+
         #tho_council.128
     }
 }

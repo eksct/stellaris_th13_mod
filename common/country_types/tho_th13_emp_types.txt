@@ -1,0 +1,106 @@
+Ten_Desires_fallen_empire = {
+    scaled_difficulty_bonuses = 1.0
+    sub_title = "COUNTRY_FALLEN_EMPIRE"
+    sub_title_desc = "COUNTRY_FALLEN_EMPIRE_DESC"
+
+    hub_system = Ten_Desires_System
+
+    share_survey_data = no
+    needs_survey = no
+    randomize_ethos = no
+    diplomatic_wars = yes
+    ship_disengagement = yes
+    army_disengagement = yes
+    #fallen_empire = yes
+    awakened_fallen_empire = yes
+    uses_special_buildables = yes
+    observable = yes
+
+    faction = {
+        needs_border_access = no
+    }
+
+
+    ai = {
+        enabled = yes
+        declare_war = yes
+        colonizer = no
+        internal_policies = no
+        modification = no
+        #construction = yes
+        tech = yes
+        limited_construction = yes
+        traditions = yes
+        ascension_perks = yes
+        starbase_upgrade = yes
+        can_use_market = yes
+        min_navy_for_wars = 0.5
+        min_assault_armies_for_wars = @armies_for_declaring_war
+        modules = {
+            anti_crisis_military_minister_module
+            military_minister_module
+            foreign_minister_module
+            interior_minister_module
+            standard_species_rights_module
+        }
+    }
+    modules = {
+        all_technology_module = {}
+        standard_event_module = {}
+        standard_leader_module = {}
+        standard_economy_module = {}
+        standard_species_rights_module = {}
+        exclusive_diplomacy_module = {
+            contact_rule = on_action_only
+            can_receive = {
+                action_declare_war
+                action_offer_peace
+                action_make_rival
+                action_end_rivalry
+                action_form_defensive_pact
+                action_break_defensive_pact
+                action_offer_trade_deal
+                action_cancel_trade_deal
+                action_insult
+
+            }
+            can_send = {
+                action_declare_war
+                action_make_rival
+                action_end_rivalry
+                action_offer_peace
+                action_form_defensive_pact
+                action_break_defensive_pact
+                action_offer_trade_deal
+                action_cancel_trade_deal
+                action_open_borders
+                action_close_borders
+            }
+        }
+
+    }
+    resources = {
+        category = country_base
+        produces = {
+            mult = trigger:num_galaxy_systems
+            energy = 1000
+            minerals = 2500
+            food = 1000
+            alloys = 1000
+            consumer_goods = 1000
+            rare_crystals = 100
+            exotic_gases = 100
+            volatile_motes = 100
+            sr_dark_matter = 50
+            sr_living_metal = 50
+            sr_lingli = 50
+            sr_fuka = 50
+            sr_zro = 50
+            influence = 50
+            minor_artifacts = 50
+            engineering_research = 1000
+            society_research = 1000
+            physics_research = 1000
+        }
+    }
+}

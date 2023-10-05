@@ -13,8 +13,16 @@ Ten_Desires_System_init = {
             clear_deposits = yes
             create_starbase = {
                 size = starbase_citadel
+
                 module = shipyard
                 module = shipyard
+                module = shipyard
+                module = shipyard
+                module = shipyard
+                module = shipyard
+
+                building = track01
+
             }
             #solar_system = {
             #    spawn_megastructure = {
@@ -40,6 +48,7 @@ Ten_Desires_System_init = {
             create_starbase = {
                 size = orbital_ring_tier_3
             }
+
             while = {
                 count = 1
                 create_pop = {
@@ -60,7 +69,106 @@ Ten_Desires_System_init = {
             #add_district = district_Ten_Desires_alloys
             #add_district = district_Ten_Desires_page2
             clear_global_event_target = Ten_Desires_satr_init
+            if = {
+                limit = {owner = { has_origin = origin_clone_army}}
+                add_building = building_clone_army_clone_vat_tho
+            }
+        }
+    }
+}
+Ten_Desires_System_init_fallen_empire = {
+    usage = fallen_empire_init
+    name = leader_trait_Ten_Desires
+    flags = { Ten_Desires_System Ten_Desires_fallen_empire_System }
+    class = Ten_Desires_star_class
+    planet = {
+        class = pc_neutron_star
+        orbit_distance = 0
+        orbit_angle = 1
+        size = 20
+        has_ring = no
+        init_effect = {
+            prevent_anomaly = yes
+            clear_deposits = yes
 
+            if = {
+                limit = {exists = event_target:Ten_Desires_fallen_empire}
+                create_starbase = {
+                    owner = event_target:Ten_Desires_fallen_empire
+                    size = "starbase_citadel"
+                    module = "shipyard"
+                    module = "shipyard"
+                    module = "shipyard"
+                    module = "hangar_bay"
+                    module = "gun_battery"
+                    module = "gun_battery"
+                    building = "target_uplink_computer"
+                    building = "defense_grid"
+                    building = "colossus_yards"
+                    building = "titan_yards"
+                }
+            }else = {
+                create_fe_citadel = yes
+            }
+        }
+    }
+    change_orbit = 45
+    #神灵庙
+    planet = {
+        count = 1
+        deposit_blockers = none
+        class = Ten_planet_hve
+        orbit_distance = 10
+        orbit_angle = { min = 90 max = 270 }
+        has_ring = no
+        size = 20
+        init_effect = {
+            set_planet_flag = Ten_System_star
+            if = {
+                limit = { exists = event_target:Ten_Desires_fallen_empire }
+                set_owner = event_target:Ten_Desires_fallen_empire
+            }
+            set_capital = yes
+            prevent_anomaly = yes
+            clear_deposits = yes
+            if = {
+                limit = {exists = event_target:Ten_Desires_fallen_empire}
+                create_starbase = {
+                    owner = event_target:Ten_Desires_fallen_empire
+                    size = orbital_ring_tier_3
+                }
+            }
+            create_ambient_object = {
+                type = consecrated_planet_stage_3_object
+                location = this
+                use_3d_location = yes
+                entity_scale_to_size = yes
+            }
+
+            while = {
+                count = 10
+                create_pop = {
+                    species = owner_main_species
+                    ethos = event_target:Ten_Desires_fallen_empire
+                }
+                create_army = {
+                    owner = event_target:Ten_Desires_fallen_empire
+                    type = Ten_def
+                    name = random
+                    species = owner_main_species
+                    leader = event_target:T_Miyako_Yoshika
+                }
+            }
+            set_name = Ten_planet_hve
+            remove_building = building_colony_shelter
+            add_building = building_Tho_Resource_integration
+            while = {
+                count = 5
+                add_district = district_Ten_Desires
+                add_district = district_Ten_Desires_alloys
+                add_district = district_Ten_Desires_page2
+                add_district = district_Ten_Desires_ex
+            }
         }
     }
 }

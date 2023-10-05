@@ -21,9 +21,13 @@ weapon_component_template = {
 		}
 	}
 	damage = { 
- 		min = 0
+ 		min = 10
  		max = 30
  	}
+	modifier = {
+		ship_shield_penetration_mult = 1
+		ship_armor_penetration_mult = 1
+	}
 	 windup = {
 		min = 0
 		max = 40

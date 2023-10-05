@@ -1,6 +1,9 @@
 tho_give_country_flag = {#选择国家
     every_country = { limit = { tho_is_counrty_list = yes } set_country_flag = tho_country_select }
 }
+tho_give_country_war_flag = {#选择国家
+    every_country = { limit = { is_at_war_with = root } set_country_flag = tho_country_select }
+}
 tho_clear_country_flag = {#撤销
     every_country = { limit = { has_country_flag = tho_country_select } remove_country_flag = tho_country_select }
 }
@@ -722,4 +725,10 @@ tho_clear_all_country_flags = {
     tho_clear_country_flag = yes
     tho_clear_country_select_page_flag = yes
     tho_clear_country_event_targets = yes
+}
+tho_country_war_start_select = {
+    tho_give_country_war_flag = yes
+    tho_set_country_select_page_flag = yes
+    tho_save_country_event_trigger = yes
+    Tho_country_select_page_check = yes
 }

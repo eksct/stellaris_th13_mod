@@ -11,7 +11,7 @@ country_event = {
         country_event = {
             id = th13_tho.0
         }
-        unlock_council_slots = 2
+        unlock_council_slots = 3
     }
 }
 #霍青娥
@@ -154,7 +154,7 @@ country_event = {
         tag = hire_leader
         add_modifier = { modifier = pop_citizenry_happiness mult = 2 days = 180 }
         hidden_effect = {
-            hire_event_leader_effect = {
+            legendary_event_leader_effect = {
                 LEADER = toyosatomimi_leader
             }
             assign_leader = last_created_leader
@@ -168,7 +168,7 @@ country_event = {
         tag = dismiss_leader
         add_modifier = { modifier = pop_citizenry_happiness mult = 2 days = 180 }
         hidden_effect = {
-            hire_event_leader_effect = {
+            legendary_event_leader_effect = {
                 LEADER = toyosatomimi_leader
             }
             assign_leader = last_created_leader
@@ -303,6 +303,7 @@ country_event = {
                 #save_event_target_as = T_NyanNyan
             effect = {
                 set_leader_flag = T_Soga_no_Tojiko
+                save_global_event_target_as = Soga_no_Tojiko
             }
         }
         last_created_leader = {
@@ -317,8 +318,16 @@ country_event = {
     title =tho_leader.888.name
     desc =tho_leader.888.desc
     picture = GFX_evt_throne_room
+    event_window_type = leader_recruit
+    picture_event_data = {
+        portrait = event_target:Soga_no_Tojiko
+        room = from
+    }
     trigger = {
-        owner = { has_country_flag = tojiko_flag }
+        owner = { has_civic = civic_Ten_Desires }
+        research_leader = {
+            has_trait = leader_trait_Soga_no_Tojiko
+        }
     }
     mean_time_to_happen = {
         years = 5
@@ -348,35 +357,39 @@ country_event = {
     }
     immediate = {
         #复活
-        from = {
-            save_event_target_as = resurrection_leader
-        }
+        #from = {
+        #    save_event_target_as = resurrection_leader
+        #}
         if = {
             limit = {
                 from = { has_trait = leader_trait_Mononobe_no_Futo}
             }
             clone_leader = {
+                target = from
+                #skill = 1
                 effect = {
                     set_variable = { which = "futo_level" value = 0 }
                     set_variable = { which = futo_level_frie value = 1 }
                 }
-                target = event_target:resurrection_leader
+                #target = event_target:resurrection_leader
             }
         }
         else_if = {
             limit = {from = { has_trait = leader_trait_Toyosatomimi}}
             clone_leader = {
+                target = from
                 effect = {
                     set_leader_flag = T_Toyosatomimi_no_Miko
                     set_variable = { which = Miko_war_count value = 0 }
                 }
-                target = event_target:resurrection_leader
+                #target = event_target:resurrection_leader
             }
             assign_leader = last_created_leader
         }
         else = {
             clone_leader = {
-                target = event_target:resurrection_leader
+                target = from
+                #target = event_target:resurrection_leader
             }
         }
     }

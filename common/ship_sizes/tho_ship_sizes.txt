@@ -20,7 +20,6 @@ tho_n_ship = {
 	icon = ship_size_military_8
 
 	combat_disengage_chance = 1.0
-
 	resources = {
 		category = ships
 		cost = {

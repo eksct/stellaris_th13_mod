@@ -23,9 +23,9 @@ district_Ten_Desires = {
         }
         produces = {
             mult = planet.value:district_Ten_Desires_pro|TYPE|Ten_Desires|
-            energy = 2
-            food = 2
-            minerals = 2
+            energy = 3
+            food = 3
+            minerals = 3
             consumer_goods = 2
             unity = 2
         }
@@ -34,7 +34,7 @@ district_Ten_Desires = {
         planet_housing_add = 10
         planet_jobs_produces_mult = 0.01
         planet_orbital_bombardment_damage = -0.01
-        planet_max_buildings_add = 0.05
+        planet_max_buildings_add = 0.5
     }
 }
 district_Ten_Desires_ex = {
@@ -44,7 +44,7 @@ district_Ten_Desires_ex = {
     base_buildtime = 2400
     max_for_deposits_on_planet = 10
     is_capped_by_modifier = no
-    icon = district_arcology_organic_housing
+    icon = district_arcology_administrative
     resources = {
         category =planet_jobs
         cost = {
@@ -56,18 +56,18 @@ district_Ten_Desires_ex = {
         upkeep = {
             mult = planet.value:district_Ten_Desires_upkeep|TYPE|Ten_Desires_ex|SCOPE|owner|
             physics_research = 7
-            society_research = 4
+            society_research = 7
             engineering_research = 7
-            sr_lingli = 2
+            sr_lingli = 3
         }
         produces = {
             mult = planet.value:district_Ten_Desires_pro|TYPE|Ten_Desires_ex|
             consumer_goods = 2
-            sr_dark_matter = 0.5
-            sr_living_metal = 1
-            sr_zro = 0.5
-            minor_artifacts = 1
-            nanites = 1
+            sr_dark_matter = 2
+            sr_living_metal = 2.5
+            sr_zro = 2
+            minor_artifacts = 2.5
+            nanites = 2.5
             influence = 0.1
             #menace = 0.1
             #rare_crystals = 2
@@ -79,7 +79,7 @@ district_Ten_Desires_ex = {
         planet_housing_add = 10
         planet_jobs_produces_mult = 0.01
         planet_orbital_bombardment_damage = -0.01
-        planet_max_buildings_add = 0.05
+        planet_max_buildings_add = 0.5
     }
 }
 
@@ -107,12 +107,12 @@ district_Ten_Desires_page2 = {
         }
         produces = {
             mult = planet.value:district_Ten_Desires_pro|TYPE|Ten_Desires_page2|
-            sr_lingli = 2
-            sr_fuka = 2
-            unity = 2
-            physics_research = 5
-            society_research = 5
-            engineering_research = 5
+            sr_lingli = 5
+            sr_fuka = 5
+            unity = 5
+            physics_research = 7
+            society_research = 7
+            engineering_research = 7
         }
     }
     planet_modifier = {
@@ -121,7 +121,7 @@ district_Ten_Desires_page2 = {
         planet_jobs_engineering_research_produces_mult = 0.01
         planet_jobs_society_research_produces_mult = 0.01
         planet_jobs_physics_research_produces_mult = 0.01
-        planet_max_buildings_add = 0.05
+        planet_max_buildings_add = 0.5
     }
 }
 district_Ten_Desires_alloys = {
@@ -141,19 +141,19 @@ district_Ten_Desires_alloys = {
         }
         upkeep = {
             mult = planet.value:district_Ten_Desires_upkeep|TYPE|Ten_Desires_alloys|SCOPE|owner|
-            physics_research = 7
+            physics_research = 5
             society_research = 2
-            engineering_research = 7
-            minerals = 10
+            engineering_research = 5
+            minerals = 7
         }
         produces = {
             mult = value:district_Ten_Desires_alloys_pro
-            alloys = 15
+            alloys = 17
         }
     }
     planet_modifier = {
         planet_jobs_alloys_produces_mult = 0.01
         planet_building_build_speed_mult = 0.01
-        planet_max_buildings_add = 0.05
+        planet_max_buildings_add = 0.5
     }
 }

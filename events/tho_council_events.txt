@@ -13,18 +13,6 @@ country_event = {
     }
 }
 country_event = {
-    id = tho_council.125
-    hide_window = yes
-    trigger = {
-        owner = {has_trait_in_council = { TRAIT = leader_trait_Toziko}}
-    }
-    immediate = {
-        owner = {
-            set_country_flag = tojiko_flag
-        }
-    }
-}
-country_event = {
     id = tho_council.124
     hide_window = yes
     trigger = {
@@ -36,18 +24,7 @@ country_event = {
         }
     }
 }
-country_event = {
-    id = tho_council.126
-    hide_window = yes
-    trigger = {
-        NOT = { owner = { has_trait_in_council = { TRAIT = leader_trait_Toziko } } }
-    }
-    immediate = {
-        owner = {
-            remove_country_flag = tojiko_flag
-        }
-    }
-}
+
 ##无用？
 #country_event = {
 #    id = tho_council.127

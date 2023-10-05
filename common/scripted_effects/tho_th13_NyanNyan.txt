@@ -153,9 +153,9 @@ fleet_reversal = {
             NOT = { tho_is_ship_class = yes }
         }
         set_owner = event_target:drone_country
-        hidden_effect = {
-            add_modifier = { modifier = futo_frie_buff mult = value:NyanNyan_fate_fleet }
-        }
+        #hidden_effect = {
+        #    add_modifier = { modifier = futo_frie_buff mult = value:NyanNyan_fate_fleet }
+        #}
     }
 }
 copy_research_tech= {

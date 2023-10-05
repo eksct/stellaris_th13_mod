@@ -4,14 +4,7 @@ fleet_event = {
     hide_window = yes
     trigger = {
         owner = {
-            OR = {
-                is_at_war_with = from.owner
-                is_country_type = extradimensional
-                is_country_type = extradimensional_2
-                is_country_type = extradimensional_3
-                is_country_type = ai_empire
-                is_country_type = swarm
-            }
+                tho_is_crisis_or_war_country_list = yes
         }
         NOT = { has_fleet_flag = toyousatomimi_atk }
         from = {
@@ -61,8 +54,11 @@ fleet_event = {
     is_triggered_only = yes
     immediate ={
         set_location = event_target:ghost_solar_system.star
-        random_owned_ship = {
-            reduce_hp = 1000
+        if = {
+            limit = {num_ships > 1}
+            every_owned_ship = {
+                reduce_hp = 3000
+            }
         }
     }
 }

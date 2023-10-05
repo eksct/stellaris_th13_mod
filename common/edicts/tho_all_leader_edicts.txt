@@ -9,9 +9,37 @@ toyousatomimi_no_miko_Lastword = {
         has_policy_flag = on_fuka
         has_country_flag = toyousatomimi
     }
+    allow = {
+        is_at_war = yes
+        #OR = {
+            custom_tooltip = {
+                NOT = {
+                    check_variable = {
+                        which = LastWord_Toy
+                        value = 3
+                    }
+                }
+                text =  LastWord_Toy_num
+            }
+            custom_tooltip = {
+
+                    check_variable = {
+                        which = LastWord_Toy
+                        value = 3
+                    }
+
+                text =  LastWord_Toy_num_3
+            }
+       # }
+
+    }
     effect = {
         hidden_effect = {
             country_event = { id = tho_war.0 }
+            change_variable = {
+                which = LastWord_Toy
+                value = 1
+            }
         }
     }
 }
@@ -28,12 +56,14 @@ toyousatomimi_no_miko_RED_OR_BULE = {
     }
     allow = {
         check_variable = { which =  Miko_war_count value < 3}
+        is_at_war = yes
     }
             #NOT = { has_country_flag = RED_BULE_TIME }
 
     effect = {
         hidden_effect = {
-            country_event = { id = tho_war.101 }
+            set_global_flag = RED_BULE_Toy
+            country_event = { id = tho_war.0 }
         }
     }
 }
@@ -46,6 +76,7 @@ toyousatomimi_no_miko_classic = {
     potential = {
         has_policy_flag = on_fuka
         has_country_flag = toyousatomimi
+
     }
     effect = {
         country_event = { id = tho_s.2 }

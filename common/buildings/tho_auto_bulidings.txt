@@ -7,6 +7,7 @@ building_auto_lingli = {
         #exists = owner
         owner = {
             has_ascension_perk = ap_open_buildings
+            has_authority = auth_gensokyo
         }
     }
      resources = {

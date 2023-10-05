@@ -536,6 +536,7 @@ country_event = {
                         flag = time_ghost
                         days = 180
                     }
+                    set_location =solar_system
                 }
             }
         }
@@ -555,6 +556,7 @@ country_event = {
                         flag = time_ghost
                         days = 180
                     }
+                    set_location =solar_system
                 }
             }
         }
@@ -574,6 +576,7 @@ country_event = {
                         flag = time_ghost
                         days = 180
                     }
+                    set_location =solar_system
                 }
             }
         }
@@ -593,6 +596,7 @@ country_event = {
                         flag = time_ghost
                         days = 180
                     }
+                    set_location =solar_system
                 }
             }
         }
@@ -612,6 +616,7 @@ country_event = {
                         flag = time_ghost
                         days = 180
                     }
+                    set_location =solar_system
                 }
             }
         }
@@ -631,6 +636,7 @@ country_event = {
                         flag = time_ghost
                         days = 180
                     }
+                    set_location =solar_system
                 }
             }
         }
@@ -650,6 +656,7 @@ country_event = {
                         flag = time_ghost
                         days = 180
                     }
+                    set_location =solar_system
                 }
             }
         }
@@ -669,6 +676,7 @@ country_event = {
                         flag = time_ghost
                         days = 180
                     }
+                    set_location =solar_system
                 }
             }
         }
@@ -688,6 +696,7 @@ country_event = {
                         flag = time_ghost
                         days = 180
                     }
+                    set_location =solar_system
                 }
             }
         }
@@ -707,6 +716,7 @@ country_event = {
                         flag = time_ghost
                         days = 180
                     }
+                    set_location =solar_system
                 }
             }
         }

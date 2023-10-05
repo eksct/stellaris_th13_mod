@@ -29,7 +29,8 @@
 #	show_in_outliner = no
 #
 #	potential = {
-#		always = no
+#		always = yes
+#        is_ai = no
 #	}
 #
 #	construction_blocks_and_blocked_by = none
@@ -41,6 +42,13 @@
 #		catapult_spread_base = 100
 #		catapult_range_base =1000
 #	}
-#
-#	bypass_type = th13_lgate
+#	on_build_complete = {
+#		set_star_flag = lgate
+#		set_star_flag = hostile_system
+#		set_star_flag =  lgate_guaranteed
+#		fromfrom = {
+#			set_megastructure_flag = lgate_activated
+#		}
+#	}
+#    bypass_type = lgate
 #}

@@ -4,7 +4,7 @@ miko_fuka = {
         every_fleet_in_system = {
             limit = {
                 owner = {
-                    is_ai = yes
+                    tho_is_crisis_or_war_country_list = yes
                 }
                 not = { has_fleet_flag = toyousatomimi_atk }
             }
@@ -39,7 +39,7 @@ futo_fuka_po = {
     owner = {save_event_target_as = cuntry}
     solar_system = {
         every_fleet_in_system = {
-            limit =  { owner = {NOT = {is_same_empire = event_target:country } is_at_war_with = root } }
+            limit =  { owner = {NOT = {is_same_empire = event_target:country is_overlord_to = event_target:country }  } }
             add_modifier = { modifier = Futo_fuka_debuff1 days = 365 }
         }
     }
@@ -184,6 +184,19 @@ frie_futo = {
         add_modifier = { modifier = futo_frie_shield_perc mult = ship_shield_frie_perc }
         add_modifier = { modifier = futo_frie_hull_perc mult = ship_hull_frie_perc }
         add_modifier = { modifier = futo_frie_hull_static mult = ship_hull_frie_static }
+    }
+}
+legendary_event_leader_effect = {
+
+    clone_leader = {
+        target = event_target:$LEADER$
+    }
+    last_created_leader = {
+        set_leader_flag = legendary_leader
+    }
+
+    hire_event_leader_message = {
+        LEADER = $LEADER$
     }
 }
 

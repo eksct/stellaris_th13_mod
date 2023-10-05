@@ -1,5 +1,5 @@
 namespace = tho_war
-#「承诏必慎」
+
 country_event = {
     id = tho_war.0
     is_triggered_only = yes
@@ -7,21 +7,16 @@ country_event = {
     immediate = {
         set_variable = { which = Tho_country_select_page value = 1 }
         set_variable = { which = tho_country_page_num value = 1 }
-        tho_country_start_select = yes
-        country_event = { id = tho_war.1 }
+        tho_country_war_start_select = yes
+        if = {
+            limit = {has_global_flag = RED_BULE_Toy}
+            country_event = {id = tho_war.10  }
+        }else = {
+            country_event = { id = tho_war.1 }
+        }
     }
 }
-country_event = {
-    id = tho_war.101
-    hide_window = yes
-    is_triggered_only = yes
-    immediate = {
-        set_variable = { which = Tho_country_select_page value = 1 }
-        set_variable = { which = tho_country_page_num value = 1 }
-        tho_country_start_select = yes
-        country_event = { id = tho_war.10 }
-    }
-}
+#「承诏必慎」
 country_event = {
     id =tho_war.1
     title = tho_war.1.name
@@ -36,9 +31,6 @@ country_event = {
     picture_event_data = {
         portrait = root.ruler
         room = from
-    }
-    trigger = {
-        check_variable = { which = Miko_war_count value < 3 }
     }
     option = {
         name = tho_target_country_01
@@ -204,9 +196,11 @@ country_event = {
         tho_save_country_event_trigger =yes
         country_event = { id = tho_war.1 }
     }
-    option = {
-        name = exit
-        tho_clear_all_country_flags = yes
+    after = {
+        hidden_effect = {
+            tho_clear_all_country_flags = yes
+        }
+
     }
 }
 country_event = {
@@ -400,9 +394,11 @@ country_event = {
         tho_save_country_event_trigger =yes
         country_event = { id = tho_war.10 }
     }
-    option = {
-        name = exit
-        hidden_effect = {tho_clear_all_country_flags = yes}
+    after = {
+       hidden_effect = {
+           remove_global_flag = RED_BULE_Toy
+           hidden_effect = {tho_clear_all_country_flags = yes}
+       }
     }
 }
 #披风选择

@@ -1,0 +1,234 @@
+Ten_Desires_fallen_empire = {
+    graphical_culture = "fallen_machine_empire_01"
+    #星系
+    initializer = "Ten_Desires_System_init_fallen_empire"
+    weight_modifier = {
+        weight = 0
+    }
+    create_country_effect = {
+        create_species = {
+            name = random
+            class = MACHINE
+            namelist = MACHINE3
+            portrait = random
+            traits = {
+                trait = trait_machine_unit
+                trait = random_traits
+            }
+            extra_trait_points = 3
+            allow_negative_traits = no
+        }
+
+        create_country = {
+            name = "leader_trait_Ten_Desires"
+            type = Ten_Desires_fallen_empire
+            ignore_initial_colony_error = no
+            flag = random
+            civics = {
+                civic = civic_Ten_Desires
+                civic = random
+            }
+            ethos = {
+                ethic = ethic_spiritualist
+                ethic = ethic_militarist
+                ethic = ethic_xenophile
+            }
+            species = last_created_species
+            effect = {
+                add_modifier = { modifier =Ten_Desires_fallen_empire_mod   }
+                set_country_flag = Ten_Desires_fallen_empire
+                add_resource = {
+                    minerals = 90000
+                    energy = 90000
+                    food = 9000
+                    influence = 900
+                }
+                if = {
+                    limit = { host_has_dlc = "Apocalypse" }
+                    give_technology = {
+                        tech = tech_colossus
+                        message = no
+                    }
+                }
+                # must initialize global designs here
+                add_global_ship_design = "NAME_Omega"
+                add_global_ship_design = "NAME_Alpha"
+                add_global_ship_design = "NAME_Beta"
+                add_global_ship_design = "NAME_Gamma"
+                add_global_ship_design = "NAME_Theta"
+                add_global_ship_design = "NAME_Tau"
+                add_global_ship_design = "NAME_Sigma"
+                add_global_ship_design = "NAME_FE_Starbase"
+                create_leader = {
+                    event_leader = yes
+                    class = general
+                    species = owner_main_species
+                    name = "宫古芳香"
+                    gender = female
+                    set_age = 20
+                    hide_age = yes
+                    background_ethic = ethic_spiritualist
+                    custom_description = Miyako_Yoshika_backstory
+                    traits = {
+                        trait = leader_trait_Miyako_Yoshika
+                        trait = leader_trait_Zombie
+                        trait = leader_trait_Rigid_Paradise_council
+                        trait = leader_trait_Yoshika
+                        trait = leader_trait_Ten_Desires
+                        trait = leader_trait_honored_warmaster
+                    }
+                    effect = {
+                        set_leader_flag = T_Miyako_Yoshika
+                    }
+                }
+                last_created_leader = {
+                    set_leader_flag = T_Miyako_Yoshika
+                    change_leader_portrait = Yoshika
+
+                }
+                create_leader = {
+                    event_leader = yes
+                    class = admiral
+                    species = owner_main_species
+                    #name = "Seiga_NyanNyan"
+                    name = "霍青娥"
+                    gender = female
+                    set_age = 20
+                    hide_age = yes
+                    background_ethic = ethic_spiritualist
+                    #event_leader = yes
+                    custom_description = NyanNya_backstory
+                    #portrait = NyanNyan
+                    #randomize_traits = yes
+                    #leader_portrait = NyanNyan
+                    traits = {
+                        trait = leader_trait_NyanNyan_immortal
+                        trait = leader_trait_NyanNyan_immortalB
+                        trait = leader_trait_NyanNyan_council_atk
+                        trait = leader_trait_NyanNyan_council_builds
+                        trait = leader_trait_NyanNyan
+                        trait = leader_trait_Ten_Desires
+                    }
+
+                    #save_event_target_as = T_NyanNyan
+                    effect = {
+                        set_leader_flag = T_Seiga_NyanNyan
+                        save_global_event_target_as = NyanNya_leader
+                    }
+                }
+                last_created_leader = {
+                    set_leader_flag = T_Seiga_NyanNyan
+                    change_leader_portrait = NyanNyan
+                }
+                create_fleet = {
+                    name = random
+                    effect = {
+                        set_owner = last_created_country
+                        set_location = last_created_country.capital_star.star
+                        while = {
+                            count =100
+                            create_ship = {
+                                name = random
+                                design = "NAME_Beta"
+                                graphical_culture = owner
+                            }
+                        }
+                        assign_leader = last_created_leader
+                    }
+                }
+                create_leader = {
+                    event_leader = yes
+                    class = governor
+                    species = root.species
+                    name = "丰聪耳神子"
+                    gender = female
+                    set_age = 20
+                    hide_age = yes
+                    background_ethic = ethic_fanatic_xenophile
+                    custom_description = Toyosatomimi_backstory
+                    traits = {
+                        trait = leader_trait_Toyosatomimi
+                        trait = leader_trait_Miko
+                        trait = leader_trait_Shoutoku
+                        trait = leader_trait_Shoutoku_forever
+                        trait = leader_trait_Ten_Desires
+                    }
+                    effect = {
+                        set_leader_flag = T_Toyosatomimi_no_Miko
+                        set_variable = { which = Miko_war_count value = 0 }
+                        save_global_event_target_as = toyosatomimi_leader
+                    }
+                }
+                last_created_leader = {
+                    set_leader_flag = T_Toyosatomimi_no_Miko
+                    change_leader_portrait = Miko
+                }
+                hidden_effect = {
+                    legendary_event_leader_effect = {
+                        LEADER = toyosatomimi_leader
+                    }
+                    assign_leader = last_created_leader
+                }
+                create_leader = {
+                    event_leader = yes
+                    class = admiral
+                    species = owner_main_species
+                    name = "物部布都"
+                    gender = female
+                    set_age = 20
+                    hide_age = yes
+                    background_ethic = ethic_militarist
+                    custom_description = Mononobe_no_Futo_backstory
+                    traits = {
+                        trait = leader_trait_Mononobe_no_Futo
+                        trait = leader_trait_Oomiwashinwaden
+                        trait = leader_trait_shui
+                        trait = leader_trait_Ten_Desires
+                    }
+
+                    #save_event_target_as = T_NyanNyan
+                    effect = {
+                        set_leader_flag = T_Mononobe_no_Futo
+                        set_variable = { which = "futo_level" value = 0 }
+                    }
+                }
+                last_created_leader = {
+                    set_leader_flag = T_Mononobe_no_Futo
+                    change_leader_portrait = Futo
+                }
+                create_leader = {
+                    event_leader = yes
+                    class = scientist
+                    species = owner_main_species
+                    name = "苏我屠自古"
+                    gender = female
+                    set_age = 20
+                    hide_age = yes
+                    # 修改
+                    background_ethic = ethic_militarist
+                    custom_description = Soga_no_Tojiko_backstory
+                    traits = {
+                        trait = leader_trait_Soga_no_Tojiko
+                        trait = leader_trait_Toziko
+                        trait = leader_trait_Mausoleum
+                        trait = leader_trait_Ten_Desires
+                    }
+
+                    #save_event_target_as = T_NyanNyan
+                    effect = {
+                        set_leader_flag = T_Soga_no_Tojiko
+                        save_global_event_target_as = Soga_no_Tojiko
+                    }
+                }
+                last_created_leader = {
+                    set_leader_flag = T_Soga_no_Tojiko
+                    change_leader_portrait = Tojiko
+                }
+                ruler = {
+                    add_skill = 10
+                }
+            }
+        }
+
+    }
+}
