@@ -122,6 +122,10 @@
  trait_Ten_Desires_desc: "$leader_trait_Ten_Desires_desc$"
  Ten_Desires_fallen_empire_mod: "§Y绝对存续§!"
  Ten_Desires_fallen_empire_mod_desc: ""
+ personality_Ten_Desires_fallen_empire:"§Y时间存续者§!"
+ personality_Ten_Desires_fallen_empire_desc:""
+ gov_Ten_Desires_fallen_empire: "§Y破碎的循环§!"
+ gov_Ten_Desires_fallen_empire_desc: "破碎的循环"
 
 
 

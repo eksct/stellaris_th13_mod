@@ -81,6 +81,10 @@ Ten_Desires_System_init_fallen_empire = {
     name = leader_trait_Ten_Desires
     flags = { Ten_Desires_System Ten_Desires_fallen_empire_System }
     class = Ten_Desires_star_class
+    asteroid_belt = {
+        type = rocky_asteroid_belt
+        radius = 75
+    }
     planet = {
         class = pc_neutron_star
         orbit_distance = 0

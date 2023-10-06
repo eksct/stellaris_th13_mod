@@ -38,6 +38,7 @@ event = {
                         civic = civic_Ten_Desires
                         civic = random
                     }
+                    origin = origin_slavers
                     ethos = {
                         ethic = ethic_spiritualist
                         ethic = ethic_militarist
@@ -175,6 +176,7 @@ event = {
                             set_leader_flag = T_Toyosatomimi_no_Miko
                             change_leader_portrait = Miko
                         }
+                        assign_leader = last_created_leader
                         create_leader = {
                             event_leader = yes
                             class = admiral
@@ -233,14 +235,15 @@ event = {
                         ruler = {
                             add_skill = 10
                         }
+
                     }
                 }
                 spawn_system = {
                     initializer = Ten_Desires_System_init_fallen_empire
                     min_distance >= 500
                     max_distance <= 500
-                    min_orientation_angle >= 45
-                    max_orientation_angle <= 45
+                    min_orientation_angle >= 90
+                    max_orientation_angle <= 90
                     hyperlane = no
                 }
                 create_fleet = {
@@ -258,6 +261,10 @@ event = {
                 }
             }
             set_spawn_system_batch = end
+            every_country = {
+                limit = {is_ai = no}
+                establish_communications_no_message = event_target:Ten_Desires_fallen_empire
+            }
             clear_global_event_target = Ten_Desires_fallen_empire
             clear_global_event_target = Ten_Desires_fallen_empire_species
             clear_global_event_target = T_Miyako_Yoshika
