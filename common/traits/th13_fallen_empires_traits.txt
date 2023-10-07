@@ -1,0 +1,81 @@
+#资源特质
+trait_Ten_Desires = {
+    cost = 0
+    initial = no
+    randomized = yes
+    icon = "gfx/interface/icons/traits/shenlingmiao_t.dds"
+    #custom_tooltip_with_modifiers = Ten_Desiresa
+    modifier = {
+        planet_jobs_produces_mult = 0.02
+    }
+    allowed_origins = {
+
+    }
+}
+trait_Ten_Desire_fallen_empire1 = {
+    cost = 1
+    initial = no
+     randomized = no
+    modifier = {
+        planet_jobs_energy_produces_mult = 0.1
+    }
+}trait_Ten_Desire_fallen_empire2 = {
+    cost = 1
+    initial = no
+    randomized = no
+    modifier = {
+
+    }
+    triggered_pop_modifier = {
+        planet_jobs_minerals_produces_mult = 0.1
+    }
+}
+trait_Ten_Desire_fallen_empire3 = {
+    cost = 1
+    initial = no
+    randomized = no
+    modifier = {
+        planet_jobs_food_produces_mult = 0.1
+    }
+}
+trait_Ten_Desire_fallen_empire4 = {
+    cost = 1
+    initial = no
+    randomized = no
+    modifier = {
+        planet_jobs_alloys_produces_mult = 0.1
+    }
+}
+trait_Ten_Desire_fallen_empire5 = {
+    cost = 1
+    initial = no
+    randomized = no
+    modifier = {
+        planet_jobs_consumer_goods_produces_mult = 0.1
+    }
+}
+trait_Ten_Desire_fallen_empire6 = {
+    cost = 1
+    initial = no
+    randomized = no
+    modifier = {
+        planet_jobs_consumer_goods_produces_mult = 0.1
+    }
+}
+trait_Ten_Desire_fallen_empire7 = {
+    cost = 1
+    initial = no
+    randomized = no
+    modifier = {
+        planet_jobs_consumer_goods_produces_mult = 0.1
+    }
+}
+#负面特质
+trait_Ten_Desire_fallen_empire7 = {
+    cost = 1
+    initial = no
+    randomized = no
+    modifier = {
+        pop_citizen_happiness = -0.1
+    }
+}

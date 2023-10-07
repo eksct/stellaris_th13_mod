@@ -57,13 +57,4 @@ leader_trait_Ten_Desires = {
         mult = trigger:has_skill
     }
 }
-trait_Ten_Desires = {
-    cost = 0
-    initial = no
-    randomized = no
-    icon = "gfx/interface/icons/traits/shenlingmiao_t.dds"
-    #custom_tooltip_with_modifiers = Ten_Desiresa
-    modifier = {
-        planet_jobs_produces_mult = 0.02
-    }
-}
+
