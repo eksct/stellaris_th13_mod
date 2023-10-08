@@ -1,0 +1,22 @@
+origin_Ten_fallen_empires = {
+    is_origin = yes
+    icon = "gfx/interface/icons/origins/origins_gateway.dds"
+    playable = {
+        always = no # Non-player origin
+    }
+    flags = { origin_Ten_fallen_empires_unlocked }
+    advanced_start = yes
+    #description = "origin_Ten_fallen_empires_effect"
+    modifier = {
+        country_naval_cap_add = 500
+        command_limit_add = -160
+        command_limit_add = 2000
+        megastructure_build_speed_mult = 2
+        add_base_country_intel = 25
+    }
+    #traits = { trait = trait_Ten_Desires }
+
+    random_weight = {
+        base = 0
+    }
+}

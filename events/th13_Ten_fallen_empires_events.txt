@@ -1,0 +1,5 @@
+namespace = th13_Ten_fe
+event = {
+    id = th13_Ten_fe.0
+    hide_window = yes
+}

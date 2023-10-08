@@ -1,16 +1,16 @@
 gov_Ten_Desires_fallen_empire = {
-    ruler_title = RT_ARCHPROPHET
-    ruler_title_female = RT_ARCHPROPHETESS
-    heir_title = HT_PRIEST
-    heir_title_female = HT_PRIESTESS
+    ruler_title = TD_ruler
+    ruler_title_female = TD_ruler
+    heir_title = TD_ruler
+    heir_title_female = TD_ruler
 
     use_regnal_names = yes
     dynastic_last_names = yes
 
     possible = {
-        has_civic = civic_Ten_Desires
-        has_country_flag = Ten_Desires_fallen_empire
+        has_origin = origin_Ten_fallen_empires
     }
+
     weight = {
         base = 2000
     }
