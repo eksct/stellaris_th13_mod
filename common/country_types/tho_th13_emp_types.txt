@@ -4,18 +4,19 @@ Ten_Desires_fallen_empire = {
     sub_title_desc = "COUNTRY_FALLEN_EMPIRE_DESC"
 
     hub_system = Ten_Desires_System
-    awakened_fallen_empire = yes
-    uses_special_buildables = yes
-    observable = yes
     share_survey_data = no
     relations = yes
-    fallen_empire = yes
     needs_survey = no
     diplomatic_wars = yes
     ship_disengagement = yes
     army_disengagement = yes
     uses_special_buildables = yes
     observable = yes
+    fallen_empire = yes
+    awakened_fallen_empire = yes
+    pop_growth = yes
+
+
     faction = {
         needs_border_access = no
     }
@@ -23,16 +24,14 @@ Ten_Desires_fallen_empire = {
         enabled = yes
         declare_war = yes
         min_navy_for_wars = 0.5
-        ascension_perks = yes
         min_assault_armies_for_wars = @armies_for_declaring_war
-        colonizer = no
-        internal_policies = no
+        colonizer = yes
+        internal_policies = yes
         modification = no
-        construction = yes
-        limited_construction = yes
-        traditions = yes
         starbase_upgrade = yes
-        can_use_market = yes
+        limited_construction = yes
+        ascension_perks = yes
+        construction = yes
         tech = yes
 
         modules = {
@@ -40,7 +39,6 @@ Ten_Desires_fallen_empire = {
             military_minister_module
             foreign_minister_module
             interior_minister_module
-            standard_species_rights_module
         }
     }
     modules = {

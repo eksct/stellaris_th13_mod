@@ -1,0 +1,29 @@
+created_Futo = {
+    create_leader = {
+        event_leader = yes
+        class = admiral
+        species = owner_main_species
+        name = "物部布都"
+        gender = female
+        set_age = 20
+        hide_age = yes
+        background_ethic = ethic_militarist
+        custom_description = Mononobe_no_Futo_backstory
+        traits = {
+            trait = leader_trait_Mononobe_no_Futo
+            trait = leader_trait_Oomiwashinwaden
+            trait = leader_trait_shui
+            trait = leader_trait_Ten_Desires
+        }
+
+        #save_event_target_as = T_NyanNyan
+        effect = {
+            set_leader_flag = T_Mononobe_no_Futo
+            set_variable = { which = "futo_level" value = 0 }
+        }
+    }
+    last_created_leader = {
+        set_leader_flag = T_Mononobe_no_Futo
+        change_leader_portrait = Futo
+    }
+}

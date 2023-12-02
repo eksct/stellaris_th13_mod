@@ -1,0 +1,42 @@
+automate_capital_planet = {
+    category = "planet_automation_designation_construction"
+    available = {
+        has_designation = col_Ten_Desires_fallen_empire_capital
+    }
+    prio_districts = {
+        district_Ten_Desires
+        district_Ten_Desires_ex
+        district_Ten_Desires_page2
+        district_Ten_Desires_alloys
+    }
+    buildings = {
+        1 = {
+            building = "building_foundry_1"
+        }
+        1 = {
+            building = "building_Reiuzi_Utuho"
+        }
+        1 = {
+            building = building_military_Animism
+        }
+        2 = {
+            building = building_research_flower
+        }
+        2 = {
+            building = building_research_geyser
+        }
+        1 = {
+            building = building_resources_production
+        }
+        1 = {
+            building = building_resources_foundry
+        }
+        1 = {
+            building = building_resources_foundation
+        }
+        1 = {
+            building = building_Unity_Chireiden
+        }
+    }
+
+}

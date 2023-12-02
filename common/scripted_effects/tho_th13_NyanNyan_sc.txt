@@ -1,3 +1,40 @@
+NyanNyan_created={
+    create_leader = {
+        event_leader = yes
+        class = admiral
+        species = owner_main_species
+        #name = "Seiga_NyanNyan"
+        name = "霍青娥"
+        gender = female
+        set_age = 20
+        hide_age = yes
+        background_ethic = ethic_spiritualist
+        #event_leader = yes
+        custom_description = NyanNya_backstory
+        #portrait = NyanNyan
+        #randomize_traits = yes
+        #leader_portrait = NyanNyan
+        traits = {
+            trait = leader_trait_NyanNyan_immortal
+            trait = leader_trait_NyanNyan_immortalB
+            trait = leader_trait_NyanNyan_council_atk
+            trait = leader_trait_NyanNyan_council_builds
+            trait = leader_trait_NyanNyan
+            trait = leader_trait_Ten_Desires
+        }
+
+        #save_event_target_as = T_NyanNyan
+        effect = {
+            set_leader_flag = T_Seiga_NyanNyan
+            save_global_event_target_as = NyanNya_leader
+        }
+    }
+    last_created_leader = {
+        set_leader_flag = T_Seiga_NyanNyan
+        change_leader_portrait = NyanNyan
+    }
+}
+
 #仙术 虫洞监牢
 NyanNyan_time_ghost = {
     hidden_effect = {
@@ -168,3 +205,34 @@ copy_research_tech= {
         }
     }
 }
+Nyan_Battle_restoration={
+    remove_fleet_flag = T_in_battle
+    remove_fleet_flag = 4_ri2
+    remove_fleet_flag = 4_tongling
+    remove_fleet_flag = 4_dao
+    remove_fleet_flag = TAOatk
+    solar_system = {
+        every_fleet_in_system = {
+            limit = { OR = {has_fleet_flag = TAO has_fleet_flag = Yoshika_fleet has_fleet_flag = xiefu } }
+            kill_leader = { show_notification = no }
+            delete_fleet = this
+        }
+    }
+}
+Nyan_fate={
+    hidden_effect = {
+        random_list = {
+            25 = { resource_reversal = yes }
+            25 = { army_reversal_swarm = yes }
+            25 = { fleet_reversal = yes }
+            25 = { copy_research_tech = yes }
+        }
+        prev = {
+            set_timed_global_flag = {
+                years = 3
+                flag =NyanNyan_fate
+            }
+        }
+    }
+}
+

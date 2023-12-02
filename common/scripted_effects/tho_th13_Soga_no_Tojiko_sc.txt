@@ -1,0 +1,30 @@
+Soga_Tojiko_created = {
+    create_leader = {
+        event_leader = yes
+        class = scientist
+        species = owner_main_species
+        name = "苏我屠自古"
+        gender = female
+        set_age = 20
+        hide_age = yes
+        # 修改
+        background_ethic = ethic_militarist
+        custom_description = Soga_no_Tojiko_backstory
+        traits = {
+            trait = leader_trait_Soga_no_Tojiko
+            trait = leader_trait_Toziko
+            trait = leader_trait_Mausoleum
+            trait = leader_trait_Ten_Desires
+        }
+
+        #save_event_target_as = T_NyanNyan
+        effect = {
+            set_leader_flag = T_Soga_no_Tojiko
+            save_global_event_target_as = Soga_no_Tojiko
+        }
+    }
+    last_created_leader = {
+        set_leader_flag = T_Soga_no_Tojiko
+        change_leader_portrait = Tojiko
+    }
+}

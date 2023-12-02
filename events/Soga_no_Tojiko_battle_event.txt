@@ -1,0 +1,24 @@
+namespace = Tojiko_battle
+#怨灵「入鹿之雷」
+country_event = {
+    hide_window = yes
+    id = Tojiko_battle.1
+    is_triggered_only = yes
+    trigger = {
+        fromfrom = {
+            exists = leader
+            leader = {
+                has_trait = leader_trait_Soga_no_Tojiko
+            }
+            owner = {has_policy_flag = on_fuka}
+        }
+    }
+    immediate = {
+        fromfrom = {
+            every_combatant_fleet = {
+                kill_leader = { show_notification = yes }
+                add_modifier = { modifier = tojiko_fuka_debuff1 days = 365 }
+            }
+        }
+    }
+}

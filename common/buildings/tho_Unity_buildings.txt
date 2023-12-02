@@ -12,6 +12,7 @@ building_Unity_Chireiden = {
 		    OR = {
                 has_country_flag = buildings_tho_ex
                 has_country_flag = buildings_tho_2
+                is_country_type = Ten_Desires_fallen_empire
             }
             #has_civic = civic_gensokyo
 		}

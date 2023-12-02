@@ -1,0 +1,11 @@
+namespace = Mi_Yo
+#宫古芳香
+country_event = {
+    id = Mi_Yo.0
+    hide_window = yes
+    is_triggered_only = yes
+    #fire_only_once = yes
+    immediate = {
+        Miyako_Yoshika_created = yes
+    }
+}

@@ -116,7 +116,7 @@ country_event = {
         name = "option_th13.4_1"
         add_resource = { unity = 1000 }
         add_modifier = { modifier = pop_citizenry_happiness mult = 2 days = 256 }
-        country_event = { id = tho_leader.14  }
+        country_event = { id = tho_init.1  }
         country_event = { id = th13_tho.5 }
     }
 }

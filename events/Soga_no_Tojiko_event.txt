@@ -1,0 +1,38 @@
+namespace = Tojiko
+#苏我屠自古
+country_event = {
+    id = Tojiko.0
+    hide_window = yes
+    is_triggered_only = yes
+    #fire_only_once = yes
+    immediate = {
+        Soga_Tojiko_created = yes
+
+    }
+}
+country_event = {
+    id = Tojiko.1
+    title =tho_leader.888.name
+    desc =tho_leader.888.desc
+    picture = GFX_evt_throne_room
+    event_window_type = leader_story
+    picture_event_data = {
+        portrait = event_target:Soga_no_Tojiko
+        room = from
+    }
+    trigger = {
+        owner = { has_civic = civic_Ten_Desires }
+        has_trait_in_council = {
+            TRAIT = leader_trait_Soga_no_Tojiko
+        }
+    }
+    mean_time_to_happen = {
+        years = 5
+    }
+    immediate = {
+        add_random_research_option = {
+            add_progress = 0.5
+            ignore_prereqs = no
+        }
+    }
+}

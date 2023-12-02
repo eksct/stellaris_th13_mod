@@ -1,4 +1,5 @@
 namespace = tho_init
+#game init
 event = {
     id = tho_init.0
     hide_window = yes
@@ -6,23 +7,79 @@ event = {
         set_global_flag = THO_INIT_SEQUEL
         every_country = {
             limit = { has_civic = civic_Ten_Desires }
-            country_event = { id = tho_leader.1 }
+            country_event = { id = tho_s.5 }
         }
         if = {
             limit = {NOT = { any_playable_country = {has_civic = civic_Ten_Desires} }}
-
+            random_system = {
+                save_global_event_target_as = targer_system_order
+            }
             Ten_Desires_fallen_empire_init = yes
 
             every_country = {
-                limit = {is_ai = no}
-                establish_communications_no_message = event_target:Ten_Desires_fallen_empire
+                limit = {is_ai = no NOT = { has_ethic = ethic_gestalt_consciousness }}
+                country_event = {
+                    #通讯事件
+                    id = th13_Ten_fe.0
+                    days = 30
+                }
+                #establish_communications_no_message = event_target:Ten_Desires_fallen_empire
+            }
+            event_target:Ten_Desires_fallen_empire_capital = {
+
+                planet_event = {
+                    id = fallen_Ai.0
+                }
+            }
+            event_target:Ten_Desires_fallen_empire = {
+                create_ship_design = {
+                    design = th13_Ten_fallen_empires_big_ship
+                }
+                add_ship_design = last_created_design
+                country_event = {
+                    id = fallen_Ai.10
+                }
             }
             #clear_global_event_target = Ten_Desires_fallen_empire
             #clear_global_event_target = Ten_Desires_fallen_empire_species
+            #clear_global_event_target = Ten_Desires_fallen_empire_capital
             #clear_global_event_target = T_Miyako_Yoshika
         }
     }
 }
+#leader init
+country_event = {
+    id = tho_init.1
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_civic = civic_Ten_Desires
+    }
+    immediate = {
+        country_event = {
+            id = Nyan.0
+        }
+        country_event = {
+            id = Toyo_no_miko.0
+        }
+        country_event = {
+
+            id = Mi_Yo.0
+        }
+        country_event = {
+
+            id = Futo.0
+        }
+        country_event = {
+            id = Tojiko.0
+        }
+        country_event = {
+            id = tho_init.100
+        }
+    }
+
+}
+#system init
 country_event = {
     id = tho_init.100
     hide_window = yes
@@ -31,6 +88,12 @@ country_event = {
         has_civic = civic_Ten_Desires
     }
     immediate = {
+        random_owned_planet = {
+            limit = {is_capital = yes}
+            solar_system = {
+                save_global_event_target_as = Ten_Desires_satr_init
+            }
+        }
         event_target:Ten_Desires_satr_init = {
             set_spawn_system_batch = begin
             spawn_system = {

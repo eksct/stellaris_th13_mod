@@ -1,0 +1,228 @@
+namespace = Nyan_Battle
+#娘娘进入战斗
+country_event = {
+    id = Nyan_Battle.0
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        FromFrom = {
+            exists = leader
+            leader = {
+                has_trait = leader_trait_NyanNyan
+            }
+            NOT = { has_fleet_flag = T_in_battle }
+            owner = {has_policy_flag = on_fuka}
+        }
+    }
+    immediate = {
+        FromFrom = {
+            set_fleet_flag = T_in_battle
+            fleet_event = { id = Nyan_Battle.1 }
+        }
+    }
+}
+fleet_event = {
+    id = Nyan_Battle.1
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        has_fleet_flag = T_in_battle
+    }
+    immediate = {
+        if = {
+            limit = {
+                is_in_combat = yes
+                exists = leader
+                leader = {
+                    has_trait = leader_trait_NyanNyan
+                }
+            }
+            owner = {save_event_target_as = target_country}
+            random_list = {
+                25 = {
+                    #入魔「过剩走火入魔」
+                    modifier = {
+                        factor = 0
+                        has_fleet_flag = 4_ri2
+                    }
+                    nskill_Lunatic_rumo = yes
+                }
+                #邪符「孤魂野鬼」
+                25 = {
+                    modifier = {
+                        factor = 0
+                        has_fleet_flag = 4_dao
+                    }
+                    nskill_Lunatic_guhunyegui = yes
+                }
+                #通灵「通灵芳香」
+                25 = {
+                    modifier = {
+                        factor = 0
+                        has_fleet_flag = 4_tongling
+                    }
+                    nskill_Lunatic_tongling = yes
+                }
+                ##道符「ＴＡＯ胎動　～道～」
+                25 = {
+                    modifier = {
+                        factor = 0
+                        has_fleet_flag = TAOatk
+                    }
+                    nskill_Lunatic_dao = yes
+                }
+            }
+            fleet_event = {
+                id = Nyan_Battle.1
+                days = 5
+            }
+        }
+        else = {
+            Nyan_Battle_restoration = yes
+
+        }
+    }
+}
+#娘娘舰船被击毁则删除符卡召唤
+country_event = {
+    id =Nyan_Battle.2
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        fromfrom = {
+            OR = {
+                has_fleet_flag = T_in_battle
+            }
+        }
+    }
+    immediate = {
+        fromfrom.solar_system = {
+            every_fleet_in_system = {
+                limit = {
+                    OR = {
+                        has_fleet_flag = Yoshika_fleet
+                        has_fleet_flag = TAO
+                        has_fleet_flag = xiefu
+                    }
+                }
+                delete_fleet = this
+            }
+        }
+    }
+}
+#通灵消失重新释放
+country_event = {
+    id = Nyan_Battle.3
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        fromfrom = {
+            has_fleet_flag = Yoshika_fleet
+        }
+    }
+    immediate = {
+        fromfrom.solar_system = {
+            random_fleet_in_system = {
+                limit = {
+                    has_fleet_flag= T_in_battle
+                }
+                remove_fleet_flag = 4_tongling
+            }
+        }
+    }
+}
+
+
+#娘娘gui
+event = {
+    id = Nyan_Battle.761
+    diplomatic = yes
+    is_triggered_only = yes
+    title = edict_NyanNyan_fate
+    custom_gui = ten_windows
+    custom_gui_option = option_ten
+    immediate = {
+        save_global_event_target_as = target_country_NyanNyan
+        remove_global_flag = NyanNyan_chuansong
+    }
+    option = {
+        name = "NyanNyan"
+        allow = {
+            custom_tooltip = {
+                text = NyanNyan_tooltip
+            }
+        }
+
+        #NyanNyan_chuansong = yes
+        hidden_effect = {
+            set_global_flag = NyanNyan_chuansong
+            country_event = {
+                id = tho_battle.8080
+            }
+        }
+    }
+    option = {
+        name = time_ghost
+        allow = {
+            custom_tooltip = {
+                fail_text = time_fries
+                hidden_trigger = { this = { NOT = { has_global_flag = time_ghost } } }
+            }
+        }
+        hidden_effect = {
+
+            country_event = {
+                id = tho_battle.8080
+            }
+        }
+    }
+    option = {
+        name = NyanNyan_fate_destruction
+        allow = {
+            custom_tooltip = {
+                fail_text = NyanNyan_fate_destruction_tooltip
+                hidden_trigger = { this = { NOT = { has_global_flag = NyanNyan_fate } } }
+            }
+        }
+        hidden_effect = {
+            set_variable = { which = Tho_country_select_page value = 1 }
+            set_variable = { which = tho_country_page_num value = 1 }
+            tho_country_start_select = yes
+            country_event = {
+                id = tho_battle.8081
+            }
+        }
+    }
+}
+#虫洞监牢
+fleet_event = {
+    id = Nyan_Battle.762
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_fleet_flag = time_ghost
+    }
+    immediate = {
+        #clear_orders = yes
+        fleet_event = {
+            id = Nyan_Battle.763
+            days = 5
+        }
+    }
+}
+#虫洞监牢固定
+fleet_event = {
+    id = Nyan_Battle.763
+    hide_window = yes
+    is_triggered_only = yes
+    immediate ={
+        set_location = event_target:ghost_solar_system.star
+        if = {
+            limit = {num_ships > 1}
+            every_owned_ship = {
+                reduce_hp = 3000
+            }
+        }
+    }
+}

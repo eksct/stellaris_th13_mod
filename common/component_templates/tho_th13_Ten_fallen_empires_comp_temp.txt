@@ -1,0 +1,165 @@
+weapon_component_template = {
+    key = "Ten_fallen_ARC_EMITTER_2"
+    size = extra_large
+    type = instant
+
+    icon = "GFX_ship_part_arc_emitter_2"
+    icon_frame = 1
+
+    firing_arc = 0
+    min_range = 0
+    use_ship_kill_target = no
+    #无科技
+    #prerequisites = { "tech_Ten_fallen_ARC_EMITTER_2" }
+    component_set = "Ten_fallen_ARC_EMITTER_2"
+    projectile_gfx = "focused_arc_emitter"
+    tags = { weapon_type_energy weapon_role_artillery x_slot }
+    ai_tags = { weapon_role_artillery artillery }
+    ai_tag_weight = 0
+    resources = {
+        category = ship_components
+        cost = {
+            alloys = @xl_t6_cost
+            rare_crystals = @xl_t6_rare
+        }
+        upkeep = {
+            energy = @xl_t6_upkeep_energy
+            alloys = @xl_t6_upkeep_alloys
+        }
+    }
+    power = -3600
+    target_weights = {
+        titan = 3
+        battleship = 2
+        th13_Ten_fallen_empires_big_ship = 10
+    }
+    damage = {
+        min = 100
+        max = 3700
+    }
+    windup = {
+        min = 0
+        max = 0
+    }
+    total_fire_time = 50
+    range = 512
+    accuracy = 1
+    tracking = 1
+    hull_damage = 5
+    shield_penetration = 3
+    armor_penetration = 3
+    ai_weight = {
+        weight = 1
+        modifier = {
+            factor = 0.0
+            no_resource_for_component = { RESOURCE = rare_crystals }
+        }
+    }
+}
+weapon_component_template = { # World Cracker
+    key = "Ten_fallen_PLANET_KILLER_CRACKER"
+    size = planet_killer
+    type = planet_killer
+    use_ship_kill_target = no
+
+    #prerequisites = { "fallen_tech_pk_cracker" }
+    icon = GFX_ship_part_world_cracker
+    icon_frame = 1
+    power = -6049
+    windup = { min = 10 max = 10 }
+    total_fire_time = 5
+
+    size_restriction = { colossus }
+    component_set = "PLANET_KILLER_CRACKER"
+
+    planet_destruction_gfx = "global_pacifier_gfx"
+
+    ai_weight = {
+        factor = 2
+    }
+}
+weapon_component_template = {
+    key = "Ten_fallen_SCAVENGER_MAIN_WEAPON"
+    size = titanic
+    type = instant
+    prio_projectile = yes
+
+    hidden = yes
+    icon = "GFX_ship_part_aura_minefield"
+    icon_frame = 1
+    power = -16384
+    firing_arc = 0
+    min_range = 50.0
+    damage = { min = 5000 max = 20000  }
+    windup = {
+        min = 0
+        max = 0
+    }
+    total_fire_time = 1000
+    range = 1024
+    accuracy = 3
+    tracking = 3
+    hull_damage = 1
+    shield_damage = 1
+    armor_damage = 1
+
+    tags = { weapon_type_kinetic }
+    projectile_gfx = "scavenger_bot_main_weapon"
+    hostile_aura = {
+        name = "NAME_hostile_aura"
+        radius = 3000
+        apply_on = fleets
+        stack_info = {
+            id = Ten_fallen_SCAVENGER_MAIN_WEAPON_1
+            priority = 30
+        }
+        modifier = {
+            ship_shield_penetration_mult = -0.25
+            ship_armor_penetration_mult = -0.25
+            ship_hull_damage_mult = -0.25
+        }
+        damage_per_day = {
+            hull_damage = 13124
+            accuracy = 0.5
+            size_damage_factor = 2
+        }
+    }
+    friendly_aura = {
+        name = "NAME_friendly_aura"
+        radius = 3000
+        apply_on = fleets
+        stack_info = {
+            id = Ten_fallen_SCAVENGER_MAIN_WEAPON_2
+            priority = 30
+        }
+        modifier = {
+            ship_speed_mult = 0.25
+        }
+    }
+}
+utility_component_template = {
+    key = "Ten_fallen_empires_BATTLESHIP_ZERO_POINT_REACTOR"
+    size = small
+    icon = "GFX_ship_part_reactor_5"
+    icon_frame = 1
+    power = 9999999
+    resources = {
+        category = ship_components
+        cost = {
+            alloys = 3699
+        }
+        upkeep = {
+            energy = 2.29
+            alloys = 0.229
+        }
+    }
+
+    #prerequisites = { "tech_zero_point_power" }
+    component_set = "power_core"
+    size_restriction = {  th13_Ten_fallen_empires_big_ship }
+
+
+    ai_weight = {
+        weight = 5
+    }
+}

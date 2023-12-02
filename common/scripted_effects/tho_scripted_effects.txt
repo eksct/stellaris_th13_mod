@@ -1,0 +1,108 @@
+tho_battle_disable_repair={
+    optimize_memory
+    if  = {
+        limit = {
+            has_modifier = fleet_time
+        }
+        set_disabled = no
+        repair_ship = yes
+        set_disable_at_health = 0.1
+    }
+    else = {
+        set_disabled = no
+        set_disable_at_health = -1
+    }
+}
+tho_resource_consume_pwoer={
+    optimize_memory
+    export_resource_stockpile_to_variable = {
+        resource = $resource$
+        variable = $var$
+    }
+    if = {
+        limit = {
+            AND = {
+                check_variable = { which = $var$ value < 2000000 }
+                check_variable = { which = $var$ value > 100000 }
+            }
+        }
+        add_resource = {
+            $resource$ = -100000
+        }
+        change_variable = { which = $var$ value = -100000 }
+        multiply_variable = {
+            which = $var$
+            value = 0.01
+        }
+    }
+    else_if = {
+        limit = {check_variable = { which = $var$ value > 2000000 }}
+        add_resource = {
+            $resource$ = -1000000
+        }
+        multiply_variable = {
+            which = $var$
+            value = 0.001
+        }
+    }
+    else = {
+        multiply_variable = {
+            which = $var$
+            value = 0.1
+        }
+    }
+}
+tho_selector_country_effect={
+    [[var]
+        prev = {
+            change_variable = { which = $var$ value = 1 }
+        }
+    ]
+
+    [[event]
+        country_event = {
+            id = $event$
+        }
+    ]
+    [[!event]
+        #默认无效果
+        $effect|Placeholder$ = yes
+    ]
+}
+tho_pgae = {
+    tho_clear_country_event_targets = yes
+    subtract_variable = { which = $subtract_flag$ value = $value|1$ }
+    change_variable = { which = $change_flag$ value = $value|1$ }
+    tho_save_country_event_trigger =yes
+}
+tho_remove_skill_global_flge={
+    remove_global_flag = RED_BULE_Toy
+}
+tho_fleet_builder = {
+    while = {
+        count = $fleet_num$
+        create_fleet = {
+            effect ={
+                [[owner]
+                    set_owner = $owner$
+                    set_location = $owner$.capital_star
+                ]
+                while = {
+                    count = $ship_num|1$
+                    create_ship = {
+                        name = random
+                        [[ship_class]
+                            random_existing_design = $ship_class$
+                        ]
+                        [[ship_design]
+                            design = $ship_design$
+                        ]
+                    }
+                }
+                [[leader]
+                    assign_leader =$leader$
+                ]
+            }
+        }
+    }
+}

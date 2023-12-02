@@ -1,0 +1,111 @@
+namespace = Futo_battle
+#炎符「太乙真火」
+planet_event = {
+    id = Futo_battle.1
+    title = fe_xeno_keeper_ms_FR
+    desc = failed_betrayal_status_quo
+    is_triggered_only = yes
+    trigger = {
+        OR = {
+            planet_devastation >= 100
+        }
+        has_orbital_bombardment_stance = futo_fuka_fire
+        habitable_planet = yes
+    }
+    immediate ={
+        change_pc = pc_molten
+        remove_all_buildings = yes
+    }
+}
+planet_event = {
+    id = Futo_battle.2
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_orbital_bombardment_stance = futo_fuka_fire
+        habitable_planet = yes
+    }
+    immediate ={
+        change_pc = pc_molten
+    }
+}
+##蛊毒皿的积重
+country_event = {
+    hide_window = yes
+    id = Futo_battle.3
+    is_triggered_only = yes
+    trigger = {
+        fromfrom = {
+            exists = leader
+            leader = {has_trait = leader_trait_Mononobe_no_Futo}
+            #owner = {has_policy_flag = on_fuka}
+        }
+    }
+    immediate = {
+        futo_fuka_duwu = yes
+    }
+}
+#「大火改新」
+country_event = {
+    id =Futo_battle.4
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        fromfrom ={
+            exists = leader
+            leader = {has_trait = leader_trait_Mononobe_no_Futo}
+            NOT = { has_fleet_flag = Futo_Battle_flag }
+        }
+    }
+    immediate = {
+        fromfrom = {
+            set_fleet_flag = Futo_Battle_flag
+            fleet_event = { id = Futo_battle.5 }
+        }
+    }
+}
+fleet_event = {
+    id = Futo_battle.5
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_fleet_flag = Futo_Battle_flag
+    }
+    immediate = {
+        if = {
+            limit = {
+                is_in_combat = yes
+            }
+            frie_futo = yes
+            if = {
+                limit = {
+                    check_variable = { which = futo_level_frie value >= 20 }
+                }
+                add_modifier = { modifier = futo_frie_buff days = 15 mult = 20 }
+            }
+            else = {
+                add_modifier = { modifier = futo_frie_buff days = 15 mult = futo_level_frie }
+            }
+            fleet_event = { id = Futo_battle.5 days = 15 }
+        }
+        else = {
+            remove_fleet_flag = Futo_Battle_flag
+            set_variable = { which = futo_frie_buff value = 1 }
+        }
+    }
+}
+#运气「破局的开门」
+fleet_event = {
+    id = Futo_battle.6
+    hide_window = yes
+    trigger = {
+        exists = leader
+        leader = {
+            has_trait = leader_trait_Mononobe_no_Futo
+        }
+        owner = {has_policy_flag = on_fuka}
+    }
+    immediate = {
+        futo_fuka_po = yes
+    }
+}

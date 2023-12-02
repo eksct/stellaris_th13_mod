@@ -17,6 +17,7 @@ building_resources_foundation = {
             OR = {
                 has_country_flag = buildings_tho_ex
                 has_country_flag = buildings_tho_1
+                is_country_type = Ten_Desires_fallen_empire
             }
             #has_civic = civic_gensokyo
         }
@@ -121,6 +122,7 @@ building_resources_foundry = {
 		    OR = {
                 has_country_flag = buildings_tho_ex
                 has_country_flag = buildings_tho_2
+                is_country_type = Ten_Desires_fallen_empire
             }
             #has_civic = civic_gensokyo
 		}
@@ -219,6 +221,7 @@ building_resources_rare = {
 		    OR = {
                 has_country_flag = buildings_tho_ex
                 has_country_flag = buildings_tho_3
+                is_country_type = Ten_Desires_fallen_empire
             }
             #has_civic = civic_gensokyo
 		}
@@ -309,7 +312,10 @@ building_resources_rare2 = {
         NOT = { has_modifier = slave_colony }
         NOT = { is_planet_class = pc_habitat }
         owner = {
-            has_country_flag = buildings_tho_ex
+            OR = {
+                is_country_type = Ten_Desires_fallen_empire
+                has_country_flag = buildings_tho_ex
+            }
             #has_civic = civic_gensokyo
 		}
     }
@@ -445,6 +451,7 @@ building_resources_production = {
 		    OR = {
                 has_country_flag = buildings_tho_ex
                 has_country_flag = buildings_tho_3
+                is_country_type = Ten_Desires_fallen_empire
             }
             #has_civic = civic_gensokyo
 		}

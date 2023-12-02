@@ -1,0 +1,109 @@
+namespace = Toyo_no_miko
+#丰聪耳神子
+country_event = {
+    id = Toyo_no_miko.0
+    #hide_window = yes
+    title = tho_leader.14_name
+    desc = tho_leader.14_desc
+    is_triggered_only = yes
+    event_window_type = leader_recruit
+    picture = GFX_evt_legendary_leader
+    #fire_only_once = yes
+    trigger = {
+        #NOT = { has_global_flag = Ten_leader_init }
+    }
+    immediate = {
+        create_country = {
+            #auto_delete = yes
+            name = root
+            type = global_event
+            effect = {
+                establish_communications_no_message = root.owner
+                save_event_target_as = targer_country_leader
+            }
+        }
+        event_target:targer_country_leader = {
+            Toyosatomimi_no_Miko_created = yes
+        }
+    }
+    picture_event_data = {
+        portrait = event_target:toyosatomimi_leader
+        room = from
+    }
+    option = {
+        name = "tho_leader.14_opt1"
+        response_text = response.14.opt1
+        is_dialog_only = yes
+    }
+    option = {
+        name = "tho_leader.14_opt2"
+        response_text =response.14.opt2
+        is_dialog_only = yes
+    }
+    option = {
+        name = "tho_leader.14_opt4"
+        response_text =response.14.opt3
+        is_dialog_only = yes
+    }
+    option = {
+        name = "tho_leader.14_ok"
+        tag = hire_leader
+        add_modifier = { modifier = pop_citizenry_happiness mult = 2 days = 180 }
+        hidden_effect = {
+            legendary_event_leader_effect = {
+                LEADER = toyosatomimi_leader
+            }
+            assign_leader = last_created_leader
+        }
+
+        #response_text =
+        #is_dialog_only = yes
+    }
+    option = {
+        name = "tho_leader.14_okdef"
+        tag = dismiss_leader
+        add_modifier = { modifier = pop_citizenry_happiness mult = 2 days = 180 }
+        hidden_effect = {
+            legendary_event_leader_effect = {
+                LEADER = toyosatomimi_leader
+            }
+            assign_leader = last_created_leader
+        }
+        #response_text =
+        #is_dialog_only = yes
+    }
+    after = {
+        hidden_effect = {
+            event_target:targer_country_leader = {
+                destroy_country = yes
+            }
+
+        }
+    }
+}
+
+#「吾乃天道也」
+country_event = {
+    id = Toyo_no_miko.1
+    hide_window = yes
+    trigger = {
+        owner = {has_trait_in_council = { TRAIT = leader_trait_Shoutoku_forever}}
+    }
+    immediate = {
+        owner = {
+            set_country_flag = toyousatomimi
+        }
+    }
+}
+country_event = {
+    id = Toyo_no_miko.2
+    hide_window = yes
+    trigger = {
+        NOT = { owner = { has_trait_in_council = { TRAIT = leader_trait_Shoutoku_forever} } }
+    }
+    immediate = {
+        owner = {
+            remove_country_flag = toyousatomimi
+        }
+    }
+}

@@ -1,6 +1,7 @@
 fuka_select_init = {
     potential = {
         is_ai = no
+        has_civic = civic_Ten_Desires
     }
     option = {
         name = off_fuka
@@ -18,6 +19,7 @@ fuka_select_init = {
 NyanNyan_init = {
     potential = {
         is_ai = no
+        has_civic = civic_Ten_Desires
     }
     option = {
         name = energy_buff
@@ -26,7 +28,7 @@ NyanNyan_init = {
         }
         on_enabled = {
             hidden_effect = {
-                country_event = { id = tho_s.19 }
+                country_event = { id = Nyan.2 }
             }
         }
     }
@@ -37,7 +39,7 @@ NyanNyan_init = {
         }
         on_enabled = {
             hidden_effect = {
-                country_event = { id = tho_s.1 }
+                country_event = { id = Nyan.1 }
             }
         }
     }

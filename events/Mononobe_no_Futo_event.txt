@@ -1,0 +1,11 @@
+namespace = Futo
+#物部布都
+country_event = {
+    id = Futo.0
+    hide_window = yes
+    is_triggered_only = yes
+    #fire_only_once = yes
+    immediate = {
+        created_Futo = yes
+    }
+}

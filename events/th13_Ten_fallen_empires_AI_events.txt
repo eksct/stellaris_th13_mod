@@ -1,0 +1,89 @@
+namespace = fallen_Ai
+#首都行星(神灵庙)区划与建筑
+planet_event = {
+    id = fallen_Ai.0
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        #建筑与区划
+        Ten_Desire_fallen_empire_capital = yes
+
+        planet_event = {
+            id = fallen_Ai.0
+            days = 365
+        }
+    }
+}
+#其他行星发展
+country_event = {
+    id = fallen_Ai.1
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        Ten_Desire_fallen_empire_planet = yes
+        country_event = {
+            id = fallen_Ai.1
+            days = 365
+        }
+    }
+}
+#刷船
+country_event = {
+    id = fallen_Ai.10
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        if = {
+            limit = {
+                num_fleets <= 20
+            }
+            tho_fleet_builder ={
+                owner = event_target:Ten_Desires_fallen_empire
+                fleet_num = 2
+                ship_design = th13_Ten_fallen_empires_big_ship
+                ship_num = 2
+            }
+        }
+        country_event = {
+            id = fallen_Ai.10
+            days = 356
+        }
+    }
+}
+##舰船移动
+#country_event = {
+#    id = fallen_Ai.2
+#    hide_window = yes
+#    is_triggered_only = yes
+#    immediate = {
+#        if = {
+#            limit = { is_at_war = no }
+#            Ten_Desire_fallen_empire_auto_move_ship = yes
+#        }
+#        else = {
+#            Ten_Desire_fallen_empire_auto_move_ship_war = yes
+#        }
+#        country_event = {
+#            id = fallen_Ai.2
+#            days = 30
+#        }
+#    }
+#}
+##war move ship to ship
+#country_event = {
+#    id = fallen_Ai.3
+#    hide_window = yes
+#    is_triggered_only = yes
+#    trigger = {
+#        is_country_type = Ten_Desires_fallen_empire
+#        is_at_war = yes
+#    }
+#    immediate = {
+#        Ten_Desire_fallen_empire_auto_move_ship_to_ship = yes
+#        country_event = {
+#            id = fallen_Ai.3
+#            days = 60
+#        }
+#    }
+#}
+

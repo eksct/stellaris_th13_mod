@@ -1,15 +1,15 @@
 
 
- 东方资源统合部(全国唯一)
+ #东方资源统合部(全国唯一)
 building_Tho_Resource_integration = {
     base_buildtime = @costTime5
     base_cap_amount = 1
-    capital = yes
     can_demolish = no
     can_be_ruined = no
     can_be_disabled = no
     can_build = no
     category = government
+    exempt_from_ai_planet_specialization = yes
     icon = integration
     empire_limit = {
         base = 1
@@ -20,7 +20,7 @@ building_Tho_Resource_integration = {
         NOT = { has_modifier = slave_colony }
 
         owner = {
-            has_civic = civic_Ten_Desires
+            has_origin = origin_Ten_fallen_empires
         }
 	}
     planet_modifier = {
@@ -69,8 +69,12 @@ building_Reiuzi_Utuho = {
 	potential = {
 	    exists = owner
 	    owner = {
-        		    has_country_flag = buildings_tho_ex
+
         		    #has_civic = civic_gensokyo
+                    OR = {
+                        is_country_type = Ten_Desires_fallen_empire
+                        has_country_flag = buildings_tho_ex
+                    }
         		}
         NOT = { has_modifier = resort_colony }
         NOT = { has_modifier = slave_colony }

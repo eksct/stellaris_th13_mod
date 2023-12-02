@@ -29,7 +29,7 @@ Ten_planet_hve = {
     moon_size = { min = @habitable_moon_min_size max = @habitable_moon_max_size }
 
     colonizable = yes
-    #district_set = standard
+    district_set = Ten_district
     ideal = yes
     starting_planet = no
     uses_alternative_skies_for_moons = no

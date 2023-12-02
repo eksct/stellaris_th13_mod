@@ -13,6 +13,7 @@ building_research_flower = {
 		    OR = {
                 has_country_flag = buildings_tho_ex
                 has_country_flag = buildings_tho_2
+                is_country_type = Ten_Desires_fallen_empire
             }
             #has_civic = civic_gensokyo
 		}
@@ -115,6 +116,7 @@ building_research_geyser = {
 		    OR = {
                 has_country_flag = buildings_tho_ex
                 has_country_flag = buildings_tho_2
+                is_country_type = Ten_Desires_fallen_empire
             }
             #has_civic = civic_gensokyo
 		}

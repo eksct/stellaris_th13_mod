@@ -6,7 +6,7 @@ leader_trait_Ten_Desires = {
     #councilor_trait = yes
     initial = no
     randomized = no
-    leader_class = { admiral scientist general governor }
+    leader_class = { commander scientist official }
     custom_tooltip_with_modifiers = Ten_Desires
     #修改
     inline_script = {
@@ -22,7 +22,7 @@ leader_trait_Ten_Desires = {
         leaders_upkeep_mult = -2
     }
     triggered_modifier = {
-        potential = { leader_class = admiral }
+        potential = { leader_class = commander }
         ships_upkeep_mult = -0.05
         ship_speed_mult = 0.03
         ship_armor_regen_add_static = 2
@@ -32,14 +32,14 @@ leader_trait_Ten_Desires = {
     }
 
     triggered_modifier = {
-        potential = {leader_class = governor}
+        potential = {leader_class = official}
         planet_jobs_consumer_goods_upkeep_mult = -0.02
         planet_jobs_alloys_produces_mult = 0.02
         planet_jobs_sr_lingli_produces_mult = 0.02
         mult = trigger:has_skill
     }
     triggered_modifier = {
-        potential = {leader_class = general}
+        potential = {leader_class = commander}
         army_attack_health_mult = 0.02
         army_morale = 0.02
         ship_armor_regen_add_static = 2

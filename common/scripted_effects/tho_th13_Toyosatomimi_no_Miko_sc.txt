@@ -1,0 +1,29 @@
+Toyosatomimi_no_Miko_created={
+    create_leader = {
+        event_leader = yes
+        class = governor
+        species = root.species
+        name = "丰聪耳神子"
+        gender = female
+        set_age = 20
+        hide_age = yes
+        background_ethic = ethic_fanatic_xenophile
+        custom_description = Toyosatomimi_backstory
+        traits = {
+            trait = leader_trait_Toyosatomimi
+            trait = leader_trait_Miko
+            trait = leader_trait_Shoutoku
+            trait = leader_trait_Shoutoku_forever
+            trait = leader_trait_Ten_Desires
+        }
+        effect = {
+            set_leader_flag = T_Toyosatomimi_no_Miko
+            set_variable = { which = Miko_war_count value = 0 }
+            save_global_event_target_as = toyosatomimi_leader
+        }
+    }
+    last_created_leader = {
+        set_leader_flag = T_Toyosatomimi_no_Miko
+        change_leader_portrait = Miko
+    }
+}

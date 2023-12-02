@@ -1,47 +1,73 @@
-
+#AI特质
 leader_trait_Ten_Desires_n = {
     cost = 0
     initial = no
-    randomized = yes
+    randomized = no
     immortal_leaders = yes
-    icon = "gfx/interface/icons/traits/shenlingmiao_t.dds"
-    #custom_tooltip_with_modifiers = Ten_Desiresa
     allowed_origins = {
         origin_Ten_fallen_empires
     }
-    leader_class = { admiral scientist general governor }
+    opposites = { leader_trait_Ten_Desires }
+    leader_class = { commander scientist official }
     requires_traits = {
         trait_Ten_Desires
     }
-    triggered_modifier = {
-        potential = {leader_class = admiral}
+    modifier = {
+        planet_jobs_upkeep_mult = 0.5
     }
     triggered_modifier = {
-        potential = {leader_class = admiral}
+        potential = {leader_class = commander}
+        ship_speed_mult = 0.25
+        damage_vs_country_type_swarm_mult = 1
+        damage_vs_country_type_ai_empire_mult = 1
+        damage_vs_country_type_extradimensional_mult = 1
+        damage_vs_country_type_extradimensional_2_mult = 1
+        damage_vs_country_type_extradimensional_3_mult = 1
     }
     triggered_modifier = {
-        potential = {leader_class = admiral}
+        potential = {leader_class = scientist}
+        planet_jobs_engineering_research_produces_mult = 0.35
+        planet_jobs_physics_research_produces_mult = 0.35
+        planet_jobs_society_research_produces_mult = 0.35
+
     }
     triggered_modifier = {
-        potential = {leader_class = admiral}
+        potential = {leader_class = official}
+        planet_crime_no_happiness_mult = -0.25
+        planet_stability_add = 5
+        planet_building_build_speed_mult = 0.25
+        planet_jobs_upkeep_mult = 0.15
+    }
+    triggered_councilor_modifier = {
+        potential = {leader_class = commander}
+        country_war_exhaustion_mult = -0.25
+        starbase_shipyard_build_speed_mult = 0.20
+        starbase_shipyard_build_cost_mult = -0.20
+    }
+    triggered_councilor_modifier = {
+        potential = {leader_class = scientist}
+        planet_jobs_engineering_research_produces_mult = 0.15
+        planet_jobs_physics_research_produces_mult = 0.15
+        planet_jobs_society_research_produces_mult = 0.15
+    }
+    triggered_councilor_modifier = {
+        potential = {leader_class = official}
+        planet_jobs_produces_mult = 0.15
     }
 }
-#资源特质
+#正面特质
 trait_Ten_Desires = {
     cost = 0
     initial = no
     randomized = yes
-    icon = "gfx/interface/icons/traits/shenlingmiao_t.dds"
     #custom_tooltip_with_modifiers = Ten_Desiresa
     modifier = {
-        planet_jobs_produces_mult = 0.15
+        planet_jobs_produces_mult = 0.55
     }
 
     allowed_origins = {
         origin_Ten_fallen_empires
     }
-    forced_happiness = yes
-    potential_crossbreeding_chance = 1
 }
 trait_Ten_Desire_fallen_empire1 = {
     cost = 1
@@ -86,6 +112,7 @@ trait_Ten_Desire_fallen_empire4 = {
     randomized = yes
     modifier = {
         planet_jobs_alloys_produces_mult = 0.2
+        planet_jobs_upkeep_mult = 0.05
     }
     allowed_origins = {
         origin_Ten_fallen_empires
@@ -97,6 +124,7 @@ trait_Ten_Desire_fallen_empire5 = {
     randomized = yes
     modifier = {
         planet_jobs_consumer_goods_produces_mult = 0.2
+        planet_jobs_upkeep_mult = 0.05
     }
     allowed_origins = {
         origin_Ten_fallen_empires
@@ -129,9 +157,9 @@ trait_Ten_Desire_fallen_empire8 = {
     initial = no
     randomized = yes
     modifier = {
-        planet_jobs_engineering_research_produces_mult = 0.35
-        planet_jobs_society_research_produces_mult = 0.35
-        planet_jobs_physics_research_produces_mult = 0.35
+        planet_jobs_engineering_research_produces_mult = 0.15
+        planet_jobs_society_research_produces_mult = 0.15
+        planet_jobs_physics_research_produces_mult = 0.15
     }
     allowed_origins = {
         origin_Ten_fallen_empires
@@ -160,23 +188,11 @@ trait_Ten_Desire_fallen_empire10 = {
     }
 }
 trait_Ten_Desire_fallen_empire11 = {
-    cost = 2
+    cost = 3
     initial = no
     randomized = yes
     modifier = {
         species_empire_size_mult = -0.30
-    }
-    allowed_origins = {
-        origin_Ten_fallen_empires
-    }
-}
-trait_Ten_Desire_fallen_empire12 = {
-    cost = 1
-    initial = no
-    randomized = yes
-    modifier = {
-        leader_skill_levels = 1
-        species_leader_exp_gain = 0.2
     }
     allowed_origins = {
         origin_Ten_fallen_empires
@@ -189,7 +205,6 @@ trait_Ten_Desire_fallen_empire13 = {
     allowed_origins = {
         origin_Ten_fallen_empires
     }
-    custom_tooltip = fallen_empire13_effect
     triggered_planet_growth_habitability_modifier = {
         potential = {
             exists = owner
@@ -200,6 +215,8 @@ trait_Ten_Desire_fallen_empire13 = {
                 }
             }
         }
+        pop_growth_speed = 1
+        planet_jobs_alloys_produces_mult = 2
     }
 }
 #负面特质
@@ -257,6 +274,7 @@ trait_Ten_Desire_fallen_empire5N = {
     opposites = { trait_Ten_Desire_fallen_empire6N }
     modifier = {
         planet_jobs_upkeep_mult = 0.1
+        planet_crime_mult = 0.2
     }
 }
 trait_Ten_Desire_fallen_empire6N = {
@@ -266,8 +284,10 @@ trait_Ten_Desire_fallen_empire6N = {
     allowed_origins = {
         origin_Ten_fallen_empires
     }
+    opposites = { trait_Ten_Desire_fallen_empire5N }
     modifier = {
         planet_jobs_upkeep_mult = 0.3
+        planet_crime_mult = 0.3
     }
 }
 trait_Ten_Desire_fallen_empire7N = {
@@ -279,16 +299,6 @@ trait_Ten_Desire_fallen_empire7N = {
     }
     modifier = {
         species_empire_size_mult = 0.3
-    }
-}
-trait_Ten_Desire_fallen_empire8N = {
-    cost = -2
-    initial = no
-    randomized = yes
-    allowed_origins = {
-        origin_Ten_fallen_empires
-    }
-    modifier = {
-        planet_jobs_upkeep_mult = 0.2
+        pop_growth_speed = -0.3
     }
 }

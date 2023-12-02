@@ -65,14 +65,11 @@ Ten_Desires_System_init = {
             set_name = Ten_planet_hve
             remove_building = building_colony_shelter
             add_building = building_Tho_Resource_integration
-            #add_district = district_Ten_Desires
-            #add_district = district_Ten_Desires_alloys
-            #add_district = district_Ten_Desires_page2
-            clear_global_event_target = Ten_Desires_satr_init
             if = {
                 limit = {owner = { has_origin = origin_clone_army}}
                 add_building = building_clone_army_clone_vat_tho
             }
+            clear_global_event_target = Ten_Desires_satr_init
         }
     }
 }
@@ -114,6 +111,82 @@ Ten_Desires_System_init_fallen_empire = {
             }else = {
                 create_fe_citadel = yes
             }
+            create_ambient_object = {
+                type = contingency_2
+            }
+
+            create_ambient_object = {
+                type = "unused_large_equipment_1"
+                scale = 0.5
+                base_angle_towards = root
+                effect = {
+                    set_location = {
+                        target = prev
+                        distance = 60
+                        angle = random
+                    }
+                }
+            }
+            create_ambient_object = {
+                type = "unused_large_equipment_2"
+                scale = 0.75
+                base_angle_towards = root
+                effect = {
+                    set_location = {
+                        target = prev
+                        distance = 70
+                        angle = random
+                    }
+                }
+            }
+            create_ambient_object = {
+                type = "unused_large_equipment_2"
+                scale = 0.5
+                base_angle_towards = root
+                effect = {
+                    set_location = {
+                        target = prev
+                        distance = 80
+                        angle = random
+                    }
+                }
+            }
+            create_ambient_object = {
+                type = "unused_large_equipment_1"
+                scale = 0.35
+                base_angle_towards = root
+                effect = {
+                    set_location = {
+                        target = prev
+                        distance = 140
+                        angle = random
+                    }
+                }
+            }
+            create_ambient_object = {
+                type = "unused_large_equipment_1"
+                scale = 0.5
+                base_angle_towards = root
+                effect = {
+                    set_location = {
+                        target = prev
+                        distance = 150
+                        angle = random
+                    }
+                }
+            }
+            create_ambient_object = {
+                type = "unused_large_equipment_2"
+                scale = 0.75
+                base_angle_towards = root
+                effect = {
+                    set_location = {
+                        target = prev
+                        distance = 220
+                        angle = random
+                    }
+                }
+            }
         }
     }
     change_orbit = 45
@@ -132,11 +205,12 @@ Ten_Desires_System_init_fallen_empire = {
                 limit = { exists = event_target:Ten_Desires_fallen_empire }
                 set_owner = event_target:Ten_Desires_fallen_empire
             }
+            save_global_event_target_as = Ten_Desires_fallen_empire_capital
             set_capital = yes
             prevent_anomaly = yes
             clear_deposits = yes
             if = {
-                limit = {exists = event_target:Ten_Desires_fallen_empire}
+                limit = {exists = event_target:Ten_Desires_fallen_empire  }
                 create_starbase = {
                     owner = event_target:Ten_Desires_fallen_empire
                     size = orbital_ring_tier_3
@@ -164,15 +238,8 @@ Ten_Desires_System_init_fallen_empire = {
                 }
             }
             set_name = Ten_planet_hve
-            remove_building = building_colony_shelter
+            add_building = building_major_capital
             add_building = building_Tho_Resource_integration
-            while = {
-                count = 5
-                add_district = district_Ten_Desires
-                add_district = district_Ten_Desires_alloys
-                add_district = district_Ten_Desires_page2
-                add_district = district_Ten_Desires_ex
-            }
         }
     }
 }

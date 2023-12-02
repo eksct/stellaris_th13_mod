@@ -2,9 +2,20 @@ district_Ten_Desires = {
     potential = {
         has_planet_flag = Ten_System_star
     }
+    show_on_uncolonized = {
+        has_planet_flag = Ten_System_star
+    }
     base_buildtime = 2400
     max_for_deposits_on_planet = 10
     is_capped_by_modifier = no
+    exempt_from_ai_planet_specialization = yes
+    conversion_ratio = 1
+    convert_to = {
+        district_city
+        district_nexus
+        district_hive
+        district_arcology_housing
+    }
     icon = district_arcology_organic_housing
     resources = {
         category = planet_jobs
@@ -41,9 +52,13 @@ district_Ten_Desires_ex = {
     potential = {
         has_planet_flag = Ten_System_star
     }
+    show_on_uncolonized = {
+        has_planet_flag = Ten_System_star
+    }
     base_buildtime = 2400
     max_for_deposits_on_planet = 10
     is_capped_by_modifier = no
+    exempt_from_ai_planet_specialization = yes
     icon = district_arcology_administrative
     resources = {
         category =planet_jobs
@@ -62,13 +77,14 @@ district_Ten_Desires_ex = {
         }
         produces = {
             mult = planet.value:district_Ten_Desires_pro|TYPE|Ten_Desires_ex|
-            consumer_goods = 2
             sr_dark_matter = 2
             sr_living_metal = 2.5
             sr_zro = 2
             minor_artifacts = 2.5
             nanites = 2.5
             influence = 0.1
+            sr_lingli = 2
+            sr_fuka = 2
             #menace = 0.1
             #rare_crystals = 2
             #exotic_gases = 2
@@ -87,8 +103,12 @@ district_Ten_Desires_page2 = {
     potential = {
         has_planet_flag = Ten_System_star
     }
+    show_on_uncolonized = {
+        has_planet_flag = Ten_System_star
+    }
     base_buildtime = 2400
     is_capped_by_modifier = no
+    exempt_from_ai_planet_specialization = yes
     icon = district_rw_science
     resources = {
         category = planet_jobs
@@ -107,8 +127,6 @@ district_Ten_Desires_page2 = {
         }
         produces = {
             mult = planet.value:district_Ten_Desires_pro|TYPE|Ten_Desires_page2|
-            sr_lingli = 5
-            sr_fuka = 5
             unity = 5
             physics_research = 7
             society_research = 7
@@ -128,9 +146,13 @@ district_Ten_Desires_alloys = {
     potential = {
         has_planet_flag = Ten_System_star
     }
+    show_on_uncolonized = {
+        has_planet_flag = Ten_System_star
+    }
     max_for_deposits_on_planet = 9
     base_buildtime = 2400
     is_capped_by_modifier = no
+    exempt_from_ai_planet_specialization = yes
     icon = district_industrial_alloys_only
     resources = {
         category = planet_jobs

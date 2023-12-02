@@ -121,5 +121,36 @@ tho_is_ship_class = {
         is_ship_class = shipclass_mining_station
         is_ship_class = shipclass_constructor
         is_ship_class = shipclass_observation_station
+        is_ship_class = shipclass_colonizer
     }
+}
+tho_is_ship_move_class = {
+    optimize_memory
+    OR = {
+        is_ship_class =shipclass_starbase
+        is_ship_class = shipclass_research_station
+        is_ship_class = shipclass_military_station
+        is_ship_class = shipclass_mining_station
+        is_ship_class = shipclass_constructor
+        is_ship_class = shipclass_observation_station
+        is_ship_class = shipclass_colonizer
+    }
+}
+tho_disable_repair = {
+    optimize_memory
+    OR = {
+        exists = leader
+        leader = {
+            has_leader_flag = T_Seiga_NyanNyan
+        }
+        has_fleet_flag = Yoshika_fleet
+        has_fleet_flag = TAO
+    }
+}
+tho_rary_planet_class = {
+    is_planet_class = pc_gaia
+    is_planet_class = pc_shattered_ring_habitable
+    is_planet_class = pc_ringworld_habitable
+    is_planet_class = pc_habitat
+    is_planet_class = pc_city
 }

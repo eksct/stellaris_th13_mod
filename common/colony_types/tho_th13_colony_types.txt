@@ -1,0 +1,30 @@
+col_Ten_Desires_fallen_empire_capital = {
+    icon = GFX_colony_type_capital
+
+    potential = {
+        is_capital = yes
+        exists = owner
+        owner = {
+            is_country_type = Ten_Desires_fallen_empire
+        }
+    }
+
+    planet_modifier = {
+        planet_stability_add = 5
+        planet_amenities_add = 10
+        pop_government_ethic_attraction = 1
+        planet_resettlement_unemployed_destination_mult = 0.1
+        planet_metallurgists_produces_mult = 0.15
+    }
+
+    triggered_planet_modifier = {
+        potential = { uses_district_set = ring_world }
+        pop_growth_speed = 0.3
+        planet_pop_assembly_mult = 0.1
+        planet_pop_assembly_organic_mult = 0.1
+    }
+
+    weight_modifier = {
+        base = 10000
+    }
+}

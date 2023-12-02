@@ -7,7 +7,6 @@ building_auto_lingli = {
         #exists = owner
         owner = {
             has_ascension_perk = ap_open_buildings
-            has_authority = auth_gensokyo
         }
     }
      resources = {
@@ -28,9 +27,11 @@ building_auto_lingli = {
         weight = 5
         modifier = {
             factor = 10
-            resource_stockpile_compare = {
-                resource = sr_lingli
-                value < 1024
+            owner = {
+                resource_stockpile_compare = {
+                    resource = sr_lingli
+                    value < 1024
+                }
             }
         }
     }

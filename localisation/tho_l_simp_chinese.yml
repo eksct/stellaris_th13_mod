@@ -118,8 +118,7 @@
  sm_track01_desc: "外界的人类发射到太空的太空站,因与地面失去通讯而飘荡在太空"
  district_Ten_Desires_ex: "§YSEQUEL blight§!"
  district_Ten_Desires_ex_desc: "SEQUEL blight(待定)"
- trait_Ten_Desires: "$leader_trait_Ten_Desires$"
- trait_Ten_Desires_desc: "$leader_trait_Ten_Desires_desc$"
+
  Ten_Desires_fallen_empire_mod: "§Y绝对存续§!"
  Ten_Desires_fallen_empire_mod_desc: ""
  personality_Ten_Desires_fallen_empire:"§Y时间存续者§!"
@@ -128,8 +127,6 @@
  gov_Ten_Desires_fallen_empire_desc: "破碎的循环"
 
 
- trait_Ten_Desire_fallen_empire1: "REPLACE_ME"
- trait_Ten_Desire_fallen_empire1_desc: "REPLACE_ME"
 
 
 

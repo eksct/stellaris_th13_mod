@@ -1,0 +1,350 @@
+namespace = Toyo_no_miko_battle
+#法令启动_神子
+# 人符「劝善惩恶古之良典」
+country_event = {
+    id = Toyo_no_miko_battle.1
+    title = tho_s.2.name
+    desc = tho_s.2.desc
+    is_triggered_only = yes
+    event_window_type = leader_story
+    show_sound = event_factions
+    picture = GFX_evt_legendary_leader
+    picture_event_data = {
+        portrait = root.ruler
+        room = from
+    }
+    immediate = {
+        random_country = {
+            limit = {owner = { OR = { has_country_flag = opt1 has_country_flag = toyousatomimi_fuka }}}
+            owner = {remove_country_flag = opt1 remove_country_flag = toyousatomimi_fuka}
+        }
+        random_country = {
+            limit = {
+                #is_ai = no
+                NOT = { is_country = root }
+                NOT = { has_modifier = happy_planet }
+                NOT = {has_country_flag = toyousatomimi_fuka}
+            }
+            set_country_flag = toyousatomimi_fuka
+            save_event_target_as = country_target_miko
+        }
+    }
+
+    option = {
+        name = go_target
+        event_target:country_target_miko = {
+            country_event = { id = tho_s.3 }
+        }
+    }
+}
+#「吾乃天道也」system
+fleet_event = {
+    id =Toyo_no_miko_battle.2
+    hide_window = yes
+    trigger = {
+        owner = {
+            tho_is_crisis_or_war_country_list = yes
+        }
+        NOT = { has_fleet_flag = toyousatomimi_atk }
+        from = {
+            owner = {
+                has_country_flag = toyousatomimi
+                has_policy_flag = on_fuka
+            }
+        }
+    }
+    immediate = {
+        miko_fuka = yes
+    }
+}
+#100-120 war
+country_event = {
+    id = Toyo_no_miko_battle.100
+    is_triggered_only = yes
+    hide_window = yes
+    immediate = {
+        set_variable = { which = Tho_country_select_page value = 1 }
+        set_variable = { which = tho_country_page_num value = 1 }
+        tho_country_war_start_select = yes
+            #limit = {has_global_flag = RED_BULE_Toy}
+            country_event = { id = Toyo_no_miko_battle.101 }
+    }
+}
+#「承诏必慎」AND 红蓝披风
+country_event = {
+    id =Toyo_no_miko_battle.101
+    title = tho_war.1.name
+    desc = tho_war.1.desc
+    event_window_type = leader_story
+    show_sound = event_factions
+    picture = GFX_evt_legendary_leader
+    is_triggered_only = yes
+    immediate = {
+
+    }
+    picture_event_data = {
+        portrait = root.ruler
+        room = from
+    }
+    option = {
+        name = tho_target_country_01
+        trigger = {
+            event_target:tho_country_select_target_1 = {
+                is_at_war_with = root
+            }
+        }
+        event_target:tho_country_select_target_1 = {
+            if = {
+                limit = { has_global_flag = RED_BULE_Toy }
+                tho_selector_country_effect = {
+                    var = Miko_war_count
+                    event = tho_s.200
+                }
+            }
+            else = {
+                tho_selector_country_effect = {
+                    var = LastWord_Toy
+                    event = tho_battle.20
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_02
+        trigger = {
+            event_target:tho_country_select_target_2 = {
+                is_at_war_with = root
+            }
+        }
+        event_target:tho_country_select_target_2 = {
+            if = {
+                limit = { has_global_flag = RED_BULE_Toy }
+                tho_selector_country_effect = {
+                    var = Miko_war_count
+                    event = tho_s.200
+                }
+            }
+            else = {
+                tho_selector_country_effect = {
+                    var = LastWord_Toy
+                    event = tho_battle.20
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_03
+        trigger = {
+            event_target:tho_country_select_target_3 = {
+                is_at_war_with = root
+            }
+        }
+        event_target:tho_country_select_target_3 = {
+            if = {
+                limit = { has_global_flag = RED_BULE_Toy }
+                tho_selector_country_effect = {
+                    var = Miko_war_count
+                    event = tho_s.200
+                }
+            }
+            else = {
+                tho_selector_country_effect = {
+                    var = LastWord_Toy
+                    event = tho_battle.20
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_04
+        trigger = {
+            event_target:tho_country_select_target_4 = {
+                is_at_war_with = root
+            }
+        }
+        event_target:tho_country_select_target_4 = {
+            if = {
+                limit = { has_global_flag = RED_BULE_Toy }
+                tho_selector_country_effect = {
+                    var = Miko_war_count
+                    event = tho_s.200
+                }
+            }
+            else = {
+                tho_selector_country_effect = {
+                    var = LastWord_Toy
+                    event = tho_battle.20
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_05
+        trigger = {
+            event_target:tho_country_select_target_5 = {
+                is_at_war_with = root
+            }
+        }
+        event_target:tho_country_select_target_5 = {
+            if = {
+                limit = { has_global_flag = RED_BULE_Toy }
+                tho_selector_country_effect = {
+                    var = Miko_war_count
+                    event = tho_s.200
+                }
+            }
+            else = {
+                tho_selector_country_effect = {
+                    var = LastWord_Toy
+                    event = tho_battle.20
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_06
+        trigger = {
+            event_target:tho_country_select_target_6 = {
+                is_at_war_with = root
+            }
+        }
+        event_target:tho_country_select_target_6 = {
+            if = {
+                limit = { has_global_flag = RED_BULE_Toy }
+                tho_selector_country_effect = {
+                    var = Miko_war_count
+                    event = tho_s.200
+                }
+            }
+            else = {
+                tho_selector_country_effect = {
+                    var = LastWord_Toy
+                    event = tho_battle.20
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_07
+        trigger = {
+            event_target:tho_country_select_target_7 = {
+                is_at_war_with = root
+            }
+        }
+        event_target:tho_country_select_target_7 = {
+            if = {
+                limit = { has_global_flag = RED_BULE_Toy }
+                tho_selector_country_effect = {
+                    var = Miko_war_count
+                    event = tho_s.200
+                }
+            }
+            else = {
+                tho_selector_country_effect = {
+                    var = LastWord_Toy
+                    event = tho_battle.20
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_08
+        trigger = {
+            event_target:tho_country_select_target_8 = {
+                is_at_war_with = root
+            }
+        }
+        event_target:tho_country_select_target_8 = {
+            if = {
+                limit = { has_global_flag = RED_BULE_Toy }
+                tho_selector_country_effect = {
+                    var = Miko_war_count
+                    event = tho_s.200
+                }
+            }
+            else = {
+                tho_selector_country_effect = {
+                    var = LastWord_Toy
+                    event = tho_battle.20
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_09
+        trigger = {
+            event_target:tho_country_select_target_9 = {
+                is_at_war_with = root
+            }
+        }
+        event_target:tho_country_select_target_9 = {
+            if = {
+                limit = { has_global_flag = RED_BULE_Toy }
+                tho_selector_country_effect = {
+                    var = Miko_war_count
+                    event = tho_s.200
+                }
+            }
+            else = {
+                tho_selector_country_effect = {
+                    var = LastWord_Toy
+                    event = tho_battle.20
+                }
+            }
+        }
+    }
+    option = {
+        name = tho_target_country_10
+        trigger = {
+            event_target:tho_country_select_target_10 = {
+                is_at_war_with = root
+            }
+        }
+        event_target:tho_country_select_target_10 = {
+            if = {
+                limit = { has_global_flag = RED_BULE_Toy }
+                tho_selector_country_effect = {
+                    var = Miko_war_count
+                    event = tho_s.200
+                }
+            }
+            else = {
+                tho_selector_country_effect = {
+                    var = LastWord_Toy
+                    event = tho_battle.20
+                }
+            }
+        }
+    }
+    option = {
+        name = "THO_select_page_up"
+        allow = {
+            custom_tooltip = "check_select_page"
+            check_variable = { which = Tho_country_select_page value > 1  }
+        }
+        tho_pgae = {
+            subtract_flag = Tho_country_select_page
+            change_flag = tho_country_page_num
+        }
+        country_event = { id = Toyo_no_miko_battle.101 }
+    }
+    option = {
+        name = "THO_select_page_down"
+        allow = {
+            custom_tooltip = "check_select_page_num"
+            check_variable = { which = tho_country_page_num value > 0  }
+        }
+        tho_pgae = {
+            subtract_flag = tho_country_page_num
+            change_flag = Tho_country_select_page
+        }
+        country_event = { id = Toyo_no_miko_battle.101 }
+    }
+    after = {
+        hidden_effect = {
+            tho_remove_skill_global_flge = yes
+            tho_clear_all_country_flags = yes
+        }
+
+    }
+}

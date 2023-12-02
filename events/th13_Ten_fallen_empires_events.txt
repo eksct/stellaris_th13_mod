@@ -1,5 +1,369 @@
 namespace = th13_Ten_fe
-event = {
+country_event = {
     id = th13_Ten_fe.0
-    hide_window = yes
+    #hide_window = yes
+    diplomatic_title = BLANK_STRING
+    diplomatic = yes
+    title = th13_Ten_fe.0_name
+    desc = th13_Ten_fe.0_desc
+    is_triggered_only = yes
+    custom_gui_option = enclave_curator_option
+    picture_event_data = {
+        room = no_video_feed_room
+    }
+    immediate = {
+        establish_communications_no_message = event_target:Ten_Desires_fallen_empire
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_ethic = ethic_gestalt_consciousness
+                has_ethic = ethic_fanatic_xenophobe
+                has_ethic = ethic_xenophobe
+            }
+        }
+        name =  th13_Ten_start.0
+        response_text = th13_Ten_start.0_text
+        is_dialog_only = yes
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_ethic = ethic_gestalt_consciousness
+                has_ethic = ethic_fanatic_xenophobe
+                has_ethic = ethic_xenophobe
+            }
+        }
+        name =  th13_Ten_start.1
+        response_text = th13_Ten_start.1_text
+        is_dialog_only = yes
+    }
+
+    option = {
+        trigger = {
+            NOT = {
+                has_ethic = ethic_gestalt_consciousness
+                has_ethic = ethic_fanatic_xenophobe
+                has_ethic = ethic_xenophobe
+            }
+        }
+        name =  th13_Ten_start.2
+        response_text = th13_Ten_start.2_text
+        is_dialog_only = yes
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_ethic = ethic_gestalt_consciousness
+                has_ethic = ethic_fanatic_xenophobe
+                has_ethic = ethic_xenophobe
+            }
+        }
+        name =  th13_Ten_start.3
+        country_event = {
+            id = th13_Ten_fe.100
+        }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_ethic = ethic_xenophobe
+            }
+        }
+        name =  th13_Ten_start.2
+        every_country = {
+            id = th13_Ten_fe.104
+        }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_ethic = ethic_fanatic_xenophobe
+            }
+        }
+        name =  th13_Ten_start.5
+        country_event = {
+            id = th13_Ten_fe.103
+        }
+    }
+    #option = {
+    #    trigger = {
+    #        OR = {
+    #            has_ethic = ethic_xenophobe
+    #            has_ethic = ethic_fanatic_xenophobe
+    #        }
+    #    }
+    #    name =  th13_Ten_start.6
+    #}
 }
+#100~1000看情况给
+country_event = {
+    id = th13_Ten_fe.100
+    #hide_window = yes
+    diplomatic_title = BLANK_STRING
+    diplomatic = yes
+    title = th13_Ten_fe.0_name
+    desc = th13_Ten_fe.100_desc
+    is_triggered_only = yes
+    custom_gui_option = enclave_curator_option
+    picture_event_data = {
+        room = from
+        portrait = Miko
+    }
+    immediate = {
+
+    }
+    option = {
+        name =  th13_Ten_fe.100_0
+        add_resource = {
+            energy = 1024
+            minerals = 1024
+            food = 1024
+            alloys = 128
+            consumer_goods = 128
+        }
+    }
+    option = {
+        name = th13_Ten_fe.100_1
+        country_event = {
+            id = th13_Ten_fe.101
+        }
+    }
+
+    option = {
+        name =  th13_Ten_fe.100_2
+        hidden_effect = {
+            add_random_research_option = {
+                add_progress = 1
+            }
+        }
+        custom_tooltip = product_randomtech
+    }
+}
+country_event = {
+    id = th13_Ten_fe.101
+    #hide_window = yes
+    diplomatic_title = BLANK_STRING
+    diplomatic = yes
+    title = th13_Ten_fe.0_name
+    desc = th13_Ten_fe.101_desc
+    is_triggered_only = yes
+    custom_gui_option = enclave_curator_option
+    picture_event_data = {
+        room = from
+        portrait = Miko
+    }
+    option = {
+        name = tech_corvettes
+        trigger = {
+            has_technology = tech_corvettes
+        }
+        create_fleet = {
+            effect = {
+                set_owner = prev.owner
+                while = {
+                    count = 40
+                    create_ship = {
+                        name = random
+                        random_existing_design = corvette
+                    }
+                }
+                set_location = prev.capital_star
+            }
+        }
+    }
+    option = {
+        name = tech_destroyers
+        trigger = {
+            has_technology = tech_destroyers
+        }
+        create_fleet = {
+            effect = {
+                set_owner = prev.owner
+                while = {
+                    count = 30
+                    create_ship = {
+                        name = random
+                        random_existing_design = corvette
+                    }
+                }
+                set_location = prev.capital_star
+            }
+        }
+    }
+    option = {
+        name = tech_cruisers
+        trigger = {
+            has_technology = tech_cruisers
+        }
+        create_fleet = {
+            effect = {
+                set_owner = prev.owner
+                while = {
+                    count = 30
+                    create_ship = {
+                        name = random
+                        random_existing_design = corvette
+                    }
+                }
+                set_location = prev.capital_star
+            }
+        }
+    }
+    option = {
+        name = tech_battleships
+        trigger = {
+            has_technology = tech_battleships
+        }
+        create_fleet = {
+            effect = {
+                set_owner = prev.owner
+                while = {
+                    count = 20
+                    create_ship = {
+                        name = random
+                        random_existing_design = corvette
+                    }
+                }
+                set_location = prev.capital_star
+            }
+        }
+    }
+    option = {
+        name = tech_titans
+        trigger = {
+            has_technology = tech_titans
+        }
+        create_fleet = {
+            effect = {
+                set_owner = prev.owner
+                while = {
+                    count = 2
+                    create_ship = {
+                        name = random
+                        random_existing_design = corvette
+                    }
+                }
+                set_location = prev.capital_star
+            }
+        }
+    }
+}
+country_event = {
+    id = th13_Ten_fe.102
+    #hide_window = yes
+    diplomatic_title = BLANK_STRING
+    diplomatic = yes
+    title = th13_Ten_fe.0_name
+    desc = th13_Ten_fe.102_desc
+    is_triggered_only = yes
+    custom_gui_option = enclave_curator_option
+    picture_event_data = {
+        room = from
+        portrait = Miko
+    }
+    option = {
+        name = th13_Ten_fe.102_0
+    }
+}
+country_event = {
+    id = th13_Ten_fe.103
+    #hide_window = yes
+    diplomatic_title = BLANK_STRING
+    diplomatic = yes
+    title = th13_Ten_fe.0_name
+    desc = th13_Ten_start.5_text
+    is_triggered_only = yes
+    custom_gui_option = enclave_curator_option
+    picture_event_data = {
+        room = no_video_feed_room
+    }
+    option = {
+        name = th13_Ten_fe.103_0
+    }
+}
+country_event = {
+    id = th13_Ten_fe.104
+    #hide_window = yes
+    diplomatic_title = BLANK_STRING
+    diplomatic = yes
+    title = th13_Ten_fe.0_name
+    desc = th13_Ten_start.2_text
+    is_triggered_only = yes
+    custom_gui_option = enclave_curator_option
+    picture_event_data = {
+        room = from
+        portrait = Miko
+    }
+    option = {
+        name = th13_Ten_fe.104_0
+        country_event = {
+            id = th13_Ten_fe.105
+        }
+    }
+}
+country_event = {
+    id = th13_Ten_fe.105
+    #hide_window = yes
+    diplomatic_title = BLANK_STRING
+    diplomatic = yes
+    title = th13_Ten_fe.0_name
+    desc = th13_Ten_start.105_text
+    is_triggered_only = yes
+    custom_gui_option = enclave_curator_option
+    picture_event_data = {
+        room = from
+        portrait = Miko
+
+    }
+    option = {
+        name = th13_Ten_fe.105_0
+    }
+}
+country_event = {
+    id = th13_Ten_fe.106
+    #hide_window = yes
+    diplomatic_title = BLANK_STRING
+    diplomatic = yes
+    title = th13_Ten_fe.0_name
+    desc = th13_Ten_fe.100_desc
+    is_triggered_only = yes
+    trigger = {
+
+    }
+    picture_event_data = {
+        room = from
+        portrait = Miko
+    }
+    immediate = {
+
+    }
+    option = {
+        name =  th13_Ten_fe.100_0
+        add_resource = {
+            energy = 1024
+            minerals = 1024
+            food = 1024
+            alloys = 128
+            consumer_goods = 128
+            mult = value:tho_year_time
+        }
+    }
+    option = {
+        name = th13_Ten_fe.100_1
+        country_event = {
+            id = th13_Ten_fe.101
+        }
+    }
+
+    option = {
+        name =  th13_Ten_fe.100_2
+        hidden_effect = {
+            add_random_research_option = {
+                add_progress = 1
+            }
+        }
+        custom_tooltip = product_randomtech
+    }
+}
+

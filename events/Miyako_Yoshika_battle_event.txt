@@ -1,0 +1,86 @@
+namespace = Mi_Yo_battle
+
+# From = army
+# FromFrom = opponent
+# FromFromFrom = planet
+#芳香逝者
+country_event = {
+    id = Mi_Yo_battle.1
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        fromfrom = {
+            has_policy_flag = on_fuka
+            #has_country_flag = yoshika_army
+        }
+    }
+    immediate = {
+        fromfromfrom = {
+            if = {
+                limit = {any_ground_combat_defender = {is_same_value = root.from}}
+                random_ground_combat_attacker = {
+                    limit = {exists = leader leader = {has_trait = leader_trait_Zombie}}
+                    leader = {save_event_target_as = atk_zombie}
+                }
+                create_army = {
+                    species = root.from.species
+                    type =  undead_army
+                    owner = root.fromfrom
+                }
+            }
+            if = {
+                limit = {any_ground_combat_attacker = {NOT = { is_same_value = root.from }}}
+                random_ground_combat_defender = {
+                    limit = {exists = leader leader = {has_trait = leader_trait_Zombie}}
+                    leader = {save_event_target_as = atk_zombie}
+                    fromfromfrom = {
+                        create_army = {
+                            species = root.from.species
+                            type =  undead_army
+                            owner = root.fromfrom
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+# From = army
+# FromFrom = opponent
+# FromFromFrom = planet
+#欲符「赚钱欲灵招来」
+country_event = {
+    id = Mi_Yo_battle.2
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        fromfrom = {
+            has_policy_flag = on_fuka
+        }
+    }
+    immediate = {
+        fromfromfrom = {
+            if = { limit = {any_ground_combat_defender = {is_same_value = root.from}} }
+            random_ground_combat_attacker = {
+                limit = {exists = leader leader = {has_trait = leader_trait_Miyako_Yoshika}}
+                leader = {save_event_target_as = atk_miyako }
+            }
+        }
+        if = {
+            limit ={exists = event_target:atk_miyako}
+            fromfrom = {
+                random_list = {
+                    40 = {
+                        yoshoka_add = yes
+                    }
+                    40 = {
+                        yoshoka_add2 = yes
+                    }
+                    20 = {
+                        yoshoka_add3 = yes
+                    }
+                }
+            }
+        }
+    }
+}

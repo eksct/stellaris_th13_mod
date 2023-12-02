@@ -1,0 +1,89 @@
+ship_section_template = {
+    key = "Ten_fallen_empires_ship"
+    ship_size = th13_Ten_fallen_empires_big_ship
+    fits_on_slot = mid
+    entity = "warship_large_entity"
+    icon = "GFX_ship_part_core_mid"
+
+    component_slot = {
+        name = "PLANET_KILLER_GUN_01"
+        template = "invisible_planet_killer_fixed"
+        locatorname = "large_gun_01"
+    }
+    component_slot = {
+        name = "TITAN_01"
+        template = "invisible_titanic_fixed"
+        locatorname = "large_gun_01"
+    }
+    component_slot = {
+        name = "TITAN_02"
+        template = "invisible_titanic_fixed"
+        locatorname = "large_gun_02"
+    }
+
+    component_slot = {
+        name = "TITAN_03"
+        template = "invisible_titanic_fixed"
+
+        locatorname = "large_gun_01"
+    }
+
+    component_slot = {
+        name = "TITAN_04"
+        template = "invisible_titanic_fixed"
+
+        locatorname = "large_gun_02"
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_01"
+        template = "invisible_extra_large_fixed"
+        locatorname = "large_gun_01"
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_02"
+        template = "invisible_extra_large_fixed"
+        locatorname = "large_gun_02"
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_03"
+        template = "invisible_extra_large_fixed"
+        locatorname = "large_gun_01"
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_04"
+        template = "invisible_extra_large_fixed"
+        locatorname = "medium_gun_01"
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_05"
+        template = "invisible_extra_large_fixed"
+        locatorname = "medium_gun_02"
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_06"
+        template = "invisible_extra_large_fixed"
+        locatorname = "medium_gun_01"
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_07"
+        template = "invisible_extra_large_fixed"
+        locatorname = "medium_gun_02"
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_08"
+        template = "invisible_extra_large_fixed"
+        locatorname = "medium_gun_03"
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_09"
+        template = "invisible_extra_large_fixed"
+        locatorname = "medium_gun_04"
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_10"
+        template = "invisible_extra_large_fixed"
+        locatorname = "medium_gun_04"
+    }
+    large_utility_slots = 24
+    aux_utility_slots = 8
+}

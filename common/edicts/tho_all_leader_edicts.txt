@@ -35,7 +35,7 @@ toyousatomimi_no_miko_Lastword = {
     }
     effect = {
         hidden_effect = {
-            country_event = { id = tho_war.0 }
+            country_event = { id = Toyo_no_miko_battle.100 }
             change_variable = {
                 which = LastWord_Toy
                 value = 1
@@ -63,7 +63,7 @@ toyousatomimi_no_miko_RED_OR_BULE = {
     effect = {
         hidden_effect = {
             set_global_flag = RED_BULE_Toy
-            country_event = { id = tho_war.0 }
+            country_event = { id = Toyo_no_miko_battle.100 }
         }
     }
 }
@@ -79,7 +79,7 @@ toyousatomimi_no_miko_classic = {
 
     }
     effect = {
-        country_event = { id = tho_s.2 }
+        country_event = { id = Toyo_no_miko_battle.1 }
     }
 }
 NyanNyan_fate = {
@@ -91,6 +91,22 @@ NyanNyan_fate = {
         has_policy_flag = on_fuka
     }
     effect = {
-        country_event = { id = tho_battle.8088 }
+        country_event = { id = Nyan_Battle.761 }
+    }
+}
+messages_Miko = {
+    icon = GFX_edict_type_time
+    resources = {
+        category = edicts
+    }
+    potential = {
+        years_passed > 1
+        exists = event_target:Ten_Desires_fallen_empire
+    }
+    length = 356
+    effect = {
+        country_event = {
+            id = th13_Ten_fe.106
+        }
     }
 }

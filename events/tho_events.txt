@@ -1,145 +1,5 @@
 namespace = tho_s
-#娘娘供给
-country_event = {
-	id = tho_s.1
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-        has_policy_flag = sr_lingli_buff_nyan
-	    #has_country_flag = ext1
-	}
-	immediate = {
-        export_resource_stockpile_to_variable = {
-            resource = sr_lingli
-            variable = NyanNyan_updata
-        }
-        if = {
-            limit = {
-                AND = {
-                    check_variable = { which = NyanNyan_updata value < 2000000 }
-                    check_variable = { which = NyanNyan_updata value > 100000 }
-                }
-            }
-            add_resource = {
-                sr_lingli = -100000
-            }
-            change_variable = { which = NyanNyan_updata value = -100000 }
-            multiply_variable = {
-                which = NyanNyan_updata
-                value = 0.01
-            }
-        }
-        else_if = {
-            limit = {check_variable = { which = NyanNyan_updata value > 2000000 }}
-            add_resource = {
-                sr_lingli = -1000000
-            }
-            multiply_variable = {
-                which = NyanNyan_updata
-                value = 0.001
-            }
-        }
-        else = {
-            multiply_variable = {
-                which = NyanNyan_updata
-                value = 0.1
-            }
-        }
-        country_event = {
-            id = tho_s.1
-            days = 365
-        }
-	}
-}
-country_event = {
-    id = tho_s.19
-    hide_window = yes
-    is_triggered_only = yes
-    trigger = {
-        has_policy_flag = evergy_buff_nyan
-        #has_country_flag = ext1
-    }
-    immediate = {
-        export_resource_stockpile_to_variable = {
-            resource = energy
-            variable = NyanNyan_updata
-        }
-        if = {
-            limit = {
-                AND = {
-                    check_variable = { which = NyanNyan_updata value < 1000000 }
-                    check_variable = { which = NyanNyan_updata value > 100000 }
-                }
-            }
-            add_resource = {
-                energy = -100000
-            }
-            change_variable = { which = NyanNyan_updata value = -100000 }
-            multiply_variable = {
-                which = NyanNyan_updata
-                value = 0.01
-            }
-        }
-        else_if = {
-            limit = {check_variable = { which = NyanNyan_updata value >= 1000000 }}
-            add_resource = {
-                energy = -10000000
-            }
-            multiply_variable = {
-                which = NyanNyan_updata
-                value = 0.001
-            }
-        }
-        else = {
-            multiply_variable = {
-                which = NyanNyan_updata
-                value = 0.1
-            }
-        }
-        country_event = {
-            id = tho_s.19
-            days = 365
-        }
-    }
-}
-#法令启动_神子
-# 人符「劝善惩恶古之良典」
-country_event = {
-    id = tho_s.2
-    title = tho_s.2.name
-    desc = tho_s.2.desc
-    is_triggered_only = yes
-    event_window_type = leader_story
-    show_sound = event_factions
-    picture = GFX_evt_legendary_leader
-    picture_event_data = {
-        portrait = root.ruler
-        room = from
-    }
-    immediate = {
-        random_country = {
-            limit = {owner = { OR = { has_country_flag = opt1 has_country_flag = toyousatomimi_fuka }}}
-            owner = {remove_country_flag = opt1 remove_country_flag = toyousatomimi_fuka}
-        }
-        random_country = {
-            limit = {
-                #is_ai = no
-                NOT = { is_country = root }
-                NOT = { has_modifier = happy_planet }
-                NOT = {has_country_flag = toyousatomimi_fuka}
-            }
-            set_country_flag = toyousatomimi_fuka
-            save_event_target_as = country_target_miko
-        }
-    }
 
-    option = {
-        name = go_target
-        event_target:country_target_miko = {
-            country_event = { id = tho_s.3 }
-        }
-    }
-}
 country_event = {
     id = tho_s.3
     title = tho_s.3.name
@@ -271,6 +131,22 @@ country_event = {
     }
 }
 country_event = {
+    id = tho_s.5
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_civic = civic_Ten_Desires
+    }
+    immediate = {
+        country_event = {
+            id = th13_tho.0
+        }
+        unlock_council_slots = 2
+    }
+}
+
+
+country_event = {
     id = tho_s.100
     title = tho_s.100.name
     desc = tho_s.100.desc
@@ -283,7 +159,6 @@ country_event = {
         name = option_s_100.2
     }
 }
-
 country_event = {
     id = tho_s.101
     title = tho_s.101.name
@@ -292,6 +167,7 @@ country_event = {
     is_triggered_only = yes
     option = {
         name = 101.optin
+        add_modifier = { modifier = pop_citizenry_happiness mult = 0.5 days = 365 }
     }
 }
 country_event = {
@@ -330,3 +206,111 @@ country_event = {
         name = tho_s.103.option
     }
 }
+#披风选择
+country_event = {
+    id = tho_s.200
+    title = tho_war.11.name
+    desc = tho_war.11.desc
+    picture = GFX_evt_red_or_bule
+    is_triggered_only = yes
+    immediate = {
+        from = {
+            random_owned_leader = {
+                limit = {has_trait = leader_trait_Toyosatomimi}
+                set_variable = {
+                    which = toyousatomimi_country_buffzreo
+                    value = trigger:has_skill
+                }
+                set_variable = {
+                    which = toyousatomimi_country_buffone
+                    value = trigger:has_skill
+                }
+            }
+        }
+    }
+    option = {
+        name = red_option
+        from = {
+            add_modifier = { modifier = toyousatomimi_country_buffzreo days = 180 }
+            country_event = { id = tho_s.201 }
+        }
+    }
+    option = {
+        name = blue_option
+        from = {
+            add_modifier = { modifier = toyousatomimi_country_buffone days = 180}
+            country_event = { id = tho_s.202}
+        }
+    }
+}
+#选择通知
+country_event = {
+    id = tho_s.201
+    title = tho_war_12.name
+    desc = tho_war_12.desc
+    is_triggered_only = yes
+}
+country_event = {
+    id = tho_s.202
+    title = tho_war_13.name
+    desc = tho_war_13.desc
+    is_triggered_only = yes
+}
+
+
+#复活
+country_event = {
+    id = tho_s.10000
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        from = {
+            OR = {
+                has_trait = leader_trait_NyanNyan
+                has_trait = leader_trait_Toyosatomimi
+                has_trait = leader_trait_Miyako_Yoshika
+                has_trait = leader_trait_Soga_no_Tojiko
+                has_trait = leader_trait_Mononobe_no_Futo
+            }
+        }
+    }
+    immediate = {
+        #复活
+        #from = {
+        #    save_event_target_as = resurrection_leader
+        #}
+        if = {
+            limit = {
+                from = { has_trait = leader_trait_Mononobe_no_Futo}
+            }
+            clone_leader = {
+                target = from
+                #skill = 1
+                effect = {
+                    set_variable = { which = "futo_level" value = 0 }
+                    set_variable = { which = futo_level_frie value = 1 }
+                }
+                #target = event_target:resurrection_leader
+            }
+        }
+        else_if = {
+            limit = {from = { has_trait = leader_trait_Toyosatomimi}}
+            clone_leader = {
+                target = from
+                effect = {
+                    set_leader_flag = T_Toyosatomimi_no_Miko
+                    set_variable = { which = Miko_war_count value = 0 }
+                }
+                #target = event_target:resurrection_leader
+            }
+            assign_leader = last_created_leader
+        }
+        else = {
+            clone_leader = {
+                target = from
+                #target = event_target:resurrection_leader
+            }
+        }
+    }
+}
+

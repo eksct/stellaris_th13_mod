@@ -1,11 +1,5 @@
 councilor_Ten_xiexian ={
-    leader_class = { admiral general }
-    is_leader_possible = {
-        OR = {
-            leader_class = admiral
-            leader_class = general
-        }
-    }
+    leader_class = { commander }
     modifier = {
         ships_upkeep_mult = -0.03
         ship_experience_gain_mult = 0.05
@@ -16,7 +10,7 @@ councilor_Ten_xiexian ={
     #icon = GFX_leader_trait_fulu
 }
 councilor_Ten_diezi = {
-    leader_class = { general admiral }
+    leader_class = {commander }
     is_leader_possible = {
         OR = {
             leader_class = admiral

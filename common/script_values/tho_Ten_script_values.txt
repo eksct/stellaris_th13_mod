@@ -129,3 +129,11 @@ district_Ten_Desires_pro = {
     mult = 0.5
     floor = yes
 }
+tho_year_time = {
+    complex_trigger_modifier = {
+        trigger = years_passed
+        mode = add
+    }
+    mult = 0.5
+    floor = yes
+}

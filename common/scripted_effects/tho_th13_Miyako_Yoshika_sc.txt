@@ -1,0 +1,29 @@
+Miyako_Yoshika_created = {
+    create_leader = {
+        event_leader = yes
+        class = general
+        species = owner_main_species
+        name = "宫古芳香"
+        gender = female
+        set_age = 20
+        hide_age = yes
+        background_ethic = ethic_spiritualist
+        custom_description = Miyako_Yoshika_backstory
+        traits = {
+            trait = leader_trait_Miyako_Yoshika
+            trait = leader_trait_Zombie
+            trait = leader_trait_Rigid_Paradise_council
+            trait = leader_trait_Yoshika
+            trait = leader_trait_Ten_Desires
+            trait = leader_trait_honored_warmaster
+        }
+        effect = {
+            set_leader_flag = T_Miyako_Yoshika
+            save_global_event_target_as = T_Miyako_Yoshika
+        }
+    }
+    last_created_leader = {
+        set_leader_flag = T_Miyako_Yoshika
+        change_leader_portrait = Yoshika
+    }
+}

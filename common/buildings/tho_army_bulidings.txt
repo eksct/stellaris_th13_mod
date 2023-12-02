@@ -12,6 +12,7 @@ building_military_Animism = {
 	    exists = owner
         owner = {
 		    OR = {
+                is_country_type = Ten_Desires_fallen_empire
                 has_country_flag = buildings_tho_ex
                 has_country_flag = buildings_tho_3
             }

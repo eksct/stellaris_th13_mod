@@ -3,6 +3,11 @@ on_game_start = {
 
     }
 }
+#on_custom_diplomacy = {
+#    events = {
+#        th13_Ten_fe.106
+#    }
+#}
 on_game_start_country = {
     events = {
         #tho_leader.1
@@ -20,28 +25,26 @@ on_building_demolished = {
 }
 on_leader_death = {
     events = {
-        tho_leader.1029
+        tho_s.10000
     }
 }
 on_fleet_destroyed_victim = {
     events = {
-        tho_dest.131
-        tho_dest.133
+        Nyan_Battle.2
+        Nyan_Battle.3
     }
 }
 on_entering_battle = {
     events = {
-        tho_battle.20
-        tho_battle.50
-        tho_battle.41
+        Nyan_Battle.0
+        Tojiko_battle.1
+        Futo_battle.4
     }
 }
-on_fleet_destroyed_perp = {
-    events = {
-        #tho_dest.131
-        #tho_dest.133
-    }
-}
+#on_fleet_destroyed_perp = {
+#    events = {
+#    }
+#}
 on_ship_disabled = {
     events = {
         tho_battle.22
@@ -50,14 +53,14 @@ on_ship_disabled = {
 #杀敌
 on_space_battle_won = {
 	events = {
-        tho_battle.40
+        Futo_battle.3
 	}
 }
 on_entering_system_fleet = {
     events = {
-        tho_system.123
-        tho_system.124
-        tho_system.700
+        Toyo_no_miko_battle.2
+        Futo_battle.6
+        Nyan_Battle.762
     }
 }
 on_game_start = {
@@ -67,34 +70,33 @@ on_game_start = {
 }
 on_add_to_imperial_council = {
     events = {
-        tho_council.123
+        Toyo_no_miko.1
 
         #tho_council.127
     }
 }
 on_remove_from_imperial_council = {
     events = {
-        tho_council.124
-
+        Toyo_no_miko.2
         #tho_council.128
     }
 }
 on_army_killed_in_combat = {
     events = {
-        tho_battle.30
-        tho_battle.31
+        Mi_Yo_battle.1
+        Mi_Yo_battle.2
     }
 }
 on_army_killed_no_combat = {  }
 on_army_recruited = {  }
 on_planet_bombarded = {
     events = {
-        tho_battle.880
+        Futo_battle.1
     }
 }
 on_planet_zero_pops = {
     events = {
-        tho_battle.881
+        Futo_battle.2
     }
 }
 on_country_released_in_war = {  }
@@ -104,6 +106,6 @@ on_entering_war = {
 on_war_ended = {  }
 on_war_beginning = {
     events = {
-        #tho_war.0
+        fallen_Ai.3
     }
 }

@@ -1,0 +1,63 @@
+namespace = Nyan
+#霍青娥
+country_event = {
+    id = Nyan.0
+    hide_window = yes
+    is_triggered_only = yes
+    #fire_only_once = yes
+    #picture = GFX_evt_legendary_leader
+    immediate = {
+        #log = "霍青娥"
+        NyanNyan_created = yes
+        #ethic_leader_creator = {
+        #  change_leader_portrait = NyanNyan
+        #   LEADER_PORTRAIT = NyanNyan
+        #}
+        country_event = {
+            id = Nyan.1
+        }
+        country_event = {
+            id = Nyan.2
+        }
+    }
+}
+
+#娘娘供给-灵力
+country_event = {
+    id = Nyan.1
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_policy_flag = sr_lingli_buff_nyan
+    }
+    immediate = {
+        tho_resource_consume_pwoer = {
+            resource = sr_lingli
+            var = NyanNyan_updata
+        }
+        country_event = {
+            id = Nyan.1
+            days = 365
+        }
+    }
+}
+#娘娘供给-能量币
+country_event = {
+    id = Nyan.2
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_policy_flag = evergy_buff_nyan
+        #has_country_flag = ext1
+    }
+    immediate = {
+        tho_resource_consume_pwoer = {
+            resource = energy
+            var = NyanNyan_updata
+        }
+        country_event = {
+            id = Nyan.2
+            days = 365
+        }
+    }
+}

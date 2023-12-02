@@ -36,206 +36,38 @@ Ten_Desires_fallen_empire_init = {
                         message = no
                     }
                 }
-                # must initialize global designs here
-                add_global_ship_design = "NAME_Omega"
-                add_global_ship_design = "NAME_Alpha"
-                add_global_ship_design = "NAME_Beta"
-                add_global_ship_design = "NAME_Gamma"
-                add_global_ship_design = "NAME_Theta"
-                add_global_ship_design = "NAME_Tau"
-                add_global_ship_design = "NAME_Sigma"
-                add_global_ship_design = "NAME_FE_Starbase"
-                create_leader = {
-                    event_leader = yes
-                    class = general
-                    species = owner_main_species
-                    name = "宫古芳香"
-                    gender = female
-                    set_age = 20
-                    hide_age = yes
-                    background_ethic = ethic_spiritualist
-                    custom_description = Miyako_Yoshika_backstory
-                    traits = {
-                        trait = leader_trait_Miyako_Yoshika
-                        trait = leader_trait_Zombie
-                        trait = leader_trait_Rigid_Paradise_council
-                        trait = leader_trait_Yoshika
-                        trait = leader_trait_Ten_Desires
-                        trait = leader_trait_honored_warmaster
-                    }
-                    effect = {
-                        set_leader_flag = T_Miyako_Yoshika
-                        save_global_event_target_as = T_Miyako_Yoshika
-                    }
+                Miyako_Yoshika_created = yes
+                NyanNyan_created = yes
+                tho_fleet_builder = {
+                    fleet_num = 3
+                    ship_design = th13_Ten_fallen_empires_big_ship
+                    owner = last_created_country
+                    ship_num = 2
+                    leader = last_created_leader
                 }
-                last_created_leader = {
-                    set_leader_flag = T_Miyako_Yoshika
-                    change_leader_portrait = Yoshika
-
+                tho_fleet_builder = {
+                    fleet_num = 2
+                    owner = last_created_country
+                    ship_class = constructor
                 }
-                create_leader = {
-                    event_leader = yes
-                    class = admiral
-                    species = owner_main_species
-                    #name = "Seiga_NyanNyan"
-                    name = "霍青娥"
-                    gender = female
-                    set_age = 20
-                    hide_age = yes
-                    background_ethic = ethic_spiritualist
-                    #event_leader = yes
-                    custom_description = NyanNya_backstory
-                    #portrait = NyanNyan
-                    #randomize_traits = yes
-                    #leader_portrait = NyanNyan
-                    traits = {
-                        trait = leader_trait_NyanNyan_immortal
-                        trait = leader_trait_NyanNyan_immortalB
-                        trait = leader_trait_NyanNyan_council_atk
-                        trait = leader_trait_NyanNyan_council_builds
-                        trait = leader_trait_NyanNyan
-                        trait = leader_trait_Ten_Desires
-                    }
-
-                    #save_event_target_as = T_NyanNyan
-                    effect = {
-                        set_leader_flag = T_Seiga_NyanNyan
-                        save_global_event_target_as = NyanNya_leader
-                    }
-                }
-                last_created_leader = {
-                    set_leader_flag = T_Seiga_NyanNyan
-                    change_leader_portrait = NyanNyan
-                }
-                create_fleet = {
-                    name = random
-                    effect = {
-                        set_owner = last_created_country
-                        set_location = last_created_country.capital_star.star
-                        while = {
-                            count =100
-                            create_ship = {
-                                name = random
-                                design = "NAME_Beta"
-                                graphical_culture = owner
-                            }
-                        }
-                        assign_leader = last_created_leader
-                    }
-                }
-                create_leader = {
-                    event_leader = yes
-                    class = governor
-                    species = root.species
-                    name = "丰聪耳神子"
-                    gender = female
-                    set_age = 20
-                    hide_age = yes
-                    background_ethic = ethic_fanatic_xenophile
-                    custom_description = Toyosatomimi_backstory
-                    traits = {
-                        trait = leader_trait_Toyosatomimi
-                        trait = leader_trait_Miko
-                        trait = leader_trait_Shoutoku
-                        trait = leader_trait_Shoutoku_forever
-                        trait = leader_trait_Ten_Desires
-                    }
-                    effect = {
-                        set_leader_flag = T_Toyosatomimi_no_Miko
-                        set_variable = { which = Miko_war_count value = 0 }
-                        save_global_event_target_as = toyosatomimi_leader
-                    }
-                }
-                last_created_leader = {
-                    set_leader_flag = T_Toyosatomimi_no_Miko
-                    change_leader_portrait = Miko
-                }
+                Toyosatomimi_no_Miko_created = yes
                 assign_leader = last_created_leader
-                create_leader = {
-                    event_leader = yes
-                    class = admiral
-                    species = owner_main_species
-                    name = "物部布都"
-                    gender = female
-                    set_age = 20
-                    hide_age = yes
-                    background_ethic = ethic_militarist
-                    custom_description = Mononobe_no_Futo_backstory
-                    traits = {
-                        trait = leader_trait_Mononobe_no_Futo
-                        trait = leader_trait_Oomiwashinwaden
-                        trait = leader_trait_shui
-                        trait = leader_trait_Ten_Desires
-                    }
-
-                    #save_event_target_as = T_NyanNyan
-                    effect = {
-                        set_leader_flag = T_Mononobe_no_Futo
-                        set_variable = { which = "futo_level" value = 0 }
-                    }
-                }
-                last_created_leader = {
-                    set_leader_flag = T_Mononobe_no_Futo
-                    change_leader_portrait = Futo
-                }
-                create_leader = {
-                    event_leader = yes
-                    class = scientist
-                    species = owner_main_species
-                    name = "苏我屠自古"
-                    gender = female
-                    set_age = 20
-                    hide_age = yes
-                    # 修改
-                    background_ethic = ethic_militarist
-                    custom_description = Soga_no_Tojiko_backstory
-                    traits = {
-                        trait = leader_trait_Soga_no_Tojiko
-                        trait = leader_trait_Toziko
-                        trait = leader_trait_Mausoleum
-                        trait = leader_trait_Ten_Desires
-                    }
-
-                    #save_event_target_as = T_NyanNyan
-                    effect = {
-                        set_leader_flag = T_Soga_no_Tojiko
-                        save_global_event_target_as = Soga_no_Tojiko
-                    }
-                }
-                last_created_leader = {
-                    set_leader_flag = T_Soga_no_Tojiko
-                    change_leader_portrait = Tojiko
-                }
+                created_Futo = yes
+                Soga_Tojiko_created = yes
                 ruler = {
                     add_skill = 10
                 }
-
             }
         }
         spawn_system = {
             initializer = Ten_Desires_System_init_fallen_empire
-            min_distance >= 500
-            max_distance <= 500
+            min_distance >= 400
+            max_distance <= 400
             min_orientation_angle >= 90
             max_orientation_angle <= 90
             hyperlane = no
         }
-        while = {
-            count = 2
-            create_fleet = {
-                effect = {
-                    set_fleet_flag = Ten_Desires_fallen_empire_fleet
-                    set_owner = last_created_system.star
-                    while = {
-                        count = 100
-                        create_ship = {
-                            name = random
-                            design = NAME_Beta
-                        }
-                    }
-                }
-            }
-        }
+
     }
     set_spawn_system_batch = end
 }
@@ -305,4 +137,251 @@ Ten_Desires_fallen_empire_species_init = {
             }
         }
     }
+}
+Ten_Desire_fallen_empire_capital = {
+        #区划
+        random_list = {
+            1 = {
+                while = {
+                    count = 4
+                    add_district = district_Ten_Desires_page2
+                    add_district = district_Ten_Desires_ex
+                }
+            }
+            1 = {
+                while = {
+                    count = 4
+                    add_district = district_Ten_Desires
+                    add_district = district_Ten_Desires_alloys
+                }
+            }
+            1 = {
+                add_district = district_Ten_Desires
+                add_district = district_Ten_Desires_alloys
+                add_district = district_Ten_Desires_page2
+                add_district = district_Ten_Desires_ex
+            }
+            1 = {
+                while = {
+                    count = 5
+                    add_district = district_Ten_Desires_page2
+                }
+            }
+            1 = {
+                while = {
+                    count = 5
+                    add_district = district_Ten_Desires_alloys
+                }
+
+            }
+            0 = {
+                while = {
+                    count = 4
+                    remove_district = district_Ten_Desires_alloys
+                }
+            }
+            1 = {
+                while = {
+                    count = 4
+                    remove_district = district_Ten_Desires_alloys
+                    remove_district = district_Ten_Desires
+                }
+            }
+            1 = {
+                while = {
+                    count = 4
+                    remove_district = district_Ten_Desires_page2
+                }
+            }
+            10 = {
+
+            }
+        }
+}
+Ten_Desire_fallen_empire_planet = {
+    optimize_memory
+    every_owned_planet = {
+        limit = {
+            is_planet_class = pc_gaia
+        }
+        while = {
+            count = 3
+            add_building= building_sacred_nexus
+        }
+        while = {
+            count = 2
+            add_building= building_food_processing_facility
+        }
+        add_building= building_energy_nexus
+        add_building= building_factory_3
+        add_building= building_foundry_3
+    }
+    every_owned_planet = {
+        limit = {
+            OR = {
+                is_planet_class = pc_shattered_ring_habitable
+                is_planet_class = pc_ringworld_habitable
+            }
+        }
+        while = {
+            count = 5
+            add_building= building_research_lab_3
+        }
+        add_building= building_foundry_3
+    }
+    every_owned_planet = {
+        limit = {
+            is_planet_class = pc_habitat
+        }
+        add_building= building_food_processing_facility
+        add_building= building_mineral_purification_plant
+        add_building= building_energy_nexus
+    }
+    every_owned_planet = {
+        limit = {
+            is_planet_class = pc_city
+        }
+        add_district = district_city
+        add_building= building_hyper_entertainment_forum
+    }
+    random_owned_planet = {
+        limit = {
+            NOT = {
+                tho_rary_planet_class = yes
+            }
+        }
+        random_list = {
+            2 = {
+                add_building= building_factory_1
+            }
+
+            3 = {
+                add_building= building_foundry_1
+            }
+
+            4 = {
+                add_building= building_embassy
+            }
+
+            5 = {
+                add_building= building_institute
+            }
+
+            6 = {
+                add_building= building_ministry_production
+            }
+
+            7 = {
+                add_building= building_galactic_stock_exchange
+            }
+
+            8 = {
+                add_building= building_research_lab_1
+            }
+        }
+        random_list = {
+            2 = {
+                add_district = district_industrial
+                add_district = district_generator
+                add_district = district_mining
+            }
+            3 = {
+                add_district = district_generator
+                add_district = district_mining
+                add_district = district_farming
+            }
+            2 = {
+                add_district = district_city
+                add_district = district_generator
+                add_district = district_mining
+                add_district = district_farming
+            }
+            1 = {
+                modifier = {
+                    owner = {
+                        OR = {
+                            has_ethic = ethic_fanatic_militarist
+                            has_ethic = ethic_militarist
+                            has_authority = auth_imperial
+                        }
+                    }
+                    add = 4
+                }
+                add_district = district_industrial
+                add_district = district_hab_industrial
+                add_district = district_arcology_civilian_industry
+                add_district = district_arcology_arms_industry
+            }
+        }
+    }
+    random_owned_planet = {
+        limit = {
+            OR = {
+                is_planet_class = pc_ringworld_habitable
+                is_planet_class = pc_shattered_ring_habitable
+            }
+        }
+        add_district = district_industrial
+        add_district = district_hab_industrial
+        add_district = district_rw_industrial
+    }
+}
+Ten_Desire_fallen_empire_auto_move_ship = {
+    random_system = {
+        save_global_event_target_as = tho_scientist_targer
+    }
+    random_owned_fleet = {
+        limit = {
+            has_auto_move_target = yes
+            NOT = { tho_is_ship_move_class = yes }
+        }
+        auto_move_to_planet = {
+            target = event_target:tho_scientist_targer.star
+            clear_auto_move_on_arrival = yes
+        }
+    }
+}
+Ten_Desire_fallen_empire_auto_move_ship_war = {
+    random_country = {
+        limit = {
+            is_at_war_with = event_target:Ten_Desires_fallen_empire
+        }
+        random_owned_planet = {
+            limit = {
+                exists = owner
+            }
+            save_global_event_target_as = tho_scientist_targer
+        }
+    }
+    random_owned_fleet = {
+        limit = {
+            has_auto_move_target = no
+            NOT = { tho_is_ship_move_class = yes }
+        }
+        auto_move_to_planet = {
+            target = event_target:tho_scientist_targer
+            clear_auto_move_on_arrival = yes
+        }
+    }
+}
+Ten_Desire_fallen_empire_auto_move_ship_to_ship ={
+    random_country = {
+        limit = {
+            is_at_war_with = event_target:Ten_Desires_fallen_empire
+        }
+        random_owned_fleet = {
+            save_global_event_target_as = fleet_targer_fallen_war
+        }
+    }
+    random_owned_fleet = {
+        limit = {
+            has_auto_move_target = no
+            NOT = { tho_is_ship_class = yes }
+        }
+        auto_move_to_planet = {
+            target = event_target:fleet_targer_fallen_war
+            clear_auto_move_on_arrival = yes
+        }
+    }
+
 }
