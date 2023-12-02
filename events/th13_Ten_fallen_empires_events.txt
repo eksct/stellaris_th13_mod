@@ -71,7 +71,8 @@ country_event = {
             }
         }
         name =  th13_Ten_start.2
-        every_country = {
+
+        country_event = {
             id = th13_Ten_fe.104
         }
     }

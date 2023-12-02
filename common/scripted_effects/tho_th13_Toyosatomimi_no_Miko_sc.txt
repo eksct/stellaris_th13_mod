@@ -1,7 +1,7 @@
 Toyosatomimi_no_Miko_created={
     create_leader = {
         event_leader = yes
-        class = governor
+        class = official
         species = root.species
         name = "丰聪耳神子"
         gender = female

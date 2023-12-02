@@ -13,8 +13,7 @@ councilor_Ten_diezi = {
     leader_class = {commander }
     is_leader_possible = {
         OR = {
-            leader_class = admiral
-            leader_class = general
+            leader_class = commander
         }
     }
     modifier = {

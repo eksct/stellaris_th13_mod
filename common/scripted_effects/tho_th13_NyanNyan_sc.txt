@@ -1,7 +1,7 @@
 NyanNyan_created={
     create_leader = {
         event_leader = yes
-        class = admiral
+        class = commander
         species = owner_main_species
         #name = "Seiga_NyanNyan"
         name = "霍青娥"
@@ -101,7 +101,7 @@ nskill_Lunatic_rumo = {
 nskill_Lunatic_tongling = {
     set_fleet_flag = 4_tongling
         create_leader = {
-            class = admiral
+            class = commander
             species = owner_main_species
             name = "宫古芳香"
             skill = 10

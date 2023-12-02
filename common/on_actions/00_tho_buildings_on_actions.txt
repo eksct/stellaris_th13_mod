@@ -106,6 +106,5 @@ on_entering_war = {
 on_war_ended = {  }
 on_war_beginning = {
     events = {
-        fallen_Ai.3
     }
 }

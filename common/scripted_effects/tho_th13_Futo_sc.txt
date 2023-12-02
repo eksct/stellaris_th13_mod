@@ -1,7 +1,7 @@
 created_Futo = {
     create_leader = {
         event_leader = yes
-        class = admiral
+        class = commander
         species = owner_main_species
         name = "物部布都"
         gender = female

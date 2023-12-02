@@ -1,7 +1,7 @@
 Miyako_Yoshika_created = {
     create_leader = {
         event_leader = yes
-        class = general
+        class = commander
         species = owner_main_species
         name = "宫古芳香"
         gender = female
